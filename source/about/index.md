@@ -23,3 +23,6 @@ comments: false
 
 # 为什么没有贴出头像？
 因为太丑。
+
+# 联系方式
+Email: `PeterSmith_9@outlook.com`

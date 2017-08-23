@@ -15,15 +15,15 @@ categories: Quantum Mechanics
 
 # 符号说明
 
-| 符号                                   | 说明，以下符号表示的量是在 *复数范围* 内讨论的                |
-| ------------------------------------ | ---------------------------------------- |
-| $\mid i\rangle$                     | ket，也称列向量                                |
-| $\langle i\mid$                     | bra，也称行向量                                |
-| $\langle i\mid  j \rangle $         | inner product，求向量$\langle i\mid $与向量$\mid j\rangle$的内积 |
+| 符号                                 | 说明，以下符号表示的量是在 *复数范围* 内讨论的                |
+| ---------------------------------- | ---------------------------------------- |
+| $\mid i\rangle$                    | ket，也称列向量                                |
+| $\langle i\mid$                    | bra，也称行向量                                |
+| $\langle i\mid  j \rangle $        | inner product，求向量$\langle i\mid $与向量$\mid j\rangle$的内积 |
 | $\mid  i \rangle \langle j \mid  $ | outer product，求向量$\mid i\rangle$与向量$\langle j\mid $的外积 |
-| $\mid i\rangle ^\dagger$            | transpose conjugate，共轭转置，即向量每个元素取共轭复数后整体转置，$\mid i\rangle ^\dagger = \langle i^*\mid $ |
-| $\Omega$, $\Lambda$                  | 算子，或称算符，由函数组成的矩阵                         |
-| $\Omega^\dagger$                     | 对 $\Omega$ 取共轭转置                         |
+| $\mid i\rangle ^\dagger$           | transpose conjugate，共轭转置，即向量每个元素取共轭复数后整体转置，$\mid i\rangle ^\dagger = \langle i^*\mid $ |
+| $\Omega$, $\Lambda$                | 算子，或称算符，由函数组成的矩阵                         |
+| $\Omega^\dagger$                   | 对 $\Omega$ 取共轭转置                         |
 
 # 题目重现
 
