@@ -1,26 +1,31 @@
-<!doctype html>
+<!DOCTYPE html>
 
 
 
   
 
 
-<html class="theme-next pisces use-motion" lang="zh-Hans">
+<html class="theme-next muse use-motion" lang="zh-Hans">
 <head>
-  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8"/>
+  <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
 
 
 
 
 
+  
+  
+  <link rel="stylesheet" media="all" href="/lib/Han/dist/han.min.css?v=3.3">
 
 
 
 
 <meta http-equiv="Cache-Control" content="no-transform" />
 <meta http-equiv="Cache-Control" content="no-siteapp" />
+
 
 
 
@@ -74,7 +79,7 @@
 
 <link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
 
-<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
   <meta name="keywords" content="C++,PAT,排序," />
@@ -86,7 +91,7 @@
 
 
 
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
 
 
 
@@ -97,11 +102,11 @@
 <meta name="keywords" content="C++,PAT,排序">
 <meta property="og:type" content="article">
 <meta property="og:title" content="PAT题解 B 1035">
-<meta property="og:url" content="http://ionzing.science/2017/06/22/PAT题解-B-1035/index.html">
-<meta property="og:site_name" content="伪化生的搬砖日常">
+<meta property="og:url" content="https://ionizing.science/2017/06/22/PAT题解-B-1035/index.html">
+<meta property="og:site_name" content="Ionizing&#39;s Blog">
 <meta property="og:description" content="题解:PAT-B 1035 插入与归并这是一篇测试用文章，欢迎围观. 题目全文：题目地址在这里  根据维基百科的定义： 插入排序是迭代算法，逐一获得输入数据，逐步产生有序的输出序列。每步迭代中，算法从输入序列中取出一元素，将之插入有序序列中正确的位置。如此迭代直到全部元素有序。 归并排序进行如下迭代操作：首先将原始序列看成N个只包含1个元素的有序子序列，然后每次迭代归并两个相邻的有序子序列，直到最">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-09-19T14:07:58.000Z">
+<meta property="og:updated_time" content="2017-09-21T14:09:47.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="PAT题解 B 1035">
 <meta name="twitter:description" content="题解:PAT-B 1035 插入与归并这是一篇测试用文章，欢迎围观. 题目全文：题目地址在这里  根据维基百科的定义： 插入排序是迭代算法，逐一获得输入数据，逐步产生有序的输出序列。每步迭代中，算法从输入序列中取出一元素，将之插入有序序列中正确的位置。如此迭代直到全部元素有序。 归并排序进行如下迭代操作：首先将原始序列看成N个只包含1个元素的有序子序列，然后每次迭代归并两个相邻的有序子序列，直到最">
@@ -112,10 +117,12 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Pisces',
-    sidebar: {"position":"right","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    scheme: 'Muse',
+    version: '5.1.2',
+    sidebar: {"position":"right","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: true,
-    motion: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn"}},
     duoshuo: {
       userId: '0',
       author: '博主'
@@ -132,13 +139,13 @@
 
 
 
-  <link rel="canonical" href="http://ionzing.science/2017/06/22/PAT题解-B-1035/"/>
+  <link rel="canonical" href="https://ionizing.science/2017/06/22/PAT题解-B-1035/"/>
 
 
 
 
 
-  <title>PAT题解 B 1035 | 伪化生的搬砖日常</title>
+  <title>PAT题解 B 1035 | Ionizing's Blog</title>
   
 
 
@@ -151,13 +158,7 @@
   })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
   ga('create', 'UA-101595379-1', 'auto');
   ga('send', 'pageview');
-</script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
-
-
-
-
-
-
+</script>
 
 
 
@@ -172,7 +173,7 @@
     
   
 
-  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-right page-post-detail ">
+  <div class="container sidebar-position-right page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -183,12 +184,12 @@
     <div class="custom-logo-site-title">
       <a href="/"  class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">伪化生的搬砖日常</span>
+        <span class="site-title">Ionizing's Blog</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
       
-        <p class="site-subtitle"></p>
+        <p class="site-subtitle">Challenge Everything</p>
       
   </div>
 
@@ -218,16 +219,6 @@
         </li>
       
         
-        <li class="menu-item menu-item-categories">
-          <a href="/categories/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
-            
-            分类
-          </a>
-        </li>
-      
-        
         <li class="menu-item menu-item-about">
           <a href="/about/" rel="section">
             
@@ -238,22 +229,32 @@
         </li>
       
         
-        <li class="menu-item menu-item-archives">
-          <a href="/archives/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
-            
-            归档
-          </a>
-        </li>
-      
-        
         <li class="menu-item menu-item-tags">
           <a href="/tags/" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
             
             标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
           </a>
         </li>
       
@@ -285,17 +286,21 @@
   
   
 
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://ionzing.science/2017/06/22/PAT题解-B-1035/">
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://ionizing.science/2017/06/22/PAT题解-B-1035/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Ionizing Radiation">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="伪化生的搬砖日常">
+      <meta itemprop="name" content="Ionizing's Blog">
     </span>
 
     
@@ -372,7 +377,7 @@
                  <i class="fa fa-eye"></i>
                </span>
                
-                 <span class="post-meta-item-text">阅读次数 </span>
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
                
                  <span class="leancloud-visitors-count"></span>
              </span>
@@ -388,7 +393,10 @@
       </header>
     
 
-    <div class="post-body" itemprop="articleBody">
+    
+    
+    
+    <div class="post-body han-init-context" itemprop="articleBody">
 
       
       
@@ -463,31 +471,19 @@
 <li>最大<code>N</code>.</li>
 </ol>
 <p>有了如上提示，加上前面的讲解，相信读者一定能够独立AC这道题了。</p>
-<h2 id="AC代码"><a href="#AC代码" class="headerlink" title="AC代码:"></a>AC代码:</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></div><div class="line"><span class="comment">//#include &lt;fstream&gt;</span></div><div class="line"></div><div class="line"><span class="keyword">using</span> <span class="built_in">std</span>::<span class="built_in">cin</span>;</div><div class="line"><span class="keyword">using</span> <span class="built_in">std</span>::<span class="built_in">cout</span>;</div><div class="line"><span class="keyword">using</span> <span class="built_in">std</span>::<span class="built_in">endl</span>;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></div><div class="line">&#123;</div><div class="line"><span class="comment">//    std::ifstream cin("in.txt");</span></div><div class="line">    <span class="keyword">int</span> N;</div><div class="line">    <span class="built_in">cin</span> &gt;&gt; N;</div><div class="line">    <span class="keyword">int</span> *Orig = <span class="keyword">new</span> <span class="keyword">int</span>[N];</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i!=N; ++i)&#123;</div><div class="line">        <span class="built_in">cin</span> &gt;&gt; Orig[i];</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">int</span> *tmp = <span class="keyword">new</span> <span class="keyword">int</span>[N];</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i!=N; ++i)&#123;</div><div class="line">        <span class="built_in">cin</span> &gt;&gt; tmp[i];</div><div class="line">    &#125;</div><div class="line">    <span class="function"><span class="keyword">int</span> <span class="title">k</span><span class="params">(<span class="number">0</span>)</span></span>;</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=k; i!=N<span class="number">-1</span>; ++i)&#123;</div><div class="line">        <span class="keyword">if</span>( tmp[i] &gt; tmp[i+<span class="number">1</span>] )&#123;</div><div class="line">            k = i;</div><div class="line">            <span class="keyword">break</span>;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">IsInsertion</span><span class="params">(<span class="literal">true</span>)</span></span>;</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=++k; i!=N; ++i)&#123;</div><div class="line">        <span class="keyword">if</span>( tmp[i] != Orig[i] )&#123;</div><div class="line">            IsInsertion = <span class="literal">false</span>;</div><div class="line">            <span class="keyword">break</span>;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">if</span>( IsInsertion )&#123;</div><div class="line">        <span class="built_in">cout</span> &lt;&lt; <span class="string">"Insertion Sort"</span> &lt;&lt; <span class="built_in">endl</span>;</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=k; i!=<span class="number">0</span>; --i)&#123;</div><div class="line">            <span class="keyword">if</span>( tmp[i] &lt; tmp[i<span class="number">-1</span>] )&#123;</div><div class="line">                <span class="keyword">int</span> t = tmp[i];</div><div class="line">                tmp[i] = tmp[i<span class="number">-1</span>];</div><div class="line">                tmp[i<span class="number">-1</span>] = t;</div><div class="line">            &#125;<span class="keyword">else</span> <span class="keyword">break</span>;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i!=N<span class="number">-1</span>; ++i)&#123;</div><div class="line">            <span class="built_in">cout</span> &lt;&lt; tmp[i] &lt;&lt; <span class="string">" "</span>;</div><div class="line">        &#125;<span class="built_in">cout</span> &lt;&lt; tmp[N<span class="number">-1</span>] &lt;&lt; <span class="built_in">endl</span>;</div><div class="line">    &#125;<span class="keyword">else</span>&#123;</div><div class="line">        <span class="built_in">cout</span> &lt;&lt; <span class="string">"Merge Sort"</span> &lt;&lt; <span class="built_in">endl</span>;</div><div class="line">        <span class="keyword">bool</span> Identified = <span class="literal">false</span>;</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> l=<span class="number">2</span>; l&lt;=N; l*=<span class="number">2</span>)&#123;</div><div class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> i=l; i&lt;N; i += <span class="number">2</span>*l)&#123;</div><div class="line">                <span class="keyword">if</span>( tmp[i<span class="number">-1</span>] &gt; tmp[i] )&#123;</div><div class="line">                    Identified = <span class="literal">true</span>;</div><div class="line">                    <span class="keyword">break</span>;</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">            <span class="keyword">if</span>( Identified )&#123;</div><div class="line">                k = l;</div><div class="line">                <span class="keyword">break</span>;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line"><span class="comment">//        cout &lt;&lt; "k = " &lt;&lt; k &lt;&lt; endl;</span></div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;N; i+=k*<span class="number">2</span>)&#123;</div><div class="line">            <span class="keyword">int</span> *tmpArr = <span class="keyword">new</span> <span class="keyword">int</span>[k*<span class="number">2</span>];</div><div class="line">            <span class="keyword">int</span> lef = i;</div><div class="line">            <span class="keyword">const</span> <span class="keyword">int</span> mid = ( lef+k &lt; N ) ? lef+k : N;</div><div class="line">            <span class="keyword">const</span> <span class="keyword">int</span> rig = ( mid+k &lt; N ) ? mid+k : N;</div><div class="line">            <span class="keyword">int</span> cur = mid;</div><div class="line">            <span class="keyword">int</span> j=<span class="number">0</span>;</div><div class="line">            <span class="keyword">while</span>( lef &lt; mid <span class="keyword">and</span> cur &lt; rig )&#123;</div><div class="line">                <span class="keyword">if</span>( tmp[lef] &lt; tmp[cur] )&#123;</div><div class="line">                    tmpArr[j++] = tmp[lef++];</div><div class="line">                &#125;<span class="keyword">else</span>&#123;</div><div class="line">                    tmpArr[j++] = tmp[cur++];</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">            <span class="keyword">while</span>( lef &lt; mid )&#123;</div><div class="line">                tmpArr[j++] = tmp[lef++];</div><div class="line">            &#125;</div><div class="line">            <span class="keyword">while</span>( cur &lt; rig )&#123;</div><div class="line">                tmpArr[j++] = tmp[cur++];</div><div class="line">            &#125;</div><div class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> t=<span class="number">0</span>; t!=j; ++t)&#123;</div><div class="line">                tmp[i+t] = tmpArr[t];</div><div class="line">            &#125;</div><div class="line">            <span class="keyword">delete</span>[] tmpArr;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i!=N<span class="number">-1</span>; ++i)&#123;</div><div class="line">            <span class="built_in">cout</span> &lt;&lt; tmp[i] &lt;&lt; <span class="string">" "</span>;</div><div class="line">        &#125;<span class="built_in">cout</span> &lt;&lt; tmp[N<span class="number">-1</span>] &lt;&lt; <span class="built_in">endl</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="AC代码"><a href="#AC代码" class="headerlink" title="AC代码:"></a>AC代码:</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></div><div class="line"><span class="comment">//#include &lt;fstream&gt;</span></div><div class="line"></div><div class="line"><span class="keyword">using</span> <span class="built_in">std</span>::<span class="built_in">cin</span>;</div><div class="line"><span class="keyword">using</span> <span class="built_in">std</span>::<span class="built_in">cout</span>;</div><div class="line"><span class="keyword">using</span> <span class="built_in">std</span>::<span class="built_in">endl</span>;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></div><div class="line"><span class="function"></span>&#123;</div><div class="line"><span class="comment">//    std::ifstream cin("in.txt");</span></div><div class="line">    <span class="keyword">int</span> N;</div><div class="line">    <span class="built_in">cin</span> &gt;&gt; N;</div><div class="line">    <span class="keyword">int</span> *Orig = <span class="keyword">new</span> <span class="keyword">int</span>[N];</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i!=N; ++i)&#123;</div><div class="line">        <span class="built_in">cin</span> &gt;&gt; Orig[i];</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">int</span> *tmp = <span class="keyword">new</span> <span class="keyword">int</span>[N];</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i!=N; ++i)&#123;</div><div class="line">        <span class="built_in">cin</span> &gt;&gt; tmp[i];</div><div class="line">    &#125;</div><div class="line">    <span class="function"><span class="keyword">int</span> <span class="title">k</span><span class="params">(<span class="number">0</span>)</span></span>;</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=k; i!=N<span class="number">-1</span>; ++i)&#123;</div><div class="line">        <span class="keyword">if</span>( tmp[i] &gt; tmp[i+<span class="number">1</span>] )&#123;</div><div class="line">            k = i;</div><div class="line">            <span class="keyword">break</span>;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">IsInsertion</span><span class="params">(<span class="literal">true</span>)</span></span>;</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=++k; i!=N; ++i)&#123;</div><div class="line">        <span class="keyword">if</span>( tmp[i] != Orig[i] )&#123;</div><div class="line">            IsInsertion = <span class="literal">false</span>;</div><div class="line">            <span class="keyword">break</span>;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">if</span>( IsInsertion )&#123;</div><div class="line">        <span class="built_in">cout</span> &lt;&lt; <span class="string">"Insertion Sort"</span> &lt;&lt; <span class="built_in">endl</span>;</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=k; i!=<span class="number">0</span>; --i)&#123;</div><div class="line">            <span class="keyword">if</span>( tmp[i] &lt; tmp[i<span class="number">-1</span>] )&#123;</div><div class="line">                <span class="keyword">int</span> t = tmp[i];</div><div class="line">                tmp[i] = tmp[i<span class="number">-1</span>];</div><div class="line">                tmp[i<span class="number">-1</span>] = t;</div><div class="line">            &#125;<span class="keyword">else</span> <span class="keyword">break</span>;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i!=N<span class="number">-1</span>; ++i)&#123;</div><div class="line">            <span class="built_in">cout</span> &lt;&lt; tmp[i] &lt;&lt; <span class="string">" "</span>;</div><div class="line">        &#125;<span class="built_in">cout</span> &lt;&lt; tmp[N<span class="number">-1</span>] &lt;&lt; <span class="built_in">endl</span>;</div><div class="line">    &#125;<span class="keyword">else</span>&#123;</div><div class="line">        <span class="built_in">cout</span> &lt;&lt; <span class="string">"Merge Sort"</span> &lt;&lt; <span class="built_in">endl</span>;</div><div class="line">        <span class="keyword">bool</span> Identified = <span class="literal">false</span>;</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> l=<span class="number">2</span>; l&lt;=N; l*=<span class="number">2</span>)&#123;</div><div class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> i=l; i&lt;N; i += <span class="number">2</span>*l)&#123;</div><div class="line">                <span class="keyword">if</span>( tmp[i<span class="number">-1</span>] &gt; tmp[i] )&#123;</div><div class="line">                    Identified = <span class="literal">true</span>;</div><div class="line">                    <span class="keyword">break</span>;</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">            <span class="keyword">if</span>( Identified )&#123;</div><div class="line">                k = l;</div><div class="line">                <span class="keyword">break</span>;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line"><span class="comment">//        cout &lt;&lt; "k = " &lt;&lt; k &lt;&lt; endl;</span></div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;N; i+=k*<span class="number">2</span>)&#123;</div><div class="line">            <span class="keyword">int</span> *tmpArr = <span class="keyword">new</span> <span class="keyword">int</span>[k*<span class="number">2</span>];</div><div class="line">            <span class="keyword">int</span> lef = i;</div><div class="line">            <span class="keyword">const</span> <span class="keyword">int</span> mid = ( lef+k &lt; N ) ? lef+k : N;</div><div class="line">            <span class="keyword">const</span> <span class="keyword">int</span> rig = ( mid+k &lt; N ) ? mid+k : N;</div><div class="line">            <span class="keyword">int</span> cur = mid;</div><div class="line">            <span class="keyword">int</span> j=<span class="number">0</span>;</div><div class="line">            <span class="keyword">while</span>( lef &lt; mid <span class="keyword">and</span> cur &lt; rig )&#123;</div><div class="line">                <span class="keyword">if</span>( tmp[lef] &lt; tmp[cur] )&#123;</div><div class="line">                    tmpArr[j++] = tmp[lef++];</div><div class="line">                &#125;<span class="keyword">else</span>&#123;</div><div class="line">                    tmpArr[j++] = tmp[cur++];</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">            <span class="keyword">while</span>( lef &lt; mid )&#123;</div><div class="line">                tmpArr[j++] = tmp[lef++];</div><div class="line">            &#125;</div><div class="line">            <span class="keyword">while</span>( cur &lt; rig )&#123;</div><div class="line">                tmpArr[j++] = tmp[cur++];</div><div class="line">            &#125;</div><div class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> t=<span class="number">0</span>; t!=j; ++t)&#123;</div><div class="line">                tmp[i+t] = tmpArr[t];</div><div class="line">            &#125;</div><div class="line">            <span class="keyword">delete</span>[] tmpArr;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i!=N<span class="number">-1</span>; ++i)&#123;</div><div class="line">            <span class="built_in">cout</span> &lt;&lt; tmp[i] &lt;&lt; <span class="string">" "</span>;</div><div class="line">        &#125;<span class="built_in">cout</span> &lt;&lt; tmp[N<span class="number">-1</span>] &lt;&lt; <span class="built_in">endl</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 
       
     </div>
+    
+    
+    
 
-    <div>
-      
-        
+    
 
-      
-    </div>
+    
 
-    <div>
-      
-        
-
-      
-    </div>
-
-    <div>
-      
-        
-
-      
-    </div>
+    
 
     <footer class="post-footer">
       
@@ -527,6 +523,10 @@
       
       
     </footer>
+  </div>
+  
+  
+  
   </article>
 
 
@@ -567,6 +567,7 @@
   </div>
 
   <aside id="sidebar" class="sidebar">
+    
     <div class="sidebar-inner">
 
       
@@ -584,19 +585,18 @@
 
       <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <img class="site-author-image" itemprop="image"
-               src="/images/avatar.png"
-               alt="Ionizing Radiation" />
-          <p class="site-author-name" itemprop="name">Ionizing Radiation</p>
-           
-              <p class="site-description motion-element" itemprop="description"></p>
           
+            <p class="site-author-name" itemprop="name">Ionizing Radiation</p>
+            <p class="site-description motion-element" itemprop="description">伪化生的小窝</p>
         </div>
+
         <nav class="site-state motion-element">
 
           
             <div class="site-state-item site-state-posts">
+            
               <a href="/archives/">
+            
                 <span class="site-state-item-count">4</span>
                 <span class="site-state-item-name">日志</span>
               </a>
@@ -635,10 +635,13 @@
               <span class="links-of-author-item">
                 <a href="https://github.com/IonizingRadiation" target="_blank" title="GitHub">
                   
-                    <i class="fa fa-fw fa-github"></i>
+                    <i class="fa fa-fw fa-globe"></i>GitHub</a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="mailto:PeterSmith_9@outlook.com" target="_blank" title="E-Mail">
                   
-                  GitHub
-                </a>
+                    <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
               </span>
             
           
@@ -693,23 +696,25 @@
     <i class="fa fa-heart"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">Ionizing Radiation</span>
+
+  
 </div>
 
 
-<div class="powered-by">
-  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
-</div>
+  <div class="powered-by">由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动</div>
+<p>Hosted by <a href="https://pages.coding.me" style="font-weight: bold">Coding Pages</a></p>
+  <span class="post-meta-divider">|</span>
 
-<div class="theme-info">
-  主题 -
-  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-    NexT.Pisces
-  </a>
-</div>
-
+  <div class="theme-info">主题 &mdash; <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.2</div>
 
 
         
+
+
+
+
+
+
 
         
       </div>
@@ -775,32 +780,25 @@
   
 
 
-  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
 
-  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
-
-
-
-  
-  
-
-
-  <script type="text/javascript" src="/js/src/affix.js?v=5.1.1"></script>
-
-  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.1"></script>
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
 
 
 
   
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+  
 
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
 
 
   
 
+  
 
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
 
 
 
@@ -816,7 +814,7 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'http://ionzing.science/2017/06/22/PAT题解-B-1035/';
+          this.page.url = 'https://ionizing.science/2017/06/22/PAT题解-B-1035/';
           this.page.identifier = '2017/06/22/PAT题解-B-1035/';
           this.page.title = 'PAT题解 B 1035';
         };
@@ -844,10 +842,6 @@
 
 
 
-  
-
-
-
 
 
 
@@ -862,7 +856,7 @@
   
 
   
-  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
   <script>AV.initialize("kURCdXShfgSCB7irfk4pHjlg-gzGzoHsz", "ljdTAbOpN7Tm1gubHSMAxuHu");</script>
   <script>
     function showTime(Counter) {
@@ -992,7 +986,7 @@
         }
       });
     </script>
-    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.6.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
   
 
 
@@ -1000,6 +994,5 @@
 
   
 
-  <script type="text/javascript" src="/js/src/love.js"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </body>
 </html>

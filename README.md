@@ -1,2 +1,0 @@
-#Blog
-# ionizing.science

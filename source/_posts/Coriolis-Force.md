@@ -120,15 +120,11 @@ $$
 
 其中的 $\vec{v}$ 表示质点相对于旋转体系的速度矢量。对上式再次求导，即得到加速度
 
-$$
-\begin{aligned}
-
+$$\begin{aligned}
 \vec{A} = \frac{\mathrm D^2 \vec{r}}{\mathrm D t^2} &= \vec{\omega}\times\frac{\mathrm D\vec{r}}{\mathrm D t} + \frac{\mathrm d \vec{v}}{\mathrm dt} \\
 	&= \vec{\omega}\times(\vec{\omega}\times \vec{r} + \vec{v}) + (\vec{\omega}\times\vec{v} + \frac{\mathrm d\vec{v}}{\mathrm d t}) \\
 	&= \vec{\omega}\times(\vec{\omega}\times \vec{r} ) + 2\vec{\omega}\times\vec{v} + \vec{a}
-
-\end{aligned}
-$$
+\end{aligned}$$
 
 因此
 
@@ -175,26 +171,18 @@ $$
 
 下面来求这个关系：
 
-$$
-\begin{aligned}
-
-\angle \text{看这里} = \angle CED  &=  \frac {\widehat{CD}}{CE} \\\\
-					& = \frac{ CE \times \sin\psi \times \omega\Delta t }{ CE } \\\\
+$$\begin{aligned}
+\angle \text{看这里} = \angle CED  &=  \frac {\widehat{CD}}{CE} \\
+					& = \frac{ CE \times \sin\psi \times \omega\Delta t }{ CE } \\
 					& = \omega\Delta t \sin\psi
-
-\end{aligned}
-$$
+\end{aligned}$$
 
 于是，单摆进动的角速度为
 
-$$
-\begin{aligned}
-
-\varOmega & = \lim_{\Delta t \rightarrow 0} \frac{\angle \text{看这里}} {\Delta t} \\\\
+$$\begin{aligned}
+\varOmega & = \lim_{\Delta t \rightarrow 0} \frac{\angle \text{看这里}} {\Delta t} \\
 		& = \omega \sin \psi
-
-\end{aligned}
-$$
+\end{aligned}$$
 
 上面式子表明，当 $\psi = \pm 90 ^ \circ$ 时，$\varOmega = \omega$ ，即当单摆处于极点时，其进动角速度等于地球自转角速度，也就是我们开始时提到单摆在圆盘时的情形。
 
@@ -203,9 +191,5 @@ $$
 # 结语
 
 这是我在补《力学》时卡住的一个知识点，之前心中总把科里奥利力想象成惯性离心力那样，导致看到傅科摆时完全不知道如何理解，经过请教群友，老师以及动手画图实验，总算稍稍理解了，上面便是本渣的一点愚见，如有疏漏，还请在评论区指出，或邮件联系（联系方式见关于页面）。
-
-另外，如果有小伙伴有在2017年4月份之前注册的 B 站账号，还请在 8 月 24 日给和泉纱雾 [投票](https://bangumi.bilibili.com/moe/2017/jp/index/#/) 感激不尽。
-
-![Sagiri](Sagiri.jpg)
 
 以上

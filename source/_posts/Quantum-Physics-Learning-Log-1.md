@@ -53,24 +53,24 @@ $$
 ​	问题化简为求微分方程组
 $$
 \begin{cases}
-	\ddot{x_1} = -\frac{2k}{m}x_1 + \frac{k}{m}x_2\\\\
+	\ddot{x_1} = -\frac{2k}{m}x_1 + \frac{k}{m}x_2\\
 	\ddot{x_2} = \frac{k}{m}x_1 - \frac{2k}{m}x_2
 \end{cases}
 $$
 ​	的解，写成矩阵形式即为
 $$
 \begin{bmatrix}
-	\ddot{x_1}\\\\
+	\ddot{x_1}\\
 	\ddot{x_2}
 \end{bmatrix} = \begin{bmatrix}
-	\frac{-2k}{m} & \frac{k}{m}\\\\
+	\frac{-2k}{m} & \frac{k}{m}\\
 	\frac{k}{m} & \frac{-2k}{m}
 \end{bmatrix} \begin{bmatrix}
-	x_1\\\\
+	x_1\\
 	x_2
 \end{bmatrix}
 $$
-​	现令$\Omega=\begin{bmatrix} \frac{-2k}{m} & \frac{k}{m}\\\\  \frac{k}{m} & \frac{-2k}{m} \end{bmatrix} $
+​	现令$\Omega=\begin{bmatrix} \frac{-2k}{m} & \frac{k}{m}\\  \frac{k}{m} & \frac{-2k}{m} \end{bmatrix} $
 
 ​	观察到 $\Omega$ 为Hermitian矩阵（$\Omega^\dagger = \Omega$，共轭转置后不变），
 
@@ -79,7 +79,7 @@ $$
 ​	有
 $$
 \begin{cases}
-	\Omega \mid \mathrm{I} \rangle = -\omega_\mathrm{I}^2 \mid \mathrm{I}\rangle\\\\
+	\Omega \mid \mathrm{I} \rangle = -\omega_\mathrm{I}^2 \mid \mathrm{I}\rangle\\
 	\Omega \mid \mathrm{II} \rangle = -\omega_\mathrm{II}^2 \mid \mathrm{II}\rangle
 \end{cases}
 $$
@@ -90,8 +90,8 @@ $$
 ​	已知本征值，可以求出本征矢为
 $$
 \begin{cases}
-	\mid \mathrm{I}\rangle = \frac{1}{\sqrt{2}} \begin{bmatrix} 1 \\\\ 1 \end{bmatrix} & \omega_\mathrm{I}=\sqrt{\frac{k}{m}} \\\\
-	\mid \mathrm{II} \rangle = \frac{1}{\sqrt{2}} \begin{bmatrix} 1 \\\\-1 \end{bmatrix}  & \omega_\mathrm{II}=\sqrt{\frac{3k}{m}}
+	\mid \mathrm{I}\rangle = \frac{1}{\sqrt{2}} \begin{bmatrix} 1 \\ 1 \end{bmatrix} & \omega_\mathrm{I}=\sqrt{\frac{k}{m}} \\
+	\mid \mathrm{II} \rangle = \frac{1}{\sqrt{2}} \begin{bmatrix} 1 \\ -1 \end{bmatrix}  & \omega_\mathrm{II}=\sqrt{\frac{3k}{m}}
  \end{cases}
 $$
 
@@ -100,13 +100,13 @@ $$
 ​	因此$x(t)= \mid \mathrm{I}\rangle x_1(t) +\mid \mathrm{II}\rangle x_2(t)$。
 
 ​	到这里，上面的步骤相当于对空间基矢进行了变换，原先的基矢为
-$x_1(t)$对应$\mid 1 \rangle = \begin{bmatrix} 1 \\\\ 0 \end{bmatrix}$，$x_2(t)$对应$\mid 2 \rangle = \begin{bmatrix} 0 \\\\ 1 \end{bmatrix}$，现变换为$x_\mathrm{I}$对应$\mid \mathrm{I} \rangle =\frac{1}{\sqrt{2}} \begin{bmatrix} 1 \\\\ 1 \end{bmatrix}$，$x_\mathrm{II}$对应$\mid \mathrm{II} \rangle =\frac{1}{\sqrt{2}} \begin{bmatrix} 1 \\\\ -1 \end{bmatrix}$。这样做有什么好处呢？好处马上就会呈现。
+$x_1(t)$对应$\mid 1 \rangle = \begin{bmatrix} 1 \\ 0 \end{bmatrix}$，$x_2(t)$对应$\mid 2 \rangle = \begin{bmatrix} 0 \\ 1 \end{bmatrix}$，现变换为$x_\mathrm{I}$对应$\mid \mathrm{I} \rangle =\frac{1}{\sqrt{2}} \begin{bmatrix} 1 \\ 1 \end{bmatrix}$，$x_\mathrm{II}$对应$\mid \mathrm{II} \rangle =\frac{1}{\sqrt{2}} \begin{bmatrix} 1 \\ -1 \end{bmatrix}$。这样做有什么好处呢？好处马上就会呈现。
 
 ​	此时$\Omega$可以对角化为
 $$
 \Omega = 
 \begin{bmatrix}
-	-\omega_\mathrm{I}^2 & 0 \\\\
+	-\omega_\mathrm{I}^2 & 0 \\
 	0 & -\omega_\mathrm{II}^2
 \end{bmatrix}
 $$
@@ -115,21 +115,21 @@ $$
 
 $$
 \begin{bmatrix}
-	\ddot{x_\mathrm{I}} \\\\
+	\ddot{x_\mathrm{I}} \\
 	\ddot{x_\mathrm{II}}
 \end{bmatrix}
 =
 \begin{bmatrix}
-	-\omega_\mathrm{I}^2 & 0 \\\\
+	-\omega_\mathrm{I}^2 & 0 \\
 	0 & -\omega_\mathrm{II}^2
 \end{bmatrix}
 \begin{bmatrix}
-	x_\mathrm{I} \\\\
+	x_\mathrm{I} \\
 	x_\mathrm{II}
 \end{bmatrix}
 =
 \begin{bmatrix}
-	-\omega_\mathrm{I}^2 x_\mathrm{I} \\\\
+	-\omega_\mathrm{I}^2 x_\mathrm{I} \\
 	-\omega_\mathrm{II}^2 x_\mathrm{II}
 \end{bmatrix}
 $$
@@ -142,7 +142,7 @@ $$
 ​	此时我们离胜利已经很近了——已经得到	
 $$
 \begin{aligned}
-	\mid x(t) \rangle & = \mid \mathrm{I} \rangle x_\mathrm{I}(0)\cos\omega_\mathrm{I}t + \mid \mathrm{II} \rangle x_\mathrm{II}(0)\cos\omega_\mathrm{II}t \\\\
+	\mid x(t) \rangle & = \mid \mathrm{I} \rangle x_\mathrm{I}(0)\cos\omega_\mathrm{I}t + \mid \mathrm{II} \rangle x_\mathrm{II}(0)\cos\omega_\mathrm{II}t \\
 	& = \mid \mathrm{I}\rangle\langle\mathrm{I}\mid x(0)\rangle \cos\omega_\mathrm{I}t + \mid \mathrm{II}\rangle\langle\mathrm{II}\mid x(0)\rangle \cos\omega_\mathrm{II}t 
 \end{aligned}
 $$
@@ -150,8 +150,8 @@ $$
 ​	式中
 $$
 \begin{aligned}
-	\langle \mathrm{I} \mid x(0) \rangle &= \frac{1}{\sqrt{2}} \begin{bmatrix} 1 & 1 \end{bmatrix} \begin{bmatrix} x_1(0) \\\\ x_2(0) \end{bmatrix} = \frac{x_1(0)+x_2(0)}{\sqrt{2}} \\\\
-	\langle \mathrm{II} \mid x(0) \rangle &= \frac{1}{\sqrt{2}} \begin{bmatrix} 1& -1 \end{bmatrix} \begin{bmatrix} x_1(0) \\\\ x_2(0) \end{bmatrix} = \frac{x_1(0) - x_2(0)}{\sqrt{2}}
+	\langle \mathrm{I} \mid x(0) \rangle &= \frac{1}{\sqrt{2}} \begin{bmatrix} 1 & 1 \end{bmatrix} \begin{bmatrix} x_1(0) \\ x_2(0) \end{bmatrix} = \frac{x_1(0)+x_2(0)}{\sqrt{2}} \\
+	\langle \mathrm{II} \mid x(0) \rangle &= \frac{1}{\sqrt{2}} \begin{bmatrix} 1& -1 \end{bmatrix} \begin{bmatrix} x_1(0) \\ x_2(0) \end{bmatrix} = \frac{x_1(0) - x_2(0)}{\sqrt{2}}
 \end{aligned}
 $$
 
@@ -160,8 +160,8 @@ $$
 ​	我们需要将$\mid \mathrm{I}\rangle$和$\mid \mathrm{II}\rangle$还原为$\mid 1\rangle$和$\mid 2\rangle$，这个操作可以通过投影 `projection` 来实现：
 $$
 \begin{aligned}
-	x_1(t) =& \langle 1 \mid x(t)\rangle \\\\
-		=& \langle 1 \mid \mathrm{I}\rangle \frac{x_1(0) + x_2(0)}{\sqrt{2}}\cos\omega_\mathrm{I}t + \langle 1 \mid \mathrm{II}\rangle \frac{x_1(0) - x_2(0)}{\sqrt{2}}\cos\omega_\mathrm{II}t \\\\
+	x_1(t) =& \langle 1 \mid x(t)\rangle \\
+		=& \langle 1 \mid \mathrm{I}\rangle \frac{x_1(0) + x_2(0)}{\sqrt{2}}\cos\omega_\mathrm{I}t + \langle 1 \mid \mathrm{II}\rangle \frac{x_1(0) - x_2(0)}{\sqrt{2}}\cos\omega_\mathrm{II}t \\
 		=& \frac{x_1(0) + x_2(0)}{2}\cos\left(\sqrt{\frac{k}{m}}t\right) + \frac{x_1(0) - x_2(0)}{2}\cos\left(\sqrt{\frac{3k}{m}}t\right)
 \end{aligned}
 $$
@@ -171,13 +171,13 @@ x_2(t)= \frac{x_1(0) + x_2(0)}{2}\cos\left(\sqrt{\frac{k}{m}}t\right) - \frac{x_
 $$
 ​	写成矩阵形式即为
 $$
-\begin{bmatrix} x_1(t) \\\\ x_2(t)  \end{bmatrix}
+\begin{bmatrix} x_1(t) \\ x_2(t)  \end{bmatrix}
 =
 \begin{bmatrix}
-	\frac{\cos\left(\sqrt{\frac{k}{m}}t\right) + \cos\left(\sqrt{\frac{3k}{m}}t\right) }{2} & \frac{\cos\left(\sqrt{\frac{k}{m}}t\right) - \cos\left(\sqrt{\frac{3k}{m}}t\right) }{2} \\\\
+	\frac{\cos\left(\sqrt{\frac{k}{m}}t\right) + \cos\left(\sqrt{\frac{3k}{m}}t\right) }{2} & \frac{\cos\left(\sqrt{\frac{k}{m}}t\right) - \cos\left(\sqrt{\frac{3k}{m}}t\right) }{2} \\
 	\frac{\cos\left(\sqrt{\frac{k}{m}}t\right) - \cos\left(\sqrt{\frac{3k}{m}}t\right) }{2} & \frac{\cos\left(\sqrt{\frac{k}{m}}t\right) + \cos\left(\sqrt{\frac{3k}{m}}t\right) }{2}
 \end{bmatrix}
-\begin{bmatrix} x_1(0) \\\\ x_2(0) \end{bmatrix}
+\begin{bmatrix} x_1(0) \\ x_2(0) \end{bmatrix}
 $$
 ​	此时，只要给出$\mid x(0)\rangle$即可得到整个耦合振子系统的运动方程。结束战斗。
 
