@@ -25,7 +25,6 @@
   <div class="powered-by">{#
   #}{{ __('footer.powered', '<a class="theme-link" href="https://hexo.io">Hexo</a>') }}{#
 #}</div>
-<p>Hosted by <a href="https://pages.coding.me" style="font-weight: bold">Coding Pages</a></p>
   <span class="post-meta-divider">|</span>
 
   <div class="theme-info">{#
@@ -33,5 +32,6 @@
   #}<a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">{#
     #}NexT.{{ theme.scheme }}{#
   #}</a> v{{ theme.version }}{#
+<p>Hosted by <a href="https://pages.coding.me" style="font-weight: bold">Coding Pages</a></p>
 #}</div>
 {% endif %}
