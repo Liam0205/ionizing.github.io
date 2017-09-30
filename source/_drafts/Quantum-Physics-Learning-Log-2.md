@@ -38,7 +38,7 @@ $$
 
 ## 假设 III
 
-经典力学：	如果粒子的状态由给定的 $x$ 和 $p$ 所确定，则对 $\omega$ 的测量将产生一个值 $\omega(x,p)$ ，并且该系统的状态不会被改变；
+经典力学：	如果粒子的状态由给定的 $x​$ 和 $p​$ 所确定，则对 $\omega​$ 的测量将产生一个值 $\omega(x,p)​$ ，并且该系统的状态不会被改变；
 
 量子力学：	如果粒子的状态为 $\mid \psi \rangle$ ，则外界对于 $\Omega$ 的测量行为有 $P(\omega) \propto |\langle \omega \mid \psi\rangle|^2$ 的概率得到 $\Omega$ 的一个特征值 $\omega$ 。**并且由于测量行为，该系统的状态将会从 $\mid\psi\rangle$ 变为 $\mid \omega \rangle$ **。
 
@@ -51,7 +51,7 @@ $$
 $$
 量子力学：	状态向量 $\mid \psi(t) \rangle$ 服从薛定谔方程：
 $$
-i\hbar \frac{d}{dt}\mid \psi(t) \rangle = H\mid\psi(t)\rangle
+i\hbar \frac{\mathrm d}{\mathrm dt}\mid \psi(t) \rangle = H\mid\psi(t)\rangle
 $$
 ​			其中 $H(X,P) = \mathscr{H}(x\rightarrow X, p\rightarrow P)$ 是量子力学中的哈密顿算符，而 $\mathscr{H}$ 是经典理论中的哈密顿算符。
 
