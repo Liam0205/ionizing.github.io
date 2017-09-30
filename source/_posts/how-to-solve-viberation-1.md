@@ -18,7 +18,7 @@ date: 2017-09-30 22:21:37
 
 ![](http://owucpthrj.bkt.clouddn.com/Fkz3IAKLr9KLnGExvHe6RlsOB_Pr)
 
-如果用 $F$ 表示物体受到的回复力，用 $x$ 表示，小球相对于平衡位置的位移，由胡克定律，小球受力总有
+如果用 $F$ 表示物体受到的回复力，用 $x$ 表示小球相对于平衡位置的位移，由胡克定律，小球受力总有
 $$
 F = -kx
 $$
@@ -133,7 +133,7 @@ $$
 
 ![](http://owucpthrj.bkt.clouddn.com/Fk4cNP6wcbGvH68621OHVFdoQIVz)
 
-我们假设从左到右三个原子的位移分别为 $x_1,\, x_2,\, x_3$ ，列出它们的运动方程为
+我们假设从左到右三个原子相对平衡位置的位移分别为 $x_1,\, x_2,\, x_3$ ，列出它们的运动方程为
 $$
 \begin{aligned}
 	m_A \frac{\mathrm d^2}{\mathrm d t^2}x_1 &= -k(x_1 - x_2) \\
@@ -161,22 +161,8 @@ $$
 	\dfrac{k}{m_A}A_2 + (\omega^2-\dfrac{k}{m_A})A_3 = 0 
 \end{cases}
 $$
-上面的方程组可以用矩阵表示：
-$$
-\begin{bmatrix}
-	(\omega^2-\frac{k}{m_A})A_1 & \frac{k}{m_A}A_2  & 0\\
-	\frac{k}{m_B}A_1 & (\omega^2-\frac{2k}{m_B})A_2 & \frac{k}{m_B}A_3 \\
-	0 & \frac{k}{m_A}A_2 & (\omega^2-\frac{k}{m_A})A_3 
-\end{bmatrix}
-\times
-\begin{bmatrix}
-	1 \\
-	1 \\
-	1
-\end{bmatrix}
-= 0
-$$
-这个上述方程组有解得条件是
+
+上述方程组有解得条件是
 $$
 \begin{vmatrix}
 	(\omega^2-\frac{k}{m_A})A_1 & \frac{k}{m_A}A_2  & 0\\
@@ -237,20 +223,7 @@ $$
 	\frac{k}{m}A_1 + \frac{k}{m}A_2 + ( \omega^2-\frac{2k}{m} )A_2 &= 0
 \end{aligned}
 $$
-用矩阵表示就是
-$$
-\begin{bmatrix}
-	( \omega^2-\frac{2k}{m} )A_1 & \frac{k}{m}A_2 & \frac{k}{m}A_3 \\
-	\frac{k}{m}A_1 & ( \omega^2-\frac{2k}{m} )A_2 & \frac{k}{m}A_3 \\
-	\frac{k}{m}A_1 & \frac{k}{m}A_2 & ( \omega^2-\frac{2k}{m} )A_2 
-\end{bmatrix}
-\begin{bmatrix}
-	1 \\
-	1 \\
-	1
-\end{bmatrix}
-= 0
-$$
+
 上述式子成立的条件是矩阵对应的行列式值为零
 $$
 \begin{vmatrix}
