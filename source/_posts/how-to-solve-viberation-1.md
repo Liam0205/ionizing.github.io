@@ -102,7 +102,7 @@ $$
 
 弹簧的势能有
 $$
-T(x) = \frac 12 k s^2
+T(s) = \frac 12 k s^2
 $$
 对势能求二阶导
 $$
@@ -118,8 +118,8 @@ $$
 此时，我们上一小节所讲的所有公式中的振幅 $A$ 和 角频率 $\omega$ 都可以用势能的二阶导数表示
 $$
 \begin{aligned}
-	A = s_{\max} &= \sqrt{ \frac{2E}{k} } = \sqrt{ \frac{2E}{U''} } \\
-		\omega	&= \sqrt{ \frac{k}{m} } = \sqrt{ \frac{U''}{m} }
+	A = s_{\max} &= \sqrt{ \frac{2E}{k} } = \sqrt{ \frac{2E}{T''} } \\
+		\omega	&= \sqrt{ \frac{k}{m} } = \sqrt{ \frac{T''}{m} }
 \end{aligned}
 $$
 
