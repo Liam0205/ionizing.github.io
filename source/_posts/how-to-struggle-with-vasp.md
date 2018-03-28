@@ -55,7 +55,7 @@ EDIFFG = -0.001	!
 kpts: Monkhorst	! KPOINTS 取法
 ```
 
-文献给出单层 C3B 的结构为 D6，长这样（从上往下看：
+文献给出单层 C3B 的结构为 $D_{6h}$ ，长这样（从上往下看：
 
 ![](http://owucpthrj.bkt.clouddn.com/FpGVI905Z66B8ksQjiULb3cLahCV)
 
