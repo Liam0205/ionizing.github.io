@@ -9,8 +9,6 @@ date: 2018-03-28 17:28:20
 
 # 在 `VASP` (PBE)计算中如何优雅地踩坑？
 
-[TOC]
-
 > **警告**：本渣刚学 `VASP` 不久，对 `VASP` 的算法、参数不甚了解，如果有大触偶遇此文，并发现有错误，请在评论区指出或邮箱联系本渣。
 
 本文是本渣从 3 月初以来刚接触 `VASP` 所学技能与遇到坑的总结，以纪念我为文献中一副图而逝去的最近一星期。何为 `VASP` 以及` VASP` 能做什么？本渣只是一个刚学的菜鸡，恕不能回答，请自行 Google 解决。
@@ -129,8 +127,8 @@ Band Calcs
 同时 `POTCAR` 这样获得：
 
 ```bash
-cat path/to/PPs/B/POTCAR >> POTCAR
-cat path/to/PPs/C/POTCAR >> POTCAR
+cat path/to/PPs/B/POTCAR >> ./POTCAR
+cat path/to/PPs/C/POTCAR >> ./POTCAR
 ```
 
 这里注意 `POTCAR` 中元素赝势的顺序应与 `POSCAR` 元素出现的顺序一致。
@@ -385,6 +383,12 @@ Rec									! 在倒空间内取点
 除了上面说到的 `INCAR`、`POSCAR`、`POTCAR`、`KPOINTS`、`CHGCAR`等，有时还会用到 `WAVECAR` ，`WAVECAR` 是二进制文件，在使用 FileZilla 传送时，如果没有勾选 `binary` 选项，则传送时会按照 ASCII 编码进行传送，后果就是 `WAVECAR` 文件损坏。
 
 
+
+参考资料：
+
+1. VASP软件包的使用入门指南——候柱锋
+2. VASP the GUIDE(April 20, 2016)——Kresse, Martijn Marsman , Jurgen Furthmuller
+3. [High-throughput electronic band structure calculations: challenges and tools](https://arxiv.org/abs/1004.2974) ——[Wahyu Setyawan](https://arxiv.org/find/cond-mat/1/au:+Setyawan_W/0/1/0/all/0/1), [Stefano Curtarolo](https://arxiv.org/find/cond-mat/1/au:+Curtarolo_S/0/1/0/all/0/1)
 
 这次 blog 就写到这里吧，反正也是为自己写的。（当然如果有大佬愿意在评论区指出其中的错误，本渣感激不尽！
 
