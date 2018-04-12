@@ -35,7 +35,7 @@ date: 2018-03-28 17:28:20
 ## 用 PBE 方法跑出能带图的总体步骤
 
 1. 阅读文献，列出文献所给参数（如果有的话），比如 `SIGMA` ，`ISMEAR` ，`ENCUT` ，晶格常数 $a$ 等等信息；
-2. 查阅资料，实现文献所给结构，关注文献的结构是否经过超胞，是否有真空层，是否考虑 vdW ；
+2. 查阅资料，**实现文献所给结构**，关注文献的结构是否经过超胞，是否有真空层，是否考虑 vdW ；
 3. 按顺序测出适合该体系的 `SIGMA` 、`ENCUT` 、kpts 、`a` ；（如果文献中给出了这些参数可跳过这一步
 4. 对结构进行弛豫，优化出最稳定结构；
 5. 对体系进行高精度的电子自洽计算；
@@ -61,23 +61,23 @@ kpts: Monkhorst	! KPOINTS 取法
 
 ## 实现结构
 
-建立元胞的格子基矢，并表示出各个原子的坐标
+建立元胞的格子基矢（D6h 的晶型都可以这样建系，使用 Direct 模式，可以手写所有原子的坐标），并表示出各个原子的坐标
 
 ![](http://owucpthrj.bkt.clouddn.com/FiQMZt8-XbO9iXes05rkDhfFjHls)
 
 所以它对应的 `POSCAR` 应为：
 
 ```fortran
-C3B graphene like structure, a = 5.17				! 注释
-   5.17												! 晶格放大系数
-    0.8660254037   -0.5000000000     0.0000000000	! 下面三行为实空间中定义元胞的三个格矢 a1, a2, a3
+C3B graphene like structure, a = 5.17               ! 注释
+   5.17                                             ! 晶格放大系数
+    0.8660254037   -0.5000000000     0.0000000000   ! 下面三行为实空间中定义元胞的三个格矢 a1, a2, a3
     0.8660254037    0.5000000000   	 0.0000000000
-    0.0000000000    0.0000000000     4.0000000000	! 真空层厚度为 4.0*5.17 = 20.68A
-   B    C											! 元素种类，这一行是给人看的，而不是给VASP看的
-   2    6											! 对应元素的原子数目
-Direct												! 以定义的格矢为基底
-    0.0000000000    0.0000000000    0.0000000000    ! B 下面皆为原子坐标
-    0.6666666666    0.6666666666    0.0000000000
+    0.0000000000    0.0000000000     4.0000000000   ! 真空层厚度为 4.0*5.17 = 20.68A
+   B    C                                           ! 元素种类，这一行是给人看的，而不是给VASP看的
+   2    6                                           ! 对应元素的原子数目
+Direct                                              ! 以定义的格矢为基底
+    0.0000000000    0.0000000000    0.0000000000    ! B 下面皆为原子坐标，顺序与第六行指定的元素种类相同
+    0.6666666666    0.6666666666    0.0000000000    ! 要注意，仅靠POSCAR，并vasp不知道元素的具体种类，而只知道元素种类的个数。
     0.5000000000    0.0000000000    0.0000000000    ! C
     0.1666666666    0.1666666666    0.0000000000
     0.0000000000    0.5000000000    0.0000000000
@@ -89,6 +89,8 @@ Direct												! 以定义的格矢为基底
 **第一个坑**：文献中的晶格常数应该怎样对应 `POSCAR` 中的晶格参数？
 
 这取决于我们取的基底。上文中我们以相邻两个元胞的 B 原子间模长最短的矢量为基矢，因此这个这个元胞的实际晶格常数应为 $a = |\vec{a}_i| \times a_{POSCAR}$ ， $a$ 即为文中给出的晶格常数，可见，`POSCAR` 中的晶格参数可以理解为缩放系数，所以写完结构时应与文献对照或放入 VESTA 等软件测出原子键长看与文献是否一致。有的文献作者基底的取法特殊，所给的晶格常数也很“魔性”，但不变的是格子的实际大小、原子间距离等，以这些信息为准才能写出与文献中真正等价的结构。此外，二维结构的实现时需要层间有 20 A 左右的真空层，以避免层间不必要的相互作用，但真空层不可取太厚，否则计算量的增加不仅仅是线性的。
+
+**闲话**：如何建系是个见仁见智的问题，有人喜欢直接沿着六边形的边建系，有人喜欢像上文那样建系，但不管怎样，只要实现的结构是等价的那么建系就是没有问题的
 
 ## 测出必要的参数
 
@@ -139,25 +141,25 @@ cat path/to/PPs/C/POTCAR >> ./POTCAR
 
 ```bash
 #!/bin/bash
-rm WAVECAR			# 删除目录中的 WAVECAR 以免影响收敛
+rm WAVECAR          # 删除目录中的 WAVECAR 以免影响收敛
 # in 后面 0.20 0.10 0.05 即为 sigma 所取的值，一般从大到小取，取值越小计算量越大当发现 dE 满足要求后可以及时终止计算
 for i in 0.20 0.10 0.05	
 do
-    cat > INCAR <<!	# 在 INCAR 中覆盖以下内容, ! 表示cat内容终止标志，可以自定义，如用 EOF
+    cat > INCAR <<! # 在 INCAR 中覆盖以下内容, ! 表示cat内容终止标志，可以自定义，如用 EOF
 SYSTEM = Na adsorbed on site 1
-ENCUT = 600			# 截断能取较大值
-ISMEAR = 0			# Gaussian Smearing
-SIGMA = $i			# 每次循环 SIGMA 取 $i 的值
-NSW = 0				# 静态计算，离子步数为 1
-IBRION = -1			# 静态计算
-LWAVE = .FALSE.		# 不输出 WAVECAR，不使用上次计算所得平面波系数作为初始值
+ENCUT = 600         # 截断能取较大值
+ISMEAR = 0          # Gaussian Smearing
+SIGMA = $i          # 每次循环 SIGMA 取 $i 的值
+NSW = 0             # 静态计算，离子步数为 1
+IBRION = -1	        # 静态计算
+LWAVE = .FALSE.     # 不输出 WAVECAR，不使用上次计算所得平面波系数作为初始值
 !
     echo " SIGMA = $i eV "
-    time vasp >> vasp.log	# 执行 vasp 计算，重定向输出到 vasp.log ，并对该过程计时，结果输出到 stdout
+    time vasp >> vasp.log   # 执行 vasp 计算，重定向输出到 vasp.log ，并对该过程计时，结果输出到 stdout
     # OUTCAR 中 EENTRO 等于 OSZICAR 中的 dE，这里取出 dE
     TS=`grep "EENTRO" OUTCAR | tail -1 | awk '{printf "%12.6f", $5}'`
-    echo "$i   $TS" >> sigma.txt	# 输出 SIGMA 和 dE 到sigma.txt
-    echo -e "\n\n"	# 换行 3 次
+    echo "$i   $TS" >> sigma.txt     # 输出 SIGMA 和 dE 到sigma.txt
+    echo -e "\n\n"   # 换行 3 次
 done
 ```
 
@@ -199,7 +201,7 @@ IBRION = -1
 done
 ```
 
-测得 `ENCUT` 取值为 450。
+测得 `ENCUT` 取值为 450。这里 `ENCUT` 如果取值过小，后面在弛豫时很可能能量不会收敛。
 
 ### 测出 kpts
 
@@ -248,7 +250,7 @@ C3B graphene like structure, a = 5.17
     0.8660254037   -0.5000000000    0.0000000000
     0.8660254037    0.5000000000    0.0000000000
     0.0000000000    0.0000000000    3.0000000000
-   N    C
+   B    C
    2    6
 Direct
     0.0000000000    0.0000000000    0.0000000000    ! B1
@@ -268,25 +270,25 @@ Direct
 done
 ```
 
-测得 `a` 与文献值相同，5.17
+测得 `a` 与文献值相同，5.17。这里的 `a` 还可以取得更精细一些，甚至可以到小数点后三位，这里取值越接近“真实值”，后面弛豫的过程将会越短。
 
 ## 弛豫（结构优化，relaxation）
 
 弛豫中需要用到的 `INCAR` 参数有
 
 ```fortran
-ISMEAR = 0		! 继承自上面的计算结果
+ISMEAR = 0       ! 继承自上面的计算结果
 SIGMA = 0.1
 ENCUT = 450
 
 PREC = Accurate
 EDIFF = 1.0E-6
 EDIFFG = -0.01
-IBRION = 1	! 准牛顿法
-ISIF = 3	! 计算 force、stress tensor，对离子、晶格进行弛豫 
+IBRION = 1       ! 准牛顿法
+ISIF = 3         ! 计算 force、stress tensor，对离子、晶格进行弛豫 
 
-NELMIN = 6	! (optional) 强制每个离子步跑至少 6 电子步，提高收敛效果
-NSW = 200	! 离子步上限为 200 步，目前本渣所算的体系中离子步数没有超过这个值的，也许是我太年轻了吧
+NELMIN = 6       ! (optional) 强制每个离子步跑至少 6 电子步，提高收敛效果
+NSW = 200        ! 离子步上限为 200 步，目前本渣所算的体系中离子步数没有超过这个值的，也许是我太年轻了吧
 ```
 
 这个步骤耗时最长，尤其是加上 `PREC` 后，每个电子步计算量上升很多，而为了结构的优化，离子步数的增多也使这个过程耗时不少，本例中 8 个原子的体系优化需要数个小时；本渣另外的一个体系中有 12 个原子，优化就需要 12h+ 。
@@ -297,6 +299,8 @@ NSW = 200	! 离子步上限为 200 步，目前本渣所算的体系中离子步
 
 ## 高精度的电子自洽计算（SCF）
 
+进行高精度的电子自洽计算是为了得到体系的电荷分布，同时也为后面计算能带提供数据。
+
 这一步需要**将 relaxation 得到的 CONTCAR 复制到 SCF 计算目录下，并重命名为 POSCAR** ，`INCAR` 内容相似，仅将弛豫相关参数修改即可，`INCAR` 如下
 
 ```fortran
@@ -304,7 +308,7 @@ C3B Mono Layer  strcut_optim
   SYSTEM = "C3B Mono Layer" # System Name
 
 Electronic minimization
-  ISMEAR = 1                # Toggle Gaussian Method, complete later
+  ISMEAR = 0                # Toggle Gaussian Method, complete later
   SIGMA = 0.1               # Broadening in eV -4-tet-1-fermi 0-gaus
   EDIFF = 1.E-6             # Energy tolerance eV/atom
 #  EDIFFG = -0.01            # Force tolerance
@@ -329,7 +333,7 @@ Ionic minimization
 
 我们需要重写 `KPOINTS` ，之前的 `KPOINTS` 一直是系统帮助我们在布里渊区采样，现在我们想要得到布里渊区某一路径上能带的能量变化，则需要在 `KPOINTS` 指定出路径。
 
-根据 [DOI:10.1016/j.commatsci.2010.05.010](https://arxiv.org/abs/1004.2974) 后面所给资料提示选择对应的布里渊区 K 点路径（注意文中基矢的取法是否与自己一致，否则需要重新画出布里渊区，找出对应的 K 点。
+根据 [DOI:10.1016/j.commatsci.2010.05.010](https://arxiv.org/abs/1004.2974) 后面所给资料提示选择对应的布里渊区 K 点路径（注意文中基矢的取法是否与自己一致，否则需要重新画出布里渊区，找出对应的 K 点。这里在寻找 K 点时可以借助 [XCrysDen](http://www.xcrysden.org/) ，选择 K-Point path 即可
 
 ![这里取 Gamma -> K -> M -> Gamma](http://owucpthrj.bkt.clouddn.com/FpmnmrDYGQOgi2NLIPUvy31t0c4p)
 
