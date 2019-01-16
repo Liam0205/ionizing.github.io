@@ -190,3 +190,5 @@ private:
 输出的效果如图：
 
 ![](a.png)
+
+2019-1-15 更新: 已实现的波函数解析程序请见[这里](https://github.com/Ionizing/wavecar_parser)
