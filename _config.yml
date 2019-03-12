@@ -77,12 +77,13 @@ theme: next
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
-  type: git
+  type: leancloud_counter_security_sync
   repo: https://github.com/Ionizing/ionizing.github.io
   branch: master
   name: Ionizing
   email: PeterSmith_9@outlook.com
 
+# https://leaferx.online/2018/02/11/lc-security/
 leancloud_counter_security:
   enable_sync: true
   app_id: uvg5d6PFKOwQMrgsVfD3grKa-gzGzoHsz
@@ -92,3 +93,4 @@ leancloud_counter_security:
 
 # For hexo math settings, follow the steps in the site following
 # https://www.jianshu.com/p/e8d433a2c5b7
+
