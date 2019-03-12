@@ -98,18 +98,18 @@
 
 
 
-  <meta name="description" content="问题给定一个矩阵方程$$\mathbf{A} \times \mathbf{B} = \mathbf{C}$$其中 $\mathbf{B}$ 是方阵， $\mathbf{A}$  和 $\mathbf{C}$ 的形状相同，问如何求解 $\mathbf{B}$ ? 解答$\mathbf{A}$ 和 $\mathbf{C}$ 的形状相同，如果它们都是方阵，则$$\begin{align}\mathbf">
+  <meta name="description" content="问题给定一个矩阵方程  \mathbf{A} \times \mathbf{B} = \mathbf{C}其中 $\mathbf{B}$ 是方阵， $\mathbf{A}$  和 $\mathbf{C}$ 的形状相同，问如何求解 $\mathbf{B}$ ? 解答$\mathbf{A}$ 和 $\mathbf{C}$ 的形状相同，如果它们都是方阵，则  \begin{align} \mathbf{">
 <meta name="keywords" content="Linear Algebra,VASP,OUTCAR">
 <meta property="og:type" content="article">
 <meta property="og:title" content="如何求解 A * B = C 中的矩阵 B ？">
 <meta property="og:url" content="https://ionizing.science/2019/01/25/how-to-solve-matrix-B-in-A-times-B-equals-C/index.html">
 <meta property="og:site_name" content="Ionizing&#39;s Blog">
-<meta property="og:description" content="问题给定一个矩阵方程$$\mathbf{A} \times \mathbf{B} = \mathbf{C}$$其中 $\mathbf{B}$ 是方阵， $\mathbf{A}$  和 $\mathbf{C}$ 的形状相同，问如何求解 $\mathbf{B}$ ? 解答$\mathbf{A}$ 和 $\mathbf{C}$ 的形状相同，如果它们都是方阵，则$$\begin{align}\mathbf">
+<meta property="og:description" content="问题给定一个矩阵方程  \mathbf{A} \times \mathbf{B} = \mathbf{C}其中 $\mathbf{B}$ 是方阵， $\mathbf{A}$  和 $\mathbf{C}$ 的形状相同，问如何求解 $\mathbf{B}$ ? 解答$\mathbf{A}$ 和 $\mathbf{C}$ 的形状相同，如果它们都是方阵，则  \begin{align} \mathbf{">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:updated_time" content="2019-03-12T13:26:32.510Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="如何求解 A * B = C 中的矩阵 B ？">
-<meta name="twitter:description" content="问题给定一个矩阵方程$$\mathbf{A} \times \mathbf{B} = \mathbf{C}$$其中 $\mathbf{B}$ 是方阵， $\mathbf{A}$  和 $\mathbf{C}$ 的形状相同，问如何求解 $\mathbf{B}$ ? 解答$\mathbf{A}$ 和 $\mathbf{C}$ 的形状相同，如果它们都是方阵，则$$\begin{align}\mathbf">
+<meta name="twitter:description" content="问题给定一个矩阵方程  \mathbf{A} \times \mathbf{B} = \mathbf{C}其中 $\mathbf{B}$ 是方阵， $\mathbf{A}$  和 $\mathbf{C}$ 的形状相同，问如何求解 $\mathbf{B}$ ? 解答$\mathbf{A}$ 和 $\mathbf{C}$ 的形状相同，如果它们都是方阵，则  \begin{align} \mathbf{">
 
 
 
@@ -451,10 +451,23 @@
       
 
       
-        <h1 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h1><p>给定一个矩阵方程<br>$$<br>\mathbf{A} \times \mathbf{B} = \mathbf{C}<br>$$<br>其中 $\mathbf{B}$ 是方阵， $\mathbf{A}$  和 $\mathbf{C}$ 的形状相同，问如何求解 $\mathbf{B}$ ?</p>
-<h1 id="解答"><a href="#解答" class="headerlink" title="解答"></a>解答</h1><p>$\mathbf{A}$ 和 $\mathbf{C}$ 的形状相同，如果它们都是方阵，则<br>$$<br>\begin{align}<br>\mathbf{A} \times \mathbf{B} ={}&amp; \mathbf{C} \<br>\mathbf{A}^{-1} \times \mathbf{A} \times \mathbf{B} ={}&amp; \mathbf{A}^{-1} \times \mathbf{C} \<br>\mathbf{B} ={}&amp; \mathbf{A}^{-1} \times \mathbf{C} \label{eq:easy}<br>\end{align}<br>$$</p>
-<p>但 $\mathbf{A}$ 和 $\mathbf{C}$ 未必是方阵，所以不存在逆矩阵，也就无法通过等式左右同时左乘 $\mathbf{A}^{-1}$ 的方法直接求出 $\mathbf{B}$ 。那么此时如何求解 $\mathbf{B}$ 呢？</p>
-<p>既然 $\mathbf{A}$ 和 $\mathbf{C}$ 不是方阵，那么把它们变换成方阵不就好了吗？因此等式左右共同左乘 $\mathbf{A}^{T}$ ，即可将 $\mathbf{A}$ 和 $\mathbf{C}$ 变换成方阵，即<br>$$<br>\begin{align}<br>\mathbf{A}<em>{m\times n} \times \mathbf{B}</em>{n\times n} ={}&amp; \mathbf{C}<em>{m\times n} \<br>\mathbf{A}^{T}</em>{n\times m} \times \mathbf{A}<em>{m\times n} \times \mathbf{B}</em>{n\times n} ={}&amp; \mathbf{A}^{T}<em>{n\times m} \times  \mathbf{C}</em>{m\times n} \<br>\mathbf{A}’<em>{n\times n} \mathbf{B}</em>{n\times n} ={}&amp; \mathbf{C}’_{n\times n} \label{eq:difficult}<br>\end{align}<br>$$<br>$\eqref{eq:difficult}$ 即是我们熟悉的形式，直接使用 $\eqref{eq:easy}$ 的解法即可解得 $\mathbf{B}$ 。 </p>
+        <h1 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h1><p>给定一个矩阵方程</p>
+<script type="math/tex; mode=display">
+\mathbf{A} \times \mathbf{B} = \mathbf{C}</script><p>其中 $\mathbf{B}$ 是方阵， $\mathbf{A}$  和 $\mathbf{C}$ 的形状相同，问如何求解 $\mathbf{B}$ ?</p>
+<h1 id="解答"><a href="#解答" class="headerlink" title="解答"></a>解答</h1><p>$\mathbf{A}$ 和 $\mathbf{C}$ 的形状相同，如果它们都是方阵，则</p>
+<script type="math/tex; mode=display">
+\begin{align}
+\mathbf{A} \times \mathbf{B} ={}& \mathbf{C} \\
+\mathbf{A}^{-1} \times \mathbf{A} \times \mathbf{B} ={}& \mathbf{A}^{-1} \times \mathbf{C} \\
+\mathbf{B} ={}& \mathbf{A}^{-1} \times \mathbf{C} \label{eq:easy}
+\end{align}</script><p>但 $\mathbf{A}$ 和 $\mathbf{C}$ 未必是方阵，所以不存在逆矩阵，也就无法通过等式左右同时左乘 $\mathbf{A}^{-1}$ 的方法直接求出 $\mathbf{B}$ 。那么此时如何求解 $\mathbf{B}$ 呢？</p>
+<p>既然 $\mathbf{A}$ 和 $\mathbf{C}$ 不是方阵，那么把它们变换成方阵不就好了吗？因此等式左右共同左乘 $\mathbf{A}^{T}$ ，即可将 $\mathbf{A}$ 和 $\mathbf{C}$ 变换成方阵，即</p>
+<script type="math/tex; mode=display">
+\begin{align}
+\mathbf{A}_{m\times n} \times \mathbf{B}_{n\times n} ={}& \mathbf{C}_{m\times n} \\
+\mathbf{A}^{T}_{n\times m} \times \mathbf{A}_{m\times n} \times \mathbf{B}_{n\times n} ={}& \mathbf{A}^{T}_{n\times m} \times  \mathbf{C}_{m\times n} \\
+\mathbf{A}'_{n\times n} \mathbf{B}_{n\times n} ={}& \mathbf{C}'_{n\times n} \label{eq:difficult}
+\end{align}</script><p>$\eqref{eq:difficult}$ 即是我们熟悉的形式，直接使用 $\eqref{eq:easy}$ 的解法即可解得 $\mathbf{B}$ 。 </p>
 
       
     </div>
@@ -572,7 +585,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">9</span>
+                    <span class="site-state-item-count">10</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -666,7 +679,7 @@
                     
                       
                     
-                    <span class="site-state-item-count">19</span>
+                    <span class="site-state-item-count">20</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -964,6 +977,57 @@
   
 
   
+    
+      <script type="text/x-mathjax-config">
+  
+    MathJax.Ajax.config.path['mhchem'] = '//cdn.jsdelivr.net/npm/mathjax-mhchem@3';
+  
+
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
+      processEscapes: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      
+        extensions: ['[mhchem]/mhchem.js'],
+      
+      equationNumbers: {
+        autoNumber: 'AMS'
+      }
+    }
+  });
+  MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
+    MathJax.InputJax.TeX.prefilterHooks.Add(function(data) {
+      if (data.display) {
+        var next = data.script.nextSibling;
+        while (next && next.nodeName.toLowerCase() === '#text') { next = next.nextSibling }
+        if (next && next.nodeName.toLowerCase() === 'br') { next.parentNode.removeChild(next) }
+      }
+    });
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for (i = 0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+<script src="//cdn.jsdelivr.net/npm/mathjax@2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+<style>
+.MathJax_Display {
+  overflow-x: scroll;
+  overflow-y: hidden;
+}
+</style>
+
+    
+  
 
 
   
@@ -1057,24 +1121,7 @@
       }, 300);
     }).append(e);
   })
-</script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
-</script>
-
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Queue(function() {
-    var all = MathJax.Hub.getAllJax(), i;
-    for(i=0; i < all.length; i += 1) {
-      all[i].SourceElement().parentNode.className += ' has-jax';
-    }
-  });
-</script>
-
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js">
-</script>
-<!-- End: Injected MathJax -->
-<!-- hexo-inject:end -->
+</script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
 
 </body>

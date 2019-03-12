@@ -98,19 +98,19 @@
 
 
 
-  <meta name="description" content="简介 这篇手记仅为自己学习记录而写。 虽然题目提到量子力学，但内容与量子力学关系不大，事实是这篇文章提到的某些概念以及方法在以后学习中十分普遍，因此有必要将其归为量子力学学习手记。 就当这是在打数学基础好了。  符号说明   符号 说明，以下符号表示的量是在 复数范围 内讨论的     $\mid i\rangle$ ket，也称列向量   $\langle i\mid$ bra，也称行向量">
+  <meta name="description" content="简介 这篇手记仅为自己学习记录而写。 虽然题目提到量子力学，但内容与量子力学关系不大，事实是这篇文章提到的某些概念以及方法在以后学习中十分普遍，因此有必要将其归为量子力学学习手记。 就当这是在打数学基础好了。  符号说明    符号 说明，以下符号表示的量是在 复数范围 内讨论的     $\mid i\rangle$ ket，也称列向量   $\langle i\mid$ bra，也称行向量">
 <meta name="keywords" content="量子力学,线性代数,数学基础">
 <meta property="og:type" content="article">
 <meta property="og:title" content="量子力学学习手记（一）">
 <meta property="og:url" content="https://ionizing.science/2017/06/30/Quantum-Physics-Learning-Log-1/index.html">
 <meta property="og:site_name" content="Ionizing&#39;s Blog">
-<meta property="og:description" content="简介 这篇手记仅为自己学习记录而写。 虽然题目提到量子力学，但内容与量子力学关系不大，事实是这篇文章提到的某些概念以及方法在以后学习中十分普遍，因此有必要将其归为量子力学学习手记。 就当这是在打数学基础好了。  符号说明   符号 说明，以下符号表示的量是在 复数范围 内讨论的     $\mid i\rangle$ ket，也称列向量   $\langle i\mid$ bra，也称行向量">
+<meta property="og:description" content="简介 这篇手记仅为自己学习记录而写。 虽然题目提到量子力学，但内容与量子力学关系不大，事实是这篇文章提到的某些概念以及方法在以后学习中十分普遍，因此有必要将其归为量子力学学习手记。 就当这是在打数学基础好了。  符号说明    符号 说明，以下符号表示的量是在 复数范围 内讨论的     $\mid i\rangle$ ket，也称列向量   $\langle i\mid$ bra，也称行向量">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://ionizing.science/2017/06/30/Quantum-Physics-Learning-Log-1/fig.svg">
 <meta property="og:updated_time" content="2019-03-12T13:26:32.514Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="量子力学学习手记（一）">
-<meta name="twitter:description" content="简介 这篇手记仅为自己学习记录而写。 虽然题目提到量子力学，但内容与量子力学关系不大，事实是这篇文章提到的某些概念以及方法在以后学习中十分普遍，因此有必要将其归为量子力学学习手记。 就当这是在打数学基础好了。  符号说明   符号 说明，以下符号表示的量是在 复数范围 内讨论的     $\mid i\rangle$ ket，也称列向量   $\langle i\mid$ bra，也称行向量">
+<meta name="twitter:description" content="简介 这篇手记仅为自己学习记录而写。 虽然题目提到量子力学，但内容与量子力学关系不大，事实是这篇文章提到的某些概念以及方法在以后学习中十分普遍，因此有必要将其归为量子力学学习手记。 就当这是在打数学基础好了。  符号说明    符号 说明，以下符号表示的量是在 复数范围 内讨论的     $\mid i\rangle$ ket，也称列向量   $\langle i\mid$ bra，也称行向量">
 <meta name="twitter:image" content="https://ionizing.science/2017/06/30/Quantum-Physics-Learning-Log-1/fig.svg">
 
 
@@ -476,7 +476,8 @@
 <li>虽然题目提到量子力学，但内容与量子力学关系不大，事实是这篇文章提到的某些概念以及方法在以后学习中十分普遍，因此有必要将其归为量子力学学习手记。</li>
 <li>就当这是在打数学基础好了。</li>
 </ol>
-<h1 id="符号说明"><a href="#符号说明" class="headerlink" title="符号说明"></a>符号说明</h1><table>
+<h1 id="符号说明"><a href="#符号说明" class="headerlink" title="符号说明"></a>符号说明</h1><div class="table-container">
+<table>
 <thead>
 <tr>
 <th>符号</th>
@@ -514,29 +515,105 @@
 </tr>
 </tbody>
 </table>
+</div>
 <h1 id="题目重现"><a href="#题目重现" class="headerlink" title="题目重现"></a>题目重现</h1><p>如图，两个振子组成一维耦合振子，两质点的质量均为$m$，所有弹簧劲度系数均为$k$，以右为正方向，两者位移分别为$x_1$、$x_2$。若两振子初始速度均为零，设两个振子在各自平衡位置时的位移为０，且初始位置未知，求这两个振子的位移-时间函数即$x_i(t)$。</p>
 <p><img src="fig.svg" alt="耦合振子示意图"></p>
 <h1 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h1><p>​    对两个振子分别分析，不妨设左边振子为1号，右边振子为2号。</p>
 <p>​    对1号振子做受力分析：</p>
-<p>$$<br>m \frac{\mathrm{d}^2 x_1}{\mathrm{d}t^2} = k(x_2 - x_1) - k{x_1}<br>$$<br>​    即</p>
-<p>$$<br>m\ddot{x_1} = -2kx_1+kx_2 \notag<br>$$</p>
-<p>​    同理，2号振子满足<br>$$<br>m\ddot{x_2} = k{x_1} - 2kx_2  \notag<br>$$<br>​    问题化简为求微分方程组<br>$$<br>\begin{cases}<br>    \ddot{x_1} = -\frac{2k}{m}x_1 + \frac{k}{m}x_2\<br>    \ddot{x_2} = \frac{k}{m}x_1 - \frac{2k}{m}x_2<br>\end{cases}<br>$$<br>​    的解，写成矩阵形式即为<br>$$<br>\begin{bmatrix}<br>    \ddot{x_1}\<br>    \ddot{x_2}<br>\end{bmatrix} = \begin{bmatrix}<br>    \frac{-2k}{m} &amp; \frac{k}{m}\<br>    \frac{k}{m} &amp; \frac{-2k}{m}<br>\end{bmatrix} \begin{bmatrix}<br>    x_1\<br>    x_2<br>\end{bmatrix}<br>$$<br>​    现令$\Omega=\begin{bmatrix} \frac{-2k}{m} &amp; \frac{k}{m}\  \frac{k}{m} &amp; \frac{-2k}{m} \end{bmatrix} $</p>
+<script type="math/tex; mode=display">
+m \frac{\mathrm{d}^2 x_1}{\mathrm{d}t^2} = k(x_2 - x_1) - k{x_1}</script><p>​    即</p>
+<script type="math/tex; mode=display">
+m\ddot{x_1} = -2kx_1+kx_2 \notag</script><p>​    同理，2号振子满足</p>
+<script type="math/tex; mode=display">
+m\ddot{x_2} = k{x_1} - 2kx_2  \notag</script><p>​    问题化简为求微分方程组</p>
+<script type="math/tex; mode=display">
+\begin{cases}
+    \ddot{x_1} = -\frac{2k}{m}x_1 + \frac{k}{m}x_2\\
+    \ddot{x_2} = \frac{k}{m}x_1 - \frac{2k}{m}x_2
+\end{cases}</script><p>​    的解，写成矩阵形式即为</p>
+<script type="math/tex; mode=display">
+\begin{bmatrix}
+    \ddot{x_1}\\
+    \ddot{x_2}
+\end{bmatrix} = \begin{bmatrix}
+    \frac{-2k}{m} & \frac{k}{m}\\
+    \frac{k}{m} & \frac{-2k}{m}
+\end{bmatrix} \begin{bmatrix}
+    x_1\\
+    x_2
+\end{bmatrix}</script><p>​    现令$\Omega=\begin{bmatrix} \frac{-2k}{m} &amp; \frac{k}{m}\  \frac{k}{m} &amp; \frac{-2k}{m} \end{bmatrix} $</p>
 <p>​    观察到 $\Omega$ 为Hermitian矩阵（$\Omega^\dagger = \Omega$，共轭转置后不变），</p>
 <p>​    故设$\mid\mathrm{I}\rangle $和$\mid\mathrm{II}\rangle $分别为$\Omega$的两个本征矢（也叫特征向量）</p>
-<p>​    有<br>$$<br>\begin{cases}<br>    \Omega \mid \mathrm{I} \rangle = -\omega_\mathrm{I}^2 \mid \mathrm{I}\rangle\<br>    \Omega \mid \mathrm{II} \rangle = -\omega_\mathrm{II}^2 \mid \mathrm{II}\rangle<br>\end{cases}<br>$$<br>​    这里$-\omega_\mathrm{I}^2$与$-\omega_\mathrm{II}^2$分别表示$\Omega$的两个本征值，因计算结果表示方便，这里用$-\omega_i^2$表示，而不是$\omega_i$。</p>
+<p>​    有</p>
+<script type="math/tex; mode=display">
+\begin{cases}
+    \Omega \mid \mathrm{I} \rangle = -\omega_\mathrm{I}^2 \mid \mathrm{I}\rangle\\
+    \Omega \mid \mathrm{II} \rangle = -\omega_\mathrm{II}^2 \mid \mathrm{II}\rangle
+\end{cases}</script><p>​    这里$-\omega_\mathrm{I}^2$与$-\omega_\mathrm{II}^2$分别表示$\Omega$的两个本征值，因计算结果表示方便，这里用$-\omega_i^2$表示，而不是$\omega_i$。</p>
 <p>​    求出$-\omega_\mathrm{I}^2$与$-\omega_\mathrm{II}^2$分别为$\frac{k}{m} \mp \frac{2k}{m}$。不妨设$-\omega_\mathrm{I}^2＝-\frac{k}{m}$，$-\omega_\mathrm{II}^2＝-\frac{3k}{m}$。</p>
-<p>​    已知本征值，可以求出本征矢为<br>$$<br>\begin{cases}<br>    \mid \mathrm{I}\rangle = \frac{1}{\sqrt{2}} \begin{bmatrix} 1 \ 1 \end{bmatrix} &amp; \omega_\mathrm{I}=\sqrt{\frac{k}{m}} \<br>    \mid \mathrm{II} \rangle = \frac{1}{\sqrt{2}} \begin{bmatrix} 1 \ -1 \end{bmatrix}  &amp; \omega_\mathrm{II}=\sqrt{\frac{3k}{m}}<br> \end{cases}<br>$$</p>
-<p>​    可以看出$\mid \mathrm{I} \rangle$与$\mid \mathrm{II}\rangle$相互正交（内积为０）。</p>
+<p>​    已知本征值，可以求出本征矢为</p>
+<script type="math/tex; mode=display">
+\begin{cases}
+    \mid \mathrm{I}\rangle = \frac{1}{\sqrt{2}} \begin{bmatrix} 1 \\ 1 \end{bmatrix} & \omega_\mathrm{I}=\sqrt{\frac{k}{m}} \\
+    \mid \mathrm{II} \rangle = \frac{1}{\sqrt{2}} \begin{bmatrix} 1 \\ -1 \end{bmatrix}  & \omega_\mathrm{II}=\sqrt{\frac{3k}{m}}
+ \end{cases}</script><p>​    可以看出$\mid \mathrm{I} \rangle$与$\mid \mathrm{II}\rangle$相互正交（内积为０）。</p>
 <p>​    因此$x(t)= \mid \mathrm{I}\rangle x_1(t) +\mid \mathrm{II}\rangle x_2(t)$。</p>
 <p>​    到这里，上面的步骤相当于对空间基矢进行了变换，原先的基矢为<br>$x_1(t)$对应$\mid 1 \rangle = \begin{bmatrix} 1 \ 0 \end{bmatrix}$，$x_2(t)$对应$\mid 2 \rangle = \begin{bmatrix} 0 \ 1 \end{bmatrix}$，现变换为$x_\mathrm{I}$对应$\mid \mathrm{I} \rangle =\frac{1}{\sqrt{2}} \begin{bmatrix} 1 \ 1 \end{bmatrix}$，$x_\mathrm{II}$对应$\mid \mathrm{II} \rangle =\frac{1}{\sqrt{2}} \begin{bmatrix} 1 \ -1 \end{bmatrix}$。这样做有什么好处呢？好处马上就会呈现。</p>
-<p>​    此时$\Omega$可以对角化为<br>$$<br>\Omega =<br>\begin{bmatrix}<br>    -\omega_\mathrm{I}^2 &amp; 0 \<br>    0 &amp; -\omega_\mathrm{II}^2<br>\end{bmatrix}<br>$$</p>
-<p>​    故原方程式可以化为</p>
-<p>$$<br>\begin{bmatrix}<br>    \ddot{x_\mathrm{I}} \<br>    \ddot{x_\mathrm{II}}<br>\end{bmatrix}<br>=<br>\begin{bmatrix}<br>    -\omega_\mathrm{I}^2 &amp; 0 \<br>    0 &amp; -\omega_\mathrm{II}^2<br>\end{bmatrix}<br>\begin{bmatrix}<br>    x_\mathrm{I} \<br>    x_\mathrm{II}<br>\end{bmatrix}<br>=<br>\begin{bmatrix}<br>    -\omega_\mathrm{I}^2 x_\mathrm{I} \<br>    -\omega_\mathrm{II}^2 x_\mathrm{II}<br>\end{bmatrix}<br>$$</p>
-<p>​    此时分别解$\ddot{x_\mathrm{I}}$与$\ddot{x_\mathrm{II}}$（两个二阶线性微分方程$\ddot{x_i} + \omega_i^2 x_i = 0$，并且$\dot{x_i}$=0），即可得到$x_i (t),\quad i=\mathrm{I,II}$的解，解为<br>$$<br>x_i(t) = x_i(0) \cos\omega_i t, \quad i=\mathrm{I,II}<br>$$</p>
-<p>​    此时我们离胜利已经很近了——已经得到<br>$$<br>\begin{aligned}<br>    \mid x(t) \rangle &amp; = \mid \mathrm{I} \rangle x_\mathrm{I}(0)\cos\omega_\mathrm{I}t + \mid \mathrm{II} \rangle x_\mathrm{II}(0)\cos\omega_\mathrm{II}t \<br>    &amp; = \mid \mathrm{I}\rangle\langle\mathrm{I}\mid x(0)\rangle \cos\omega_\mathrm{I}t + \mid \mathrm{II}\rangle\langle\mathrm{II}\mid x(0)\rangle \cos\omega_\mathrm{II}t<br>\end{aligned}<br>$$</p>
-<p>​    式中<br>$$<br>\begin{aligned}<br>    \langle \mathrm{I} \mid x(0) \rangle &amp;= \frac{1}{\sqrt{2}} \begin{bmatrix} 1 &amp; 1 \end{bmatrix} \begin{bmatrix} x_1(0) \ x_2(0) \end{bmatrix} = \frac{x_1(0)+x_2(0)}{\sqrt{2}} \<br>    \langle \mathrm{II} \mid x(0) \rangle &amp;= \frac{1}{\sqrt{2}} \begin{bmatrix} 1&amp; -1 \end{bmatrix} \begin{bmatrix} x_1(0) \ x_2(0) \end{bmatrix} = \frac{x_1(0) - x_2(0)}{\sqrt{2}}<br>\end{aligned}<br>$$</p>
-<p>​    $\therefore \mid x(t)\rangle = \mid \mathrm{I}\rangle \frac{x_1(0)+x_2(0)}{\sqrt{2}} + \mid \mathrm{II}\rangle \frac{x_1(0) - x_2(0)}{\sqrt{2}}$</p>
-<p>​    我们需要将$\mid \mathrm{I}\rangle$和$\mid \mathrm{II}\rangle$还原为$\mid 1\rangle$和$\mid 2\rangle$，这个操作可以通过投影 <code>projection</code> 来实现：<br>$$<br>\begin{aligned}<br>    x_1(t) =&amp; \langle 1 \mid x(t)\rangle \<br>        =&amp; \langle 1 \mid \mathrm{I}\rangle \frac{x_1(0) + x_2(0)}{\sqrt{2}}\cos\omega_\mathrm{I}t + \langle 1 \mid \mathrm{II}\rangle \frac{x_1(0) - x_2(0)}{\sqrt{2}}\cos\omega_\mathrm{II}t \<br>        =&amp; \frac{x_1(0) + x_2(0)}{2}\cos\left(\sqrt{\frac{k}{m}}t\right) + \frac{x_1(0) - x_2(0)}{2}\cos\left(\sqrt{\frac{3k}{m}}t\right)<br>\end{aligned}<br>$$<br>​    同理<br>$$<br>x_2(t)= \frac{x_1(0) + x_2(0)}{2}\cos\left(\sqrt{\frac{k}{m}}t\right) - \frac{x_1(0) - x_2(0)}{2}\cos\left(\sqrt{\frac{3k}{m}}t\right)<br>$$<br>​    写成矩阵形式即为<br>$$<br>\begin{bmatrix} x_1(t) \ x_2(t)  \end{bmatrix}<br>=<br>\begin{bmatrix}<br>    \frac{\cos\left(\sqrt{\frac{k}{m}}t\right) + \cos\left(\sqrt{\frac{3k}{m}}t\right) }{2} &amp; \frac{\cos\left(\sqrt{\frac{k}{m}}t\right) - \cos\left(\sqrt{\frac{3k}{m}}t\right) }{2} \<br>    \frac{\cos\left(\sqrt{\frac{k}{m}}t\right) - \cos\left(\sqrt{\frac{3k}{m}}t\right) }{2} &amp; \frac{\cos\left(\sqrt{\frac{k}{m}}t\right) + \cos\left(\sqrt{\frac{3k}{m}}t\right) }{2}<br>\end{bmatrix}<br>\begin{bmatrix} x_1(0) \ x_2(0) \end{bmatrix}<br>$$<br>​    此时，只要给出$\mid x(0)\rangle$即可得到整个耦合振子系统的运动方程。结束战斗。</p>
+<p>​    此时$\Omega$可以对角化为</p>
+<script type="math/tex; mode=display">
+\Omega = 
+\begin{bmatrix}
+    -\omega_\mathrm{I}^2 & 0 \\
+    0 & -\omega_\mathrm{II}^2
+\end{bmatrix}</script><p>​    故原方程式可以化为</p>
+<script type="math/tex; mode=display">
+\begin{bmatrix}
+    \ddot{x_\mathrm{I}} \\
+    \ddot{x_\mathrm{II}}
+\end{bmatrix}
+=
+\begin{bmatrix}
+    -\omega_\mathrm{I}^2 & 0 \\
+    0 & -\omega_\mathrm{II}^2
+\end{bmatrix}
+\begin{bmatrix}
+    x_\mathrm{I} \\
+    x_\mathrm{II}
+\end{bmatrix}
+=
+\begin{bmatrix}
+    -\omega_\mathrm{I}^2 x_\mathrm{I} \\
+    -\omega_\mathrm{II}^2 x_\mathrm{II}
+\end{bmatrix}</script><p>​    此时分别解$\ddot{x_\mathrm{I}}$与$\ddot{x_\mathrm{II}}$（两个二阶线性微分方程$\ddot{x_i} + \omega_i^2 x_i = 0$，并且$\dot{x_i}$=0），即可得到$x_i (t),\quad i=\mathrm{I,II}$的解，解为</p>
+<script type="math/tex; mode=display">
+x_i(t) = x_i(0) \cos\omega_i t, \quad i=\mathrm{I,II}</script><p>​    此时我们离胜利已经很近了——已经得到    </p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+    \mid x(t) \rangle & = \mid \mathrm{I} \rangle x_\mathrm{I}(0)\cos\omega_\mathrm{I}t + \mid \mathrm{II} \rangle x_\mathrm{II}(0)\cos\omega_\mathrm{II}t \\
+    & = \mid \mathrm{I}\rangle\langle\mathrm{I}\mid x(0)\rangle \cos\omega_\mathrm{I}t + \mid \mathrm{II}\rangle\langle\mathrm{II}\mid x(0)\rangle \cos\omega_\mathrm{II}t 
+\end{aligned}</script><p>​    式中</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+    \langle \mathrm{I} \mid x(0) \rangle &= \frac{1}{\sqrt{2}} \begin{bmatrix} 1 & 1 \end{bmatrix} \begin{bmatrix} x_1(0) \\ x_2(0) \end{bmatrix} = \frac{x_1(0)+x_2(0)}{\sqrt{2}} \\
+    \langle \mathrm{II} \mid x(0) \rangle &= \frac{1}{\sqrt{2}} \begin{bmatrix} 1& -1 \end{bmatrix} \begin{bmatrix} x_1(0) \\ x_2(0) \end{bmatrix} = \frac{x_1(0) - x_2(0)}{\sqrt{2}}
+\end{aligned}</script><p>​    $\therefore \mid x(t)\rangle = \mid \mathrm{I}\rangle \frac{x_1(0)+x_2(0)}{\sqrt{2}} + \mid \mathrm{II}\rangle \frac{x_1(0) - x_2(0)}{\sqrt{2}}$</p>
+<p>​    我们需要将$\mid \mathrm{I}\rangle$和$\mid \mathrm{II}\rangle$还原为$\mid 1\rangle$和$\mid 2\rangle$，这个操作可以通过投影 <code>projection</code> 来实现：</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+    x_1(t) =& \langle 1 \mid x(t)\rangle \\
+        =& \langle 1 \mid \mathrm{I}\rangle \frac{x_1(0) + x_2(0)}{\sqrt{2}}\cos\omega_\mathrm{I}t + \langle 1 \mid \mathrm{II}\rangle \frac{x_1(0) - x_2(0)}{\sqrt{2}}\cos\omega_\mathrm{II}t \\
+        =& \frac{x_1(0) + x_2(0)}{2}\cos\left(\sqrt{\frac{k}{m}}t\right) + \frac{x_1(0) - x_2(0)}{2}\cos\left(\sqrt{\frac{3k}{m}}t\right)
+\end{aligned}</script><p>​    同理</p>
+<script type="math/tex; mode=display">
+x_2(t)= \frac{x_1(0) + x_2(0)}{2}\cos\left(\sqrt{\frac{k}{m}}t\right) - \frac{x_1(0) - x_2(0)}{2}\cos\left(\sqrt{\frac{3k}{m}}t\right)</script><p>​    写成矩阵形式即为</p>
+<script type="math/tex; mode=display">
+\begin{bmatrix} x_1(t) \\ x_2(t)  \end{bmatrix}
+=
+\begin{bmatrix}
+    \frac{\cos\left(\sqrt{\frac{k}{m}}t\right) + \cos\left(\sqrt{\frac{3k}{m}}t\right) }{2} & \frac{\cos\left(\sqrt{\frac{k}{m}}t\right) - \cos\left(\sqrt{\frac{3k}{m}}t\right) }{2} \\
+    \frac{\cos\left(\sqrt{\frac{k}{m}}t\right) - \cos\left(\sqrt{\frac{3k}{m}}t\right) }{2} & \frac{\cos\left(\sqrt{\frac{k}{m}}t\right) + \cos\left(\sqrt{\frac{3k}{m}}t\right) }{2}
+\end{bmatrix}
+\begin{bmatrix} x_1(0) \\ x_2(0) \end{bmatrix}</script><p>​    此时，只要给出$\mid x(0)\rangle$即可得到整个耦合振子系统的运动方程。结束战斗。</p>
 <h1 id="收获总结"><a href="#收获总结" class="headerlink" title="收获总结"></a>收获总结</h1><p>​    在Shankar上看到这道题的题解时，起初是不怎么明白的，直到在写这篇手记的过程中，我才体会到这样解的用意：</p>
 <ol>
 <li>这是一个耦合系统，即两个微分方程分别含有对方的变量。</li>
@@ -667,7 +744,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">9</span>
+                    <span class="site-state-item-count">10</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -761,7 +838,7 @@
                     
                       
                     
-                    <span class="site-state-item-count">19</span>
+                    <span class="site-state-item-count">20</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -1059,6 +1136,57 @@
   
 
   
+    
+      <script type="text/x-mathjax-config">
+  
+    MathJax.Ajax.config.path['mhchem'] = '//cdn.jsdelivr.net/npm/mathjax-mhchem@3';
+  
+
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
+      processEscapes: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      
+        extensions: ['[mhchem]/mhchem.js'],
+      
+      equationNumbers: {
+        autoNumber: 'AMS'
+      }
+    }
+  });
+  MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
+    MathJax.InputJax.TeX.prefilterHooks.Add(function(data) {
+      if (data.display) {
+        var next = data.script.nextSibling;
+        while (next && next.nodeName.toLowerCase() === '#text') { next = next.nextSibling }
+        if (next && next.nodeName.toLowerCase() === 'br') { next.parentNode.removeChild(next) }
+      }
+    });
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for (i = 0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+<script src="//cdn.jsdelivr.net/npm/mathjax@2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+<style>
+.MathJax_Display {
+  overflow-x: scroll;
+  overflow-y: hidden;
+}
+</style>
+
+    
+  
 
 
   
@@ -1152,24 +1280,7 @@
       }, 300);
     }).append(e);
   })
-</script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
-</script>
-
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Queue(function() {
-    var all = MathJax.Hub.getAllJax(), i;
-    for(i=0; i < all.length; i += 1) {
-      all[i].SourceElement().parentNode.className += ' has-jax';
-    }
-  });
-</script>
-
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js">
-</script>
-<!-- End: Injected MathJax -->
-<!-- hexo-inject:end -->
+</script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
 
 </body>

@@ -514,7 +514,7 @@
 <p>所以它对应的 <code>POSCAR</code> 应为：</p>
 <figure class="highlight fortran"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">C3B graphene like structure, a = <span class="number">5.17</span>               <span class="comment">! 注释</span></span><br><span class="line">   <span class="number">5.17</span>                                             <span class="comment">! 晶格放大系数</span></span><br><span class="line">    <span class="number">0.8660254037</span>   -<span class="number">0.5000000000</span>     <span class="number">0.0000000000</span>   <span class="comment">! 下面三行为实空间中定义元胞的三个格矢 a1, a2, a3</span></span><br><span class="line">    <span class="number">0.8660254037</span>    <span class="number">0.5000000000</span>   	 <span class="number">0.0000000000</span></span><br><span class="line">    <span class="number">0.0000000000</span>    <span class="number">0.0000000000</span>     <span class="number">4.0000000000</span>   <span class="comment">! 真空层厚度为 4.0*5.17 = 20.68A</span></span><br><span class="line">   B    C                                           <span class="comment">! 元素种类，这一行是给人看的，而不是给VASP看的</span></span><br><span class="line">   <span class="number">2</span>    <span class="number">6</span>                                           <span class="comment">! 对应元素的原子数目</span></span><br><span class="line"><span class="keyword">Direct</span>                                              <span class="comment">! 以定义的格矢为基底</span></span><br><span class="line">    <span class="number">0.0000000000</span>    <span class="number">0.0000000000</span>    <span class="number">0.0000000000</span>    <span class="comment">! B 下面皆为原子坐标，顺序与第六行指定的元素种类相同</span></span><br><span class="line">    <span class="number">0.6666666666</span>    <span class="number">0.6666666666</span>    <span class="number">0.0000000000</span>    <span class="comment">! 要注意，仅靠POSCAR，并vasp不知道元素的具体种类，而只知道元素种类的个数。</span></span><br><span class="line">    <span class="number">0.5000000000</span>    <span class="number">0.0000000000</span>    <span class="number">0.0000000000</span>    <span class="comment">! C</span></span><br><span class="line">    <span class="number">0.1666666666</span>    <span class="number">0.1666666666</span>    <span class="number">0.0000000000</span></span><br><span class="line">    <span class="number">0.0000000000</span>    <span class="number">0.5000000000</span>    <span class="number">0.0000000000</span></span><br><span class="line">    <span class="number">0.5000000000</span>    <span class="number">0.5000000000</span>    <span class="number">0.0000000000</span></span><br><span class="line">    <span class="number">0.6666666666</span>    <span class="number">0.1666666666</span>    <span class="number">0.0000000000</span></span><br><span class="line">    <span class="number">0.1666666666</span>    <span class="number">0.6666666666</span>    <span class="number">0.0000000000</span></span><br></pre></td></tr></table></figure>
 <p><strong>第一个坑</strong>：文献中的晶格常数应该怎样对应 <code>POSCAR</code> 中的晶格参数？</p>
-<p>这取决于我们取的基底。上文中我们以相邻两个元胞的 B 原子间模长最短的矢量为基矢，因此这个这个元胞的实际晶格常数应为 $a = |\vec{a}<em>i| \times a</em>{POSCAR}$ ， $a$ 即为文中给出的晶格常数，可见，<code>POSCAR</code> 中的晶格参数可以理解为缩放系数，所以写完结构时应与文献对照或放入 VESTA 等软件测出原子键长看与文献是否一致。有的文献作者基底的取法特殊，所给的晶格常数也很“魔性”，但不变的是格子的实际大小、原子间距离等，以这些信息为准才能写出与文献中真正等价的结构。此外，二维结构的实现时需要层间有 20 A 左右的真空层，以避免层间不必要的相互作用，但真空层不可取太厚，否则计算量的增加不仅仅是线性的。</p>
+<p>这取决于我们取的基底。上文中我们以相邻两个元胞的 B 原子间模长最短的矢量为基矢，因此这个这个元胞的实际晶格常数应为 $a = |\vec{a}_i| \times a_{POSCAR}$ ， $a$ 即为文中给出的晶格常数，可见，<code>POSCAR</code> 中的晶格参数可以理解为缩放系数，所以写完结构时应与文献对照或放入 VESTA 等软件测出原子键长看与文献是否一致。有的文献作者基底的取法特殊，所给的晶格常数也很“魔性”，但不变的是格子的实际大小、原子间距离等，以这些信息为准才能写出与文献中真正等价的结构。此外，二维结构的实现时需要层间有 20 A 左右的真空层，以避免层间不必要的相互作用，但真空层不可取太厚，否则计算量的增加不仅仅是线性的。</p>
 <p><strong>闲话</strong>：如何建系是个见仁见智的问题，有人喜欢直接沿着六边形的边建系，有人喜欢像上文那样建系，但不管怎样，只要实现的结构是等价的那么建系就是没有问题的</p>
 <h2 id="测出必要的参数"><a href="#测出必要的参数" class="headerlink" title="测出必要的参数"></a>测出必要的参数</h2><h3 id="INCAR-Template"><a href="#INCAR-Template" class="headerlink" title="INCAR Template"></a><code>INCAR</code> Template</h3><p>在测各项参数之前，先给出一个<code>INCAR</code> 模板，具体参数的含义见注释或<code>VASP</code>手册。</p>
 <figure class="highlight fortran"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">C3B Mono Layer  strcut_optim</span><br><span class="line">  SYSTEM = <span class="string">"C3B Mono Layer"</span> # 系统注释</span><br><span class="line"></span><br><span class="line">Electronic minimization</span><br><span class="line">  ISMEAR =                  # 使用Gaussian smearing，取 <span class="number">0</span> 用于导体、绝缘体的计算</span><br><span class="line">  SIGMA =                   # Smearring 的宽度，在精度允许范围内应尽量大以减小计算量</span><br><span class="line">  EDIFF =                   # 收敛判据的能量判据</span><br><span class="line">  EDIFFG =                  # 收敛判据，若值为负，则为力判据；若值为正，则为能量判据</span><br><span class="line">  PREC =                    # 精确度</span><br><span class="line">  IBRION =                  # 离子移动方法，跑MD、弛豫抑或静态计算时设置不同</span><br><span class="line">  ISIF =                    # 结构优化类型</span><br><span class="line"></span><br><span class="line">Ionic minimization</span><br><span class="line">  NSW =                     # 离子步数上限</span><br><span class="line">  NELMIN = 					# 电子步收敛下限</span><br><span class="line">  ENCUT =                   # 截断能，在保证收敛良好的情况下应尽量小</span><br><span class="line">  LWAVE =                   # 是否输出 WAVECAR；该值为 .FALSE. 时也会有 WAVECAR 输出，但其长度为 <span class="number">0</span></span><br><span class="line">  LCHARG =                  # 是否输出 CHGCAR</span><br><span class="line"></span><br><span class="line">Band Calcs</span><br><span class="line">  ISTART =                  # 是否从当前目录读取 WAVECAR</span><br><span class="line">  ICHARG =                  #  <span class="number">1</span>: 读取 CHGCAR</span><br><span class="line">                            # <span class="number">10</span>: 不改变当前目录下的 CHGCAR</span><br></pre></td></tr></table></figure>
@@ -698,7 +698,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">9</span>
+                    <span class="site-state-item-count">10</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -792,7 +792,7 @@
                     
                       
                     
-                    <span class="site-state-item-count">19</span>
+                    <span class="site-state-item-count">20</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -1090,6 +1090,57 @@
   
 
   
+    
+      <script type="text/x-mathjax-config">
+  
+    MathJax.Ajax.config.path['mhchem'] = '//cdn.jsdelivr.net/npm/mathjax-mhchem@3';
+  
+
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
+      processEscapes: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      
+        extensions: ['[mhchem]/mhchem.js'],
+      
+      equationNumbers: {
+        autoNumber: 'AMS'
+      }
+    }
+  });
+  MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
+    MathJax.InputJax.TeX.prefilterHooks.Add(function(data) {
+      if (data.display) {
+        var next = data.script.nextSibling;
+        while (next && next.nodeName.toLowerCase() === '#text') { next = next.nextSibling }
+        if (next && next.nodeName.toLowerCase() === 'br') { next.parentNode.removeChild(next) }
+      }
+    });
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for (i = 0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+<script src="//cdn.jsdelivr.net/npm/mathjax@2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+<style>
+.MathJax_Display {
+  overflow-x: scroll;
+  overflow-y: hidden;
+}
+</style>
+
+    
+  
 
 
   
@@ -1183,24 +1234,7 @@
       }, 300);
     }).append(e);
   })
-</script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
-</script>
-
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Queue(function() {
-    var all = MathJax.Hub.getAllJax(), i;
-    for(i=0; i < all.length; i += 1) {
-      all[i].SourceElement().parentNode.className += ' has-jax';
-    }
-  });
-</script>
-
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js">
-</script>
-<!-- End: Injected MathJax -->
-<!-- hexo-inject:end -->
+</script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
 
 </body>
