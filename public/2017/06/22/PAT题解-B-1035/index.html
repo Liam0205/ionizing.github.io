@@ -98,18 +98,18 @@
 
 
 
-  <meta name="description" content="题解:PAT-B 1035 插入与归并这是一篇测试用文章，欢迎围观. 题目全文：题目地址在这里  根据维基百科的定义：   插入排序是迭代算法，逐一获得输入数据，逐步产生有序的输出序列。每步迭代中，算法从输入序列中取出一元素，将之插入有序序列中正确的位置。如此迭代直到全部元素有序。   归并排序进行如下迭代操作：首先将原始序列看成N个只包含1个元素的有序子序列，然后每次迭代归并两个相邻的有序子序列">
+  <meta name="description" content="题解:PAT-B 1035 插入与归并这是一篇测试用文章，欢迎围观. 题目全文：题目地址在这里  根据维基百科的定义： 插入排序是迭代算法，逐一获得输入数据，逐步产生有序的输出序列。每步迭代中，算法从输入序列中取出一元素，将之插入有序序列中正确的位置。如此迭代直到全部元素有序。 归并排序进行如下迭代操作：首先将原始序列看成N个只包含1个元素的有序子序列，然后每次迭代归并两个相邻的有序子序列，直到最">
 <meta name="keywords" content="C++,PAT,排序">
 <meta property="og:type" content="article">
 <meta property="og:title" content="PAT题解 B 1035">
 <meta property="og:url" content="https://ionizing.science/2017/06/22/PAT题解-B-1035/index.html">
 <meta property="og:site_name" content="Ionizing&#39;s Blog">
-<meta property="og:description" content="题解:PAT-B 1035 插入与归并这是一篇测试用文章，欢迎围观. 题目全文：题目地址在这里  根据维基百科的定义：   插入排序是迭代算法，逐一获得输入数据，逐步产生有序的输出序列。每步迭代中，算法从输入序列中取出一元素，将之插入有序序列中正确的位置。如此迭代直到全部元素有序。   归并排序进行如下迭代操作：首先将原始序列看成N个只包含1个元素的有序子序列，然后每次迭代归并两个相邻的有序子序列">
+<meta property="og:description" content="题解:PAT-B 1035 插入与归并这是一篇测试用文章，欢迎围观. 题目全文：题目地址在这里  根据维基百科的定义： 插入排序是迭代算法，逐一获得输入数据，逐步产生有序的输出序列。每步迭代中，算法从输入序列中取出一元素，将之插入有序序列中正确的位置。如此迭代直到全部元素有序。 归并排序进行如下迭代操作：首先将原始序列看成N个只包含1个元素的有序子序列，然后每次迭代归并两个相邻的有序子序列，直到最">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:updated_time" content="2019-03-12T13:26:32.538Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="PAT题解 B 1035">
-<meta name="twitter:description" content="题解:PAT-B 1035 插入与归并这是一篇测试用文章，欢迎围观. 题目全文：题目地址在这里  根据维基百科的定义：   插入排序是迭代算法，逐一获得输入数据，逐步产生有序的输出序列。每步迭代中，算法从输入序列中取出一元素，将之插入有序序列中正确的位置。如此迭代直到全部元素有序。   归并排序进行如下迭代操作：首先将原始序列看成N个只包含1个元素的有序子序列，然后每次迭代归并两个相邻的有序子序列">
+<meta name="twitter:description" content="题解:PAT-B 1035 插入与归并这是一篇测试用文章，欢迎围观. 题目全文：题目地址在这里  根据维基百科的定义： 插入排序是迭代算法，逐一获得输入数据，逐步产生有序的输出序列。每步迭代中，算法从输入序列中取出一元素，将之插入有序序列中正确的位置。如此迭代直到全部元素有序。 归并排序进行如下迭代操作：首先将原始序列看成N个只包含1个元素的有序子序列，然后每次迭代归并两个相邻的有序子序列，直到最">
 
 
 
@@ -473,26 +473,12 @@
 <h2 id="题目全文："><a href="#题目全文：" class="headerlink" title="题目全文："></a>题目全文：</h2><p>题目地址在<a href="https://www.patest.cn/contests/pat-b-practise/1035" target="_blank" rel="noopener">这里</a></p>
 <blockquote>
 <p>根据维基百科的定义：</p>
-</blockquote>
-<blockquote>
 <p>插入排序是迭代算法，逐一获得输入数据，逐步产生有序的输出序列。每步迭代中，算法从输入序列中取出一元素，将之插入有序序列中正确的位置。如此迭代直到全部元素有序。</p>
-</blockquote>
-<blockquote>
 <p>归并排序进行如下迭代操作：首先将原始序列看成N个只包含1个元素的有序子序列，然后每次迭代归并两个相邻的有序子序列，直到最后只剩下1个有序的序列。</p>
-</blockquote>
-<blockquote>
 <p>现给定原始序列和由某排序算法产生的中间序列，请你判断该算法究竟是哪种排序算法？</p>
-</blockquote>
-<blockquote>
 <p>输入格式：</p>
-</blockquote>
-<blockquote>
 <p>输入在第一行给出正整数N (&lt;=100)；随后一行给出原始序列的N个整数；最后一行给出由某排序算法产生的中间序列。这里假设排序的目标序列是升序。数字间以空格分隔。</p>
-</blockquote>
-<blockquote>
 <p>输出格式：</p>
-</blockquote>
-<blockquote>
 <p>首先在第1行中输出“Insertion Sort”表示插入排序、或“Merge Sort”表示归并排序；然后在第2行中输出用该排序算法再迭代一轮的结果序列。题目保证每组测试的结果是唯一的。数字间以空格分隔，且行末不得有多余空格。</p>
 </blockquote>
 <p>输入样例1：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">10</span><br><span class="line">3 1 2 8 7 5 9 4 6 0</span><br><span class="line">1 2 3 7 8 5 9 4 6 0</span><br></pre></td></tr></table></figure></p>
@@ -670,7 +656,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">9</span>
+                    <span class="site-state-item-count">10</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -764,7 +750,7 @@
                     
                       
                     
-                    <span class="site-state-item-count">19</span>
+                    <span class="site-state-item-count">20</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -1005,21 +991,24 @@
           if (results.length > 0) {
             var counter = results[0];
             
-            Counter('put', '/classes/Counter/' + counter.objectId, JSON.stringify({ time: { '__op': 'Increment', 'amount': 1 } }))
+              var $element = $(document.getElementById(url));
+              $element.find('.leancloud-visitors-count').text(counter.time + 1);
             
-              .done(function() {
-                var $element = $(document.getElementById(url));
-                $element.find('.leancloud-visitors-count').text(counter.time + 1);
-              })
+            Counter('put', '/classes/Counter/' + counter.objectId, JSON.stringify({ time: { '__op': 'Increment', 'amount': 1 } }))
             
               .fail(function ({ responseJSON }) {
                 console.log('Failed to save Visitor num, with error message: ' + responseJSON.error);
               })
           } else {
             
-              var $element = $(document.getElementById(url));
-              $element.find('.leancloud-visitors-count').text('Counter not initialized! More info at console err msg.');
-              console.error('ATTENTION! LeanCloud counter has security bug, see how to solve it here: https://github.com/theme-next/hexo-leancloud-counter-security. \n However, you can still use LeanCloud without security, by setting `security` option to `false`.');
+              Counter('post', '/classes/Counter', JSON.stringify({ title: title, url: url, time: 1 }))
+                .done(function() {
+                  var $element = $(document.getElementById(url));
+                  $element.find('.leancloud-visitors-count').text(1);
+                })
+                .fail(function() {
+                  console.log('Failed to create');
+                });
             
           }
         })
@@ -1030,15 +1019,15 @@
     
 
     $(function() {
-      $.get('https://app-router.leancloud.cn/2/route?appId=' + 'kURCdXShfgSCB7irfk4pHjlg-gzGzoHsz')
+      $.get('https://app-router.leancloud.cn/2/route?appId=' + 'uvg5d6PFKOwQMrgsVfD3grKa-gzGzoHsz')
         .done(function({ api_server }) {
           var Counter = function(method, url, data) {
             return $.ajax({
               method: method,
               url: 'https://' + api_server + '/1.1' + url,
               headers: {
-                'X-LC-Id': 'kURCdXShfgSCB7irfk4pHjlg-gzGzoHsz',
-                'X-LC-Key': 'ljdTAbOpN7Tm1gubHSMAxuHu',
+                'X-LC-Id': 'uvg5d6PFKOwQMrgsVfD3grKa-gzGzoHsz',
+                'X-LC-Key': 'pORgRsmYGMgcnRO7MKPQFafu',
                 'Content-Type': 'application/json',
               },
               data: data
@@ -1061,6 +1050,57 @@
   
   
 
+  
+    
+      <script type="text/x-mathjax-config">
+  
+    MathJax.Ajax.config.path['mhchem'] = '//cdn.jsdelivr.net/npm/mathjax-mhchem@3';
+  
+
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
+      processEscapes: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      
+        extensions: ['[mhchem]/mhchem.js'],
+      
+      equationNumbers: {
+        autoNumber: 'AMS'
+      }
+    }
+  });
+  MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
+    MathJax.InputJax.TeX.prefilterHooks.Add(function(data) {
+      if (data.display) {
+        var next = data.script.nextSibling;
+        while (next && next.nodeName.toLowerCase() === '#text') { next = next.nextSibling }
+        if (next && next.nodeName.toLowerCase() === 'br') { next.parentNode.removeChild(next) }
+      }
+    });
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for (i = 0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+<script src="//cdn.jsdelivr.net/npm/mathjax@2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+<style>
+.MathJax_Display {
+  overflow-x: scroll;
+  overflow-y: hidden;
+}
+</style>
+
+    
   
 
 
@@ -1155,24 +1195,7 @@
       }, 300);
     }).append(e);
   })
-</script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
-</script>
-
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Queue(function() {
-    var all = MathJax.Hub.getAllJax(), i;
-    for(i=0; i < all.length; i += 1) {
-      all[i].SourceElement().parentNode.className += ' has-jax';
-    }
-  });
-</script>
-
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js">
-</script>
-<!-- End: Injected MathJax -->
-<!-- hexo-inject:end -->
+</script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
 
 </body>

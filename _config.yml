@@ -82,3 +82,13 @@ deploy:
   branch: master
   name: Ionizing
   email: PeterSmith_9@outlook.com
+
+leancloud_counter_security:
+  enable_sync: true
+  app_id: uvg5d6PFKOwQMrgsVfD3grKa-gzGzoHsz
+  app_key: pORgRsmYGMgcnRO7MKPQFafu
+  username: ionizing
+  password: ionizing__
+
+# For hexo math settings, follow the steps in the site following
+# https://www.jianshu.com/p/e8d433a2c5b7

@@ -385,7 +385,7 @@
 <h1 id="化学"><a href="#化学" class="headerlink" title="化学"></a>化学</h1><p>有机化学学渣，物理化学学渣。　嗯，还是众多具有帝国能源男子高中特色课程的学渣。</p>
 <h1 id="职业生涯"><a href="#职业生涯" class="headerlink" title="职业生涯"></a>职业生涯</h1><p>未来只想低调做科研，少装X，多做事。</p>
 <h1 id="为什么没有贴出头像？"><a href="#为什么没有贴出头像？" class="headerlink" title="为什么没有贴出头像？"></a>为什么没有贴出头像？</h1><p>因为太丑。</p>
-<h1 id="联系方式"><a href="#联系方式" class="headerlink" title="联系方式"></a>联系方式</h1><p>Email: <a href="mailto:`PeterSmith_9@outlook.com" target="_blank" rel="noopener">`PeterSmith_9@outlook.com</a>`</p>
+<h1 id="联系方式"><a href="#联系方式" class="headerlink" title="联系方式"></a>联系方式</h1><p>Email: <code>PeterSmith_9@outlook.com</code></p>
 
         
       </div>
@@ -449,7 +449,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">9</span>
+                    <span class="site-state-item-count">10</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -543,7 +543,7 @@
                     
                       
                     
-                    <span class="site-state-item-count">19</span>
+                    <span class="site-state-item-count">20</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -813,15 +813,15 @@
     
 
     $(function() {
-      $.get('https://app-router.leancloud.cn/2/route?appId=' + 'kURCdXShfgSCB7irfk4pHjlg-gzGzoHsz')
+      $.get('https://app-router.leancloud.cn/2/route?appId=' + 'uvg5d6PFKOwQMrgsVfD3grKa-gzGzoHsz')
         .done(function({ api_server }) {
           var Counter = function(method, url, data) {
             return $.ajax({
               method: method,
               url: 'https://' + api_server + '/1.1' + url,
               headers: {
-                'X-LC-Id': 'kURCdXShfgSCB7irfk4pHjlg-gzGzoHsz',
-                'X-LC-Key': 'ljdTAbOpN7Tm1gubHSMAxuHu',
+                'X-LC-Id': 'uvg5d6PFKOwQMrgsVfD3grKa-gzGzoHsz',
+                'X-LC-Key': 'pORgRsmYGMgcnRO7MKPQFafu',
                 'Content-Type': 'application/json',
               },
               data: data
@@ -846,6 +846,57 @@
   
   
 
+  
+    
+      <script type="text/x-mathjax-config">
+  
+    MathJax.Ajax.config.path['mhchem'] = '//cdn.jsdelivr.net/npm/mathjax-mhchem@3';
+  
+
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
+      processEscapes: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      
+        extensions: ['[mhchem]/mhchem.js'],
+      
+      equationNumbers: {
+        autoNumber: 'AMS'
+      }
+    }
+  });
+  MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
+    MathJax.InputJax.TeX.prefilterHooks.Add(function(data) {
+      if (data.display) {
+        var next = data.script.nextSibling;
+        while (next && next.nodeName.toLowerCase() === '#text') { next = next.nextSibling }
+        if (next && next.nodeName.toLowerCase() === 'br') { next.parentNode.removeChild(next) }
+      }
+    });
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for (i = 0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+<script src="//cdn.jsdelivr.net/npm/mathjax@2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+<style>
+.MathJax_Display {
+  overflow-x: scroll;
+  overflow-y: hidden;
+}
+</style>
+
+    
   
 
 
@@ -940,24 +991,7 @@
       }, 300);
     }).append(e);
   })
-</script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
-</script>
-
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Queue(function() {
-    var all = MathJax.Hub.getAllJax(), i;
-    for(i=0; i < all.length; i += 1) {
-      all[i].SourceElement().parentNode.className += ' has-jax';
-    }
-  });
-</script>
-
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js">
-</script>
-<!-- End: Injected MathJax -->
-<!-- hexo-inject:end -->
+</script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
 
 </body>
