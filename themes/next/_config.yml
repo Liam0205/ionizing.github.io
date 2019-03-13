@@ -549,10 +549,10 @@ quicklink:
 
 # Disqus
 disqus:
-  enable: false
-  shortname:
+  enable: true 
+  shortname: https-www-ionizing-science
   count: true
-  lazyload: false
+  lazyload: true
 
 # Changyan
 changyan:
