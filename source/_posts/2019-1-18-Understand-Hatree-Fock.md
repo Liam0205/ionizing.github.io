@@ -277,8 +277,8 @@ $$
 $\eqref{eq:orb_en}$ 中：
 
 - $\varepsilon_i^0$ 为 $\hat{h}(1)$ 的本征值， $\varepsilon_i$ 为第 $i$ 个轨道的轨道能；
-- $ J _ { i j } = \langle i j | i j \rangle = \int d q _ { 1 } d q _ { 2 } \psi _ { i } ^ { * } ( 1 ) \psi _ { j } ^ { * } ( 2 ) \frac { 1 } { r _ { 12 } } \psi _ { i } ( 1 ) \psi _ { j } ( 2 ) $；
-- $ K _ { i j } = \langle i j | j i \rangle = \int d q _ { 1 } d q _ { 2 } \psi _ { i } ^ { * } ( 1 ) \psi _ { j } ^ { * } ( 2 ) \frac { 1 } { r _ { 12 } } \psi _ { j } ( 1 ) \psi _ { i } ( 2 ) $ 。
+- $J_{ij}=\langle ij|ij\rangle = \int dq_{1}dq_{2}\psi _{i}^{\star}(1)\psi _{j}^{\star}(2)\frac {1}{r_{12}}\psi _{i}(1)\psi _{j}(2)$ ；
+- $K_{ij} = \langle ij|ji \rangle = \int dq_{1}dq_{2} \psi _ { i } ^ { \star } ( 1 ) \psi _ { j } ^ { \star } ( 2 ) \frac { 1 } { r _ { 12 } } \psi _ { j } ( 1 ) \psi _ { i } ( 2 )$ 。
 
 ### 电子总能量
 
