@@ -10,9 +10,9 @@ date: 2019-03-22 21:50:44
 
 # 何为「系综」？
 
-简单来说 [系综](https://en.wikipedia.org/wiki/Statistical_ensemble_(mathematical_physics) ) (Ensemble) 就是一个宏观态对应所有可能微观态的集合。 $\newcommand{\dif}{\mathop{}\mathrm{d}}$ 
+简单来说 [系综][ensemble-wikipedia] (Ensemble) 就是一个宏观态对应所有可能微观态的集合。 $\newcommand{\dif}{\mathop{}\mathrm{d}}$ 
 
-对于宏观态，我们研究对象所含有的粒子的数量级在 10<sup>23</sup> 左右（即 1 mol 物质所含粒子的数量），而这个宏观态的宏观量（如压力 $p$ ，温度 $T$ ，体积 $V$ ，粒子数目 $N$ ，以及内能 $E$ 等）可以保持不变，但是给定一个宏观态，固定其中某些宏观量后，却可能有极大量微观态与之对应。为了研究方便，我们给这些对应于同一个宏观态的微观态的集合起名字叫做「系综」。
+对于宏观态，我们研究对象所含有的粒子的数量级在 10<sup>23</sup> 左右（即 1 mol 物质所含粒子的数量），而这个宏观态的宏观量（如压力 $p​$ ，温度 $T​$ ，体积 $V​$ ，粒子数目 $N​$ ，以及内能 $E​$ 等）可以保持不变，但是给定一个宏观态，固定其中某些宏观量后，却可能有极大量微观态与之对应。为了研究方便，我们给这些对应于同一个宏观态的微观态的集合起名字叫做「系综」。
 
 为了简化模型，我们使用理想气体分子作为研究的粒子，通常研究的系综体系有：
 
@@ -35,11 +35,11 @@ $$
 \dif E = T\dif S - p\dif V + \mu\dif N
 \label{eq:thermal_relation}
 $$
-式 $\eqref{eq:thermal_relation}$ 中：
+式 $\eqref{eq:thermal_relation}​$ 中：
 
 - $E$ ——内能，J；
 - $T​$ ——温度，K；
-- $S$ ——熵，J/K；
+- $S​$ ——熵，J/K；
 - $p$ ——压力，Pa；
 - $V$ ——体积，m<sup>3</sup>；
 - $\mu$ ——化学势，J；
@@ -125,6 +125,8 @@ $$
 ​	如果一个体系的能级是连续分布的，那么求其某一个点上的简并度，是不合适的，就像在一个二维图形上取一条线求这条线的面积一样，求出来的值是零；而如果一个体系的能级是量子化的，此时再求简并度就很合理，因为在两个分立能级之间没有态，态全部「确切」地分布在各个能级上，因此数/计算某个能级上有多少个态是可行的。
 
 # 参考资料 & 致谢
+
+[ensemble-wikipedia]: https://en.wikipedia.org/wiki/Statistical_ensemble_(mathematical_physics)
 
 Wikipedia: 已在超链接中给出；
 
