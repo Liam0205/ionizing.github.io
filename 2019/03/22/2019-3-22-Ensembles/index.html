@@ -98,25 +98,27 @@
 
 
 
-  <meta name="description" content="前言Travis-CI 是一个持续集成测试网站，其 org 版对用户免费开放，对用户的 public 仓库可以免费提供 持续集成测试服务（私有仓库要使用 com 版） 设置步骤 访问  并使自己的 github 账户与 travis-ci 关联，并给予它足够的权限 （一路下一步就行）； 点击右上角的用户头像，进入自己的 repositories 配置面板，找到自己想要开启集成测试的项目， 开启集成">
-<meta name="keywords" content="cpp,travis-ci">
+  <meta name="description" content="何为「系综」？简单来说 系综 ) (Ensemble) 就是一个宏观态对应所有可能微观态的集合。 $\newcommand{\dif}{\mathop{}\mathrm{d}}$  对于宏观态，我们研究对象所含有的粒子的数量级在 1023 左右（即 1 mol 物质所含粒子的数量），而这个宏观态的宏观量（如压力 $p$ ，温度 $T$ ，体积 $V$ ，粒子数目 $N$ ，以及内能 $E$ 等）可">
+<meta name="keywords" content="Statistical Mechanics,Physical Chemistry">
 <meta property="og:type" content="article">
-<meta property="og:title" content="如何为 github 上的 cpp 项目设置 Travis-CI 自动测试">
-<meta property="og:url" content="https://ionizing.science/2019/01/21/2019-1-21-how-to-setup-travis-ci/index.html">
+<meta property="og:title" content="统计力学笔记——系综的概念">
+<meta property="og:url" content="https://ionizing.science/2019/03/22/2019-3-22-Ensembles/index.html">
 <meta property="og:site_name" content="Ionizing&#39;s Blog">
-<meta property="og:description" content="前言Travis-CI 是一个持续集成测试网站，其 org 版对用户免费开放，对用户的 public 仓库可以免费提供 持续集成测试服务（私有仓库要使用 com 版） 设置步骤 访问  并使自己的 github 账户与 travis-ci 关联，并给予它足够的权限 （一路下一步就行）； 点击右上角的用户头像，进入自己的 repositories 配置面板，找到自己想要开启集成测试的项目， 开启集成">
+<meta property="og:description" content="何为「系综」？简单来说 系综 ) (Ensemble) 就是一个宏观态对应所有可能微观态的集合。 $\newcommand{\dif}{\mathop{}\mathrm{d}}$  对于宏观态，我们研究对象所含有的粒子的数量级在 1023 左右（即 1 mol 物质所含粒子的数量），而这个宏观态的宏观量（如压力 $p$ ，温度 $T$ ，体积 $V$ ，粒子数目 $N$ ，以及内能 $E$ 等）可">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-03-12T13:26:32.000Z">
+<meta property="og:image" content="https://ionizing.science/2019/03/22/2019-3-22-Ensembles/boltzmann_tombstone.jpg">
+<meta property="og:updated_time" content="2019-03-22T11:22:26.234Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="如何为 github 上的 cpp 项目设置 Travis-CI 自动测试">
-<meta name="twitter:description" content="前言Travis-CI 是一个持续集成测试网站，其 org 版对用户免费开放，对用户的 public 仓库可以免费提供 持续集成测试服务（私有仓库要使用 com 版） 设置步骤 访问  并使自己的 github 账户与 travis-ci 关联，并给予它足够的权限 （一路下一步就行）； 点击右上角的用户头像，进入自己的 repositories 配置面板，找到自己想要开启集成测试的项目， 开启集成">
+<meta name="twitter:title" content="统计力学笔记——系综的概念">
+<meta name="twitter:description" content="何为「系综」？简单来说 系综 ) (Ensemble) 就是一个宏观态对应所有可能微观态的集合。 $\newcommand{\dif}{\mathop{}\mathrm{d}}$  对于宏观态，我们研究对象所含有的粒子的数量级在 1023 左右（即 1 mol 物质所含粒子的数量），而这个宏观态的宏观量（如压力 $p$ ，温度 $T$ ，体积 $V$ ，粒子数目 $N$ ，以及内能 $E$ 等）可">
+<meta name="twitter:image" content="https://ionizing.science/2019/03/22/2019-3-22-Ensembles/boltzmann_tombstone.jpg">
 
 
 
 
 
 
-  <link rel="canonical" href="https://ionizing.science/2019/01/21/2019-1-21-how-to-setup-travis-ci/">
+  <link rel="canonical" href="https://ionizing.science/2019/03/22/2019-3-22-Ensembles/">
 
 
 
@@ -126,7 +128,7 @@
   };
 </script>
 
-  <title>如何为 github 上的 cpp 项目设置 Travis-CI 自动测试 | Ionizing's Blog</title>
+  <title>统计力学笔记——系综的概念 | Ionizing's Blog</title>
   
 
 
@@ -346,7 +348,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://ionizing.science/2019/01/21/2019-1-21-how-to-setup-travis-ci/">
+    <link itemprop="mainEntityOfPage" href="https://ionizing.science/2019/03/22/2019-3-22-Ensembles/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="博主">
@@ -363,7 +365,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">如何为 github 上的 cpp 项目设置 Travis-CI 自动测试
+          <h1 class="post-title" itemprop="name headline">统计力学笔记——系综的概念
 
               
             
@@ -389,24 +391,12 @@
                 
               
 
-              <time title="创建于：2019-01-21 11:32:17" itemprop="dateCreated datePublished" datetime="2019-01-21T11:32:17+08:00">2019-01-21</time>
+              <time title="创建于：2019-03-22 21:50:44 / 更新于：19:22:26" itemprop="dateCreated datePublished" datetime="2019-03-22T21:50:44+08:00">2019-03-22</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Edited on</span>
-                
-                <time title="更新于：2019-03-12 21:26:32" itemprop="dateModified" datetime="2019-03-12T21:26:32+08:00">2019-03-12</time>
               
             
           </span>
@@ -424,8 +414,8 @@
                 </span>
             
                 <span class="post-meta-item-text">Comments：</span>
-                <a href="/2019/01/21/2019-1-21-how-to-setup-travis-ci/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/01/21/2019-1-21-how-to-setup-travis-ci/" itemprop="commentCount"></span>
+                <a href="/2019/03/22/2019-3-22-Ensembles/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/03/22/2019-3-22-Ensembles/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -433,7 +423,7 @@
 
           
           
-            <span id="/2019/01/21/2019-1-21-how-to-setup-travis-ci/" class="leancloud_visitors" data-flag-title="如何为 github 上的 cpp 项目设置 Travis-CI 自动测试">
+            <span id="/2019/03/22/2019-3-22-Ensembles/" class="leancloud_visitors" data-flag-title="统计力学笔记——系综的概念">
               <span class="post-meta-divider">|</span>
               <span class="post-meta-item-icon">
                 <i class="fa fa-eye"></i>
@@ -464,22 +454,85 @@
       
 
       
-        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>Travis-CI 是一个持续集成测试网站，其 org 版对用户免费开放，对用户的 public 仓库可以免费提供 持续集成测试服务（私有仓库要使用 com 版）</p>
-<h1 id="设置步骤"><a href="#设置步骤" class="headerlink" title="设置步骤"></a>设置步骤</h1><ol>
-<li>访问 <a href="https://travis-ci.org" target="_blank" rel="noopener"></a> 并使自己的 github 账户与 travis-ci 关联，并给予它足够的权限 （一路下一步就行）；</li>
-<li>点击右上角的用户头像，进入自己的 repositories 配置面板，找到自己想要开启集成测试的项目， 开启集成测试功能；</li>
-<li>进入刚刚项目集成测试的 settings ，在页面最下面的 Cron Jobs 一栏设置自己想要的定时测试任务 配置；</li>
-<li>在<strong>本地</strong>该仓库的根目录下写好 <code>Makefile</code> ；</li>
-<li><p>在<strong>本地</strong>该仓库的根目录下创建 <code>.travis.yml</code> ，里面写上如下内容：</p>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">language:</span> <span class="string">cpp</span>     <span class="comment"># 指定项目语言类型</span></span><br><span class="line"><span class="attr">dist:</span> <span class="string">trusty</span></span><br><span class="line"><span class="attr">sudo:</span> <span class="literal">false</span>       <span class="comment"># 是否需要 sudo 权限</span></span><br><span class="line"><span class="attr">matrix:</span>           <span class="comment"># 配置 travis-ci 系统变量</span></span><br><span class="line"><span class="attr">  include:</span></span><br><span class="line"><span class="attr">    - os:</span> <span class="string">linux</span>   <span class="comment"># 指定构建环境的系统类型</span></span><br><span class="line"><span class="attr">    - compiler:</span> <span class="string">gcc</span>  <span class="comment"># 指定编译器</span></span><br><span class="line"></span><br><span class="line"><span class="attr">addons:</span>           <span class="comment"># 第三方依赖库的添加</span></span><br><span class="line"><span class="attr">  apt:</span></span><br><span class="line"><span class="attr">    packages:</span></span><br><span class="line"><span class="bullet">      -</span> <span class="string">libfftw*</span></span><br><span class="line"></span><br><span class="line"><span class="attr">script:</span>           <span class="comment"># 构建的命令，默认为 ./configure &amp;&amp; make</span></span><br><span class="line"><span class="bullet">  -</span> <span class="string">make</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>git push</p>
-</li>
+        <h1 id="何为「系综」？"><a href="#何为「系综」？" class="headerlink" title="何为「系综」？"></a>何为「系综」？</h1><p>简单来说 <a href="https://en.wikipedia.org/wiki/Statistical_ensemble_(mathematical_physics" target="_blank" rel="noopener">系综</a> ) (Ensemble) 就是一个宏观态对应所有可能微观态的集合。 $\newcommand{\dif}{\mathop{}\mathrm{d}}$ </p>
+<p>对于宏观态，我们研究对象所含有的粒子的数量级在 10<sup>23</sup> 左右（即 1 mol 物质所含粒子的数量），而这个宏观态的宏观量（如压力 $p$ ，温度 $T$ ，体积 $V$ ，粒子数目 $N$ ，以及内能 $E$ 等）可以保持不变，但是给定一个宏观态，固定其中某些宏观量后，却可能有极大量微观态与之对应。为了研究方便，我们给这些对应于同一个宏观态的微观态的集合起名字叫做「系综」。</p>
+<p>为了简化模型，我们使用理想气体分子作为研究的粒子，通常研究的系综体系有：</p>
+<ul>
+<li>微正则系综（<a href="https://en.wikipedia.org/wiki/Microcanonical_ensemble" target="_blank" rel="noopener">Microcanonical Ensemble</a>） $\Longrightarrow$ 等粒子数、等容、等能量的体系，即孤立体系（与外界完全隔离，与环境没有物质交换、没有做功、甚至没有能量交换的体系）所对应的系综，热力学参量为 $N$ 、 $V$ 、 $E$ ；</li>
+<li>正则系综（<a href="https://en.wikipedia.org/wiki/Canonical_ensemble" target="_blank" rel="noopener">Canonical Ensemble</a>） $\Longrightarrow$  等粒子数、等容、等温的体系，即封闭体系（容器体积封闭固定无法对外界做功，与外界没有粒子交换，但是容器壁可以传热，体系与外界仅有能量交换，<strong>且体系温度保持恒定</strong>）所对应的系综，热力学参量为 $N$ ，$V$ ， $T$ ；</li>
+<li>巨正则系综（<a href="https://en.wikipedia.org/wiki/Grand_canonical_ensemble" target="_blank" rel="noopener">Grand Canonical Ensemble</a>） $\Longrightarrow$ 等化学势、等容、等温的体系，即开放体系（容器体积固定，但并不封闭，体系内外有物质交换和能量交换，但体系的化学势与温度始终保持恒定）所对应的系综，热力学参量为 $\mu$ ， $V$ ， $T$ ；</li>
+<li>等温等压系综（<a href="https://en.wikipedia.org/wiki/Isothermal–isobaric_ensemble" target="_blank" rel="noopener">Isothermal-Isobaric Ensemble</a>） $\Longrightarrow$ 等粒子数、等温、等压的体系（如一个自由的密闭活塞）所对应的系综，热力学参量为 $N$ ， $T$ ， $p$ 。</li>
+</ul>
+<p>PS. </p>
+<ol>
+<li>个人认为带「正则」的名字翻译得……很让人摸不着头脑，无法从名字知道系综的参量情况，可能是这个术语本身在命名时就比较随意吧。不过命名不是重点，其内在的逻辑才是应该关心的；</li>
+<li>其中的热力学「参量」表示我们给定体系的热力学量。类似于程序设计中「函数」的「输入参数」；</li>
+<li>给定上面的这些热力学「参量」并<span style="color:red"><strong>不代表体系在任意时刻保持这些热力学量恒定</strong></span>。给定它们表示体系在宏观上保持这些热力学量不变，但在微观角度看，这些热力学量是在<strong>时刻不停地涨落</strong>，但是它们整体表现出的<strong>平均值</strong>是恒定不变的，这才是给定热力学参量的真正含义；</li>
+<li>为什么要定义系综？其实刚开始时人们研究宏观态时是只研究其对应的某一个微观态在一段时间内的演化过程，但是研究一个态需要知道这个态的初始参数（所有粒子的初速度、位置信息等），每次研究都要设置这个参数，很麻烦，并且很多时候人们并不知道这些参数；而且在很短时间内这个态经过演化已经经历过了所有可能的等价态，使得结果与初始参数的关系并不大。于是人们将<span style="color:red"><strong>研究一个体系在一段时间的演化</strong></span>转化成<span style="color:red"><strong>研究多个等价体系在同一时间内的统计分布</strong></span>，这样并不需要定义其中某个微观态的初始参数，而是给出这些微观态平均表现出的热力学性质，然后研究这些态的热力学量在统计上的分布就能达到想要的效果，系综的概念应运而生。</li>
 </ol>
-<p>然后 Travis-CI 应该就开始进行构建了，在构建的页面上还有构建状态的 badge ，可以放到 github 的 <code>README.md</code> 上标注构建状态 = =</p>
-<h1 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h1><p>Travis-CI 还有很多功能没有用到，不过对于现在我的 repo 已经完全够用了。</p>
-<p>GitHub 都已经开通了免费的 private repo ，travis-ci 什么时候也能开通免费版的 private plan 呢？</p>
-<p>参考来源: <a href="https://blog.csdn.net/u012348774/article/details/78663381" target="_blank" rel="noopener">https://blog.csdn.net/u012348774/article/details/78663381</a></p>
+<h1 id="热力学基本关系式"><a href="#热力学基本关系式" class="headerlink" title="热力学基本关系式"></a><a href="https://en.wikipedia.org/wiki/Fundamental_thermodynamic_relation" target="_blank" rel="noopener">热力学基本关系式</a></h1><p>只有一个公式：</p>
+<script type="math/tex; mode=display">
+\dif E = T\dif S - p\dif V + \mu\dif N
+\label{eq:thermal_relation}</script><p>式 $\eqref{eq:thermal_relation}$ 中：</p>
+<ul>
+<li>$E$ ——内能，J；</li>
+<li>$T​$ ——温度，K；</li>
+<li>$S$ ——熵，J/K；</li>
+<li>$p$ ——压力，Pa；</li>
+<li>$V$ ——体积，m<sup>3</sup>；</li>
+<li>$\mu$ ——化学势，J；</li>
+<li>$N$ ——粒子数目。</li>
+</ul>
+<p>仔细观察这个公式，可以发现公式每一项的量纲都是能量： $E$ ， $TS$ ， $pV$ ， $\mu N$ 单位都是 J 。</p>
+<p>并且，等式右边微分符号左边都是<a href="https://en.wikipedia.org/wiki/Intensive_and_extensive_properties#Intensive_properties" target="_blank" rel="noopener">强度量</a>—— $T$ ， $p$ ， $\mu$ ；被微分的量都是<a href="https://en.wikipedia.org/wiki/Intensive_and_extensive_properties#Extensive_properties" target="_blank" rel="noopener">广延量</a> ——$S$ ， $V$ ， $N$ 。</p>
+<p>强度量不随物质的多少或系统的大小而改变，比如两份温度同样是 300 K 的气体混合在一块，并不意味着它们总体的温度是各自温度的加和，这样的相加是没有意义的，所以温度是强度量；但如果是两份体积为 1 L 的气体混合在一块，它们的总体积就可以是 2 L，那么体积就是广延量；</p>
+<p>再次审视这个公式，我们发现等号右边的每一项的两个量都是一对共轭量，这一点在后面的公式推导中很重要。</p>
+<h2 id="beta-的定义及对热力学基本关系式的变形"><a href="#beta-的定义及对热力学基本关系式的变形" class="headerlink" title="$\beta$ 的定义及对热力学基本关系式的变形"></a>$\beta$ 的定义及对热力学基本关系式的变形</h2><p>为了后面研究的方便，我们定义温度与玻尔兹曼常数乘积的倒数为 $\beta$ ：</p>
+<script type="math/tex; mode=display">
+\beta = \frac{1}{kT}</script><p>其中 $k$ 是<a href="https://en.wikipedia.org/wiki/Boltzmann_constant" target="_blank" rel="noopener">玻尔兹曼常数</a>， $k = \frac{R}{N_A} = \frac{8.314}{6.02\times 10^{23}} = 1.38064852\times 10^{−23}$ 单位是 J/K。</p>
+<p>接着我们对式 $\eqref{eq:thermal_relation}$ 进行变形：</p>
+<script type="math/tex; mode=display">
+\begin{align}\notag
+    \dif E &={} T\dif S - p\dif V + \mu\dif N \\ \notag
+    \frac{1}{T} \dif E &={} \dif S - \frac{p}{T} \dif V + \frac{\mu}{T}\dif N \\ \notag
+    \frac{1}{kT} \dif E &={} \frac{1}{k}\dif S - \frac{p}{kT} \dif V + \frac{\mu}{kT}\dif N \\ \notag
+    \beta \dif E &={} \frac{1}{k}\dif S -\beta p\dif V + \beta\mu \dif N\\ \notag
+    \frac{1}{k}\dif S &={} \beta \dif E +\beta p\dif V - \beta\mu \dif N\\
+       \label{eq:thermal_relation_derivative}
+\end{align}</script><p>这时要请出一位热力学历史上的一位重要人物——玻尔兹曼，在他的墓碑上写着一个著名的公式</p>
+<p><img src="boltzmann_tombstone.jpg" alt="玻尔兹曼的墓碑"></p>
+<script type="math/tex; mode=display">
+S = k\ln \Omega \label{eq:boltzmann}</script><p>式 $\eqref{eq:boltzmann}$ 中，$k$ 为玻尔兹曼常数， $\Omega$ 是体系的状态数并且无量纲， $S$ 就是体系的熵，将式 $\eqref{eq:boltzmann}$ 代入 $\eqref{eq:thermal_relation_derivative}$ 中</p>
+<script type="math/tex; mode=display">
+\begin{align} \notag
+\frac{1}{k}\dif k\ln \Omega &={} \beta \dif E + \beta p\dif V - \beta \mu\dif N \\
+\dif \ln \Omega &={} \beta \dif E + \beta p\dif V - \beta \mu\dif N \label{eq:eq5}
+\end{align}</script><p>式  $\eqref{eq:eq5}$ 在后面的推导中会<strong>非常有用</strong>。</p>
+<h1 id="两个假设"><a href="#两个假设" class="headerlink" title="两个假设"></a>两个假设</h1><p>和量子力学存在五个假设类似，统计力学也是在几个假设的前提下延伸的，当然这里的假设数量比量子力学要少很多——只有两个，它们分别是：</p>
+<ol>
+<li><p><a href="https://en.wikipedia.org/wiki/Ergodic_hypothesis" target="_blank" rel="noopener">遍历性假设</a><br>当时间足够长，所有的粒子都能遍历整个体系，体系不存在对于所有状态 $\nu$ ，都使得 $P_{\nu} = 0$ 的区域。 </p>
+<p>$P_{\nu}$ 是体系某区域出现粒子的概率， $\nu$ 表示体系所处的状态。</p>
+</li>
+<li><p><a href="https://en.wikipedia.org/wiki/A_priori_probability" target="_blank" rel="noopener">等几率假设</a></p>
+<p>对于微正则系综（孤立体系，$N$ $V$ $E$ 为给定参数），每个状态出现的概率相等。这里我们使用 $\varOmega(N, V, E)$ 表示体系的总状态数，则每个状态出现的概率</p>
+<script type="math/tex; mode=display">
+P_{\nu} = \frac{1}{\varOmega(N, V, E)}</script></li>
+</ol>
+<h1 id="态密度与简并度"><a href="#态密度与简并度" class="headerlink" title="态密度与简并度"></a>态密度与简并度</h1><ol>
+<li><p>态密度 （Density of States, DOS）</p>
+<p>态密度被定义为体系能量在 $E \sim E + \delta E$ 之间的状态数：</p>
+<script type="math/tex; mode=display">
+\bar{\varOmega}(N, V, E) := \frac{\Delta \varOmega(N, V, E)}{\delta E}</script></li>
+<li><p>简并度 （Degree of degeneracy）</p>
+<p>当 $\delta E \to 0$ 时，态密度即为简并度：</p>
+<script type="math/tex; mode=display">
+g := \frac{\dif \varOmega(N, V, E)}{\dif E}</script></li>
+</ol>
+<p><strong>个人认为</strong>：简并度与态密度的区别是简并度是对于一个能级而言，态密度是对一段能级而言。</p>
+<p>​    如果一个体系的能级是连续分布的，那么求其某一个点上的简并度，是不合适的，就像在一个二维图形上取一条线求这条线的面积一样，求出来的值是零；而如果一个体系的能级是量子化的，此时再求简并度就很合理，因为在两个分立能级之间没有态，态全部「确切」地分布在各个能级上，因此数/计算某个能级上有多少个态是可行的。</p>
+<h1 id="参考资料-amp-致谢"><a href="#参考资料-amp-致谢" class="headerlink" title="参考资料 &amp; 致谢"></a>参考资料 &amp; 致谢</h1><p>Wikipedia: 已在超链接中给出；</p>
+<p>Roommate: Li Shihao；</p>
+<p>《李政道讲义：统计力学》；</p>
 
       
     </div>
@@ -503,9 +556,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/cpp/" rel="tag"># cpp</a>
+            <a href="/tags/Statistical-Mechanics/" rel="tag"># Statistical Mechanics</a>
           
-            <a href="/tags/travis-ci/" rel="tag"># travis-ci</a>
+            <a href="/tags/Physical-Chemistry/" rel="tag"># Physical Chemistry</a>
           
         </div>
       
@@ -518,8 +571,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/01/18/2019-1-18-Understand-Hatree-Fock/" rel="next" title="简单理解 Hatree-Fock 方法">
-                <i class="fa fa-chevron-left"></i> 简单理解 Hatree-Fock 方法
+              <a href="/2019/01/25/how-to-solve-matrix-B-in-A-times-B-equals-C/" rel="next" title="如何求解 A * B = C 中的矩阵 B ？">
+                <i class="fa fa-chevron-left"></i> 如何求解 A * B = C 中的矩阵 B ？
               </a>
             
           </div>
@@ -527,10 +580,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/01/25/how-to-solve-matrix-B-in-A-times-B-equals-C/" rel="prev" title="如何求解 A * B = C 中的矩阵 B ？">
-                如何求解 A * B = C 中的矩阵 B ？ <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -766,7 +815,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#设置步骤"><span class="nav-number">2.</span> <span class="nav-text">设置步骤</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#后记"><span class="nav-number">3.</span> <span class="nav-text">后记</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#何为「系综」？"><span class="nav-number">1.</span> <span class="nav-text">何为「系综」？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#热力学基本关系式"><span class="nav-number">2.</span> <span class="nav-text">热力学基本关系式</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#beta-的定义及对热力学基本关系式的变形"><span class="nav-number">2.1.</span> <span class="nav-text">$\beta$ 的定义及对热力学基本关系式的变形</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#两个假设"><span class="nav-number">3.</span> <span class="nav-text">两个假设</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#态密度与简并度"><span class="nav-number">4.</span> <span class="nav-text">态密度与简并度</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考资料-amp-致谢"><span class="nav-number">5.</span> <span class="nav-text">参考资料 &amp; 致谢</span></a></li></ol></div>
             
 
           </div>
@@ -925,9 +974,9 @@
 
 <script>
   var disqus_config = function() {
-    this.page.url = "https://ionizing.science/2019/01/21/2019-1-21-how-to-setup-travis-ci/";
-    this.page.identifier = "2019/01/21/2019-1-21-how-to-setup-travis-ci/";
-    this.page.title = '如何为 github 上的 cpp 项目设置 Travis-CI 自动测试';
+    this.page.url = "https://ionizing.science/2019/03/22/2019-3-22-Ensembles/";
+    this.page.identifier = "2019/03/22/2019-3-22-Ensembles/";
+    this.page.title = '统计力学笔记——系综的概念';
     };
   function loadComments() {
     var d = document, s = d.createElement('script');
