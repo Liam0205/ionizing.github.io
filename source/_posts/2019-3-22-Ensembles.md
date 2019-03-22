@@ -1,15 +1,16 @@
 ---
-title: 统计力学笔记——系综及「负温度」的概念
-date: 2019-03-14 21:50:44
+title: 统计力学笔记——系综的概念
 tags:
-	- Statistical Mechanics
-	- Physics
-	- Temperature
+  - Statistical Mechanics
+  - Physical Chemistry
+Categories: Physics
+date: 2019-03-22 21:50:44
 ---
+
 
 # 何为「系综」？
 
-简单来说 [系综](https://en.wikipedia.org/wiki/Statistical_ensemble_(mathematical_physics)) (Ensemble) 就是一个宏观态对应所有可能微观态的集合。 $\newcommand{\dif}{\mathop{}\!\mathrm{d}}​$ 
+简单来说 [系综](https://en.wikipedia.org/wiki/Statistical_ensemble_(mathematical_physics) ) (Ensemble) 就是一个宏观态对应所有可能微观态的集合。 $\newcommand{\dif}{\mathop{}\mathrm{d}}$ 
 
 对于宏观态，我们研究对象所含有的粒子的数量级在 10<sup>23</sup> 左右（即 1 mol 物质所含粒子的数量），而这个宏观态的宏观量（如压力 $p$ ，温度 $T$ ，体积 $V$ ，粒子数目 $N$ ，以及内能 $E$ 等）可以保持不变，但是给定一个宏观态，固定其中某些宏观量后，却可能有极大量微观态与之对应。为了研究方便，我们给这些对应于同一个宏观态的微观态的集合起名字叫做「系综」。
 
@@ -60,7 +61,7 @@ $$
 $$
 其中 $k$ 是[玻尔兹曼常数](https://en.wikipedia.org/wiki/Boltzmann_constant)， $k = \frac{R}{N_A} = \frac{8.314}{6.02\times 10^{23}} = 1.38064852\times 10^{−23}$ 单位是 J/K。
 
-接着我们对式 $\eqref{eq:thermal_relation}​$ 进行变形：
+接着我们对式 $\eqref{eq:thermal_relation}$ 进行变形：
 $$
 \begin{align}\notag
 	\dif E &={} T\dif S - p\dif V + \mu\dif N \\ \notag
@@ -107,7 +108,7 @@ $$
 
 1. 态密度 （Density of States, DOS）
 
-   态密度被定义为体系能量在 $E \sim E + \delta E​$ 之间的状态数：
+   态密度被定义为体系能量在 $E \sim E + \delta E$ 之间的状态数：
    $$
    \bar{\varOmega}(N, V, E) := \frac{\Delta \varOmega(N, V, E)}{\delta E}
    $$
@@ -119,17 +120,9 @@ $$
    g := \frac{\dif \varOmega(N, V, E)}{\dif E}
    $$
 
-**个人认为**：简并度与态密度的区别是简并度是对于一个能级而言，态密度是对一段能级而言。如果一个体系的能级是连续分布的，比如大多数经典体系，那么使用态密度更方便；而如果一个体系的能级是量子化的，比如氢原子能级，使用简并度更方便。
+**个人认为**：简并度与态密度的区别是简并度是对于一个能级而言，态密度是对一段能级而言。
 
-# 微正则系综
-
-对于定义这里不再赘述，使用正则系综研究某个体系我们遵循下面的流程：
-
- 	1. 求体系的微观态数 $\varOmega$ ；
- 	2. 求体系的热力学量均值 $\langle X \rangle$ ；
- 	3. 求体系的热力学量涨落（方差， $\langle (\delta X)^2 \rangle$ ）。
-
-
+​	如果一个体系的能级是连续分布的，那么求其某一个点上的简并度，是不合适的，就像在一个二维图形上取一条线求这条线的面积一样，求出来的值是零；而如果一个体系的能级是量子化的，此时再求简并度就很合理，因为在两个分立能级之间没有态，态全部「确切」地分布在各个能级上，因此数/计算某个能级上有多少个态是可行的。
 
 # 参考资料 & 致谢
 
@@ -138,3 +131,4 @@ Wikipedia: 已在超链接中给出；
 Roommate: Li Shihao；
 
 《李政道讲义：统计力学》；
+
