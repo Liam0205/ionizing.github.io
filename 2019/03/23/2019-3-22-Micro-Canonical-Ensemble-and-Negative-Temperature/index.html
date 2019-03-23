@@ -98,27 +98,28 @@
 
 
 
-  <meta name="description" content="何为「系综」？简单来说 系综 (Ensemble) 就是一个宏观态对应所有可能微观态的集合。 $\newcommand{\dif}{\mathop{}\mathrm{d}}$  对于宏观态，我们研究对象所含有的粒子的数量级在 1023 左右（即 1 mol 物质所含粒子的数量），而这个宏观态的宏观量（如压力 $p​$ ，温度 $T​$ ，体积 $V​$ ，粒子数目 $N​$ ，以及内能 $E​$">
-<meta name="keywords" content="Statistical Mechanics,Physical Chemistry">
+  <meta name="description" content="微正则系综基本概念微正则系综是指参量为 $N​$ $V​$ $E​$ 的体系，对应于宏观的孤立体系，即「在宏观看来」，体系的粒子数、体积、和内能都不改变。$\newcommand{\dif}{\mathop{}\mathrm{d}}​$  上一篇博文中我们已经知道，统计力学中存在两个假设，其中一个假设是：微正则系综中各个状态出现的概率相等，用数学语言表达就是：  P_{\nu} = \frac{1">
+<meta name="keywords" content="Statistical Mechanics,Physical Chemistry,Negative Temperature">
 <meta property="og:type" content="article">
-<meta property="og:title" content="统计力学笔记——系综的概念">
-<meta property="og:url" content="https://ionizing.science/2019/03/22/2019-3-22-Ensembles/index.html">
+<meta property="og:title" content="微正则系综与负温度的导出">
+<meta property="og:url" content="https://ionizing.science/2019/03/23/2019-3-22-Micro-Canonical-Ensemble-and-Negative-Temperature/index.html">
 <meta property="og:site_name" content="Ionizing&#39;s Blog">
-<meta property="og:description" content="何为「系综」？简单来说 系综 (Ensemble) 就是一个宏观态对应所有可能微观态的集合。 $\newcommand{\dif}{\mathop{}\mathrm{d}}$  对于宏观态，我们研究对象所含有的粒子的数量级在 1023 左右（即 1 mol 物质所含粒子的数量），而这个宏观态的宏观量（如压力 $p​$ ，温度 $T​$ ，体积 $V​$ ，粒子数目 $N​$ ，以及内能 $E​$">
+<meta property="og:description" content="微正则系综基本概念微正则系综是指参量为 $N​$ $V​$ $E​$ 的体系，对应于宏观的孤立体系，即「在宏观看来」，体系的粒子数、体积、和内能都不改变。$\newcommand{\dif}{\mathop{}\mathrm{d}}​$  上一篇博文中我们已经知道，统计力学中存在两个假设，其中一个假设是：微正则系综中各个状态出现的概率相等，用数学语言表达就是：  P_{\nu} = \frac{1">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://ionizing.science/2019/03/22/2019-3-22-Ensembles/boltzmann_tombstone.jpg">
-<meta property="og:updated_time" content="2019-03-23T05:47:13.653Z">
+<meta property="og:image" content="https://ionizing.science/2019/03/23/2019-3-22-Micro-Canonical-Ensemble-and-Negative-Temperature/image-20190323153538645.png">
+<meta property="og:image" content="https://ionizing.science/2019/03/23/2019-3-22-Micro-Canonical-Ensemble-and-Negative-Temperature/image-20190323145956521.png">
+<meta property="og:updated_time" content="2019-03-23T07:47:49.294Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="统计力学笔记——系综的概念">
-<meta name="twitter:description" content="何为「系综」？简单来说 系综 (Ensemble) 就是一个宏观态对应所有可能微观态的集合。 $\newcommand{\dif}{\mathop{}\mathrm{d}}$  对于宏观态，我们研究对象所含有的粒子的数量级在 1023 左右（即 1 mol 物质所含粒子的数量），而这个宏观态的宏观量（如压力 $p​$ ，温度 $T​$ ，体积 $V​$ ，粒子数目 $N​$ ，以及内能 $E​$">
-<meta name="twitter:image" content="https://ionizing.science/2019/03/22/2019-3-22-Ensembles/boltzmann_tombstone.jpg">
+<meta name="twitter:title" content="微正则系综与负温度的导出">
+<meta name="twitter:description" content="微正则系综基本概念微正则系综是指参量为 $N​$ $V​$ $E​$ 的体系，对应于宏观的孤立体系，即「在宏观看来」，体系的粒子数、体积、和内能都不改变。$\newcommand{\dif}{\mathop{}\mathrm{d}}​$  上一篇博文中我们已经知道，统计力学中存在两个假设，其中一个假设是：微正则系综中各个状态出现的概率相等，用数学语言表达就是：  P_{\nu} = \frac{1">
+<meta name="twitter:image" content="https://ionizing.science/2019/03/23/2019-3-22-Micro-Canonical-Ensemble-and-Negative-Temperature/image-20190323153538645.png">
 
 
 
 
 
 
-  <link rel="canonical" href="https://ionizing.science/2019/03/22/2019-3-22-Ensembles/">
+  <link rel="canonical" href="https://ionizing.science/2019/03/23/2019-3-22-Micro-Canonical-Ensemble-and-Negative-Temperature/">
 
 
 
@@ -128,7 +129,7 @@
   };
 </script>
 
-  <title>统计力学笔记——系综的概念 | Ionizing's Blog</title>
+  <title>微正则系综与负温度的导出 | Ionizing's Blog</title>
   
 
 
@@ -348,7 +349,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://ionizing.science/2019/03/22/2019-3-22-Ensembles/">
+    <link itemprop="mainEntityOfPage" href="https://ionizing.science/2019/03/23/2019-3-22-Micro-Canonical-Ensemble-and-Negative-Temperature/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="博主">
@@ -365,7 +366,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">统计力学笔记——系综的概念
+          <h1 class="post-title" itemprop="name headline">微正则系综与负温度的导出
 
               
             
@@ -391,28 +392,34 @@
                 
               
 
-              <time title="创建于：2019-03-22 21:50:44" itemprop="dateCreated datePublished" datetime="2019-03-22T21:50:44+08:00">2019-03-22</time>
+              <time title="创建于：2019-03-23 15:46:00 / 更新于：15:47:49" itemprop="dateCreated datePublished" datetime="2019-03-23T15:46:00+08:00">2019-03-23</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Edited on</span>
-                
-                <time title="更新于：2019-03-23 13:47:13" itemprop="dateModified" datetime="2019-03-23T13:47:13+08:00">2019-03-23</time>
               
             
           </span>
 
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Physical-Chemistry/" itemprop="url" rel="index"><span itemprop="name">Physical Chemistry</span></a></span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -426,8 +433,8 @@
                 </span>
             
                 <span class="post-meta-item-text">Comments：</span>
-                <a href="/2019/03/22/2019-3-22-Ensembles/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/03/22/2019-3-22-Ensembles/" itemprop="commentCount"></span>
+                <a href="/2019/03/23/2019-3-22-Micro-Canonical-Ensemble-and-Negative-Temperature/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/03/23/2019-3-22-Micro-Canonical-Ensemble-and-Negative-Temperature/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -435,7 +442,7 @@
 
           
           
-            <span id="/2019/03/22/2019-3-22-Ensembles/" class="leancloud_visitors" data-flag-title="统计力学笔记——系综的概念">
+            <span id="/2019/03/23/2019-3-22-Micro-Canonical-Ensemble-and-Negative-Temperature/" class="leancloud_visitors" data-flag-title="微正则系综与负温度的导出">
               <span class="post-meta-divider">|</span>
               <span class="post-meta-item-icon">
                 <i class="fa fa-eye"></i>
@@ -466,85 +473,149 @@
       
 
       
-        <h1 id="何为「系综」？"><a href="#何为「系综」？" class="headerlink" title="何为「系综」？"></a>何为「系综」？</h1><p>简单来说 <a href="https://en.wikipedia.org/wiki/Statistical_ensemble_(mathematical_physics)" target="_blank" rel="noopener">系综</a> (Ensemble) 就是一个宏观态对应所有可能微观态的集合。 $\newcommand{\dif}{\mathop{}\mathrm{d}}$ </p>
-<p>对于宏观态，我们研究对象所含有的粒子的数量级在 10<sup>23</sup> 左右（即 1 mol 物质所含粒子的数量），而这个宏观态的宏观量（如压力 $p​$ ，温度 $T​$ ，体积 $V​$ ，粒子数目 $N​$ ，以及内能 $E​$ 等）可以保持不变，但是给定一个宏观态，固定其中某些宏观量后，却可能有极大量微观态与之对应。为了研究方便，我们给这些对应于同一个宏观态的微观态的集合起名字叫做「系综」。</p>
-<p>为了简化模型，我们使用理想气体分子作为研究的粒子，通常研究的系综体系有：</p>
+        <h1 id="微正则系综"><a href="#微正则系综" class="headerlink" title="微正则系综"></a>微正则系综</h1><h2 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h2><p>微正则系综是指参量为 $N​$ $V​$ $E​$ 的体系，对应于宏观的孤立体系，即「在宏观看来」，体系的粒子数、体积、和内能都不改变。$\newcommand{\dif}{\mathop{}\mathrm{d}}​$ </p>
+<p>上一篇博文中我们已经知道，统计力学中存在两个假设，其中一个假设是：微正则系综中各个状态出现的概率相等，用数学语言表达就是：</p>
+<script type="math/tex; mode=display">
+P_{\nu} = \frac{1}{\varOmega(N,V,E)}</script><p>其中 $\nu$ 表示某个状态， $\varOmega(N, V, E)$ 表示系统参量为 $N$ 、 $V$ 、 $E$ 时所拥有的状态数。</p>
+<p>由玻尔兹曼关系式，体系的熵可以表达为</p>
+<script type="math/tex; mode=display">
+S = k\ln \varOmega(N, V, E)</script><h2 id="三维势箱的例子"><a href="#三维势箱的例子" class="headerlink" title="三维势箱的例子"></a>三维势箱的例子</h2><p>假想我们把理想气体放在一个长宽高均为 $a$ 的密闭、绝热、体积不变的箱子中，这个箱子中的气体可以看作一个孤立体系，气体的粒子是自由粒子，它们之间的运动无关联。</p>
+<p>我们假设这个 $a$ 是 m 的量级，即箱子为宏观尺度上的箱子，体系的粒子数为 $N$ ，体积为 $V$ ，内能为 $E$ 。</p>
+<p>下面开始求这个体系的的状态数 $\varOmega(N, V, E)$。</p>
+<h3 id="当体系只有一个粒子时"><a href="#当体系只有一个粒子时" class="headerlink" title="当体系只有一个粒子时"></a>当体系只有一个粒子时</h3><p>如果体系只有一个粒子，那么粒子的能级为</p>
+<script type="math/tex; mode=display">
+\epsilon_{n_x, n_y, n_z} = \frac{h^2}{8ma^2}(n_x^2 + n_y^2 + n_z^2)</script><p>上面式子中</p>
 <ul>
-<li>微正则系综（<a href="https://en.wikipedia.org/wiki/Microcanonical_ensemble" target="_blank" rel="noopener">Microcanonical Ensemble</a>） $\Longrightarrow$ 等粒子数、等容、等能量的体系，即孤立体系（与外界完全隔离，与环境没有物质交换、没有做功、甚至没有能量交换的体系）所对应的系综，热力学参量为 $N$ 、 $V$ 、 $E$ ；</li>
-<li>正则系综（<a href="https://en.wikipedia.org/wiki/Canonical_ensemble" target="_blank" rel="noopener">Canonical Ensemble</a>） $\Longrightarrow$  等粒子数、等容、等温的体系，即封闭体系（容器体积封闭固定无法对外界做功，与外界没有粒子交换，但是容器壁可以传热，体系与外界仅有能量交换，<strong>且体系温度保持恒定</strong>）所对应的系综，热力学参量为 $N$ ，$V$ ， $T$ ；</li>
-<li>巨正则系综（<a href="https://en.wikipedia.org/wiki/Grand_canonical_ensemble" target="_blank" rel="noopener">Grand Canonical Ensemble</a>） $\Longrightarrow$ 等化学势、等容、等温的体系，即开放体系（容器体积固定，但并不封闭，体系内外有物质交换和能量交换，但体系的化学势与温度始终保持恒定）所对应的系综，热力学参量为 $\mu$ ， $V$ ， $T$ ；</li>
-<li>等温等压系综（<a href="https://en.wikipedia.org/wiki/Isothermal–isobaric_ensemble" target="_blank" rel="noopener">Isothermal-Isobaric Ensemble</a>） $\Longrightarrow$ 等粒子数、等温、等压的体系（如一个自由的密闭活塞）所对应的系综，热力学参量为 $N$ ， $T$ ， $p$ 。</li>
+<li>$h$ —— 普朗克常量， $6.626\times 10^{-34}$ J*s ；</li>
+<li>$m$ —— 粒子质量，g ；</li>
+<li>$n<em>x$ , $n_y$ , $n_z$ —— $x$ , $y$ , $z​$ 方向上的量子数， $n_x, n_y, n_z \in N</em>+$ ，无量纲。（如果不明白这个公式如何推出来，可以参考<a href="https://en.wikipedia.org/wiki/Particle_in_a_box" target="_blank" rel="noopener">Particle in a box</a> ）</li>
 </ul>
-<p>PS. </p>
-<ol>
-<li>个人认为带「正则」的名字翻译得……很让人摸不着头脑，无法从名字知道系综的参量情况，可能是这个术语本身在命名时就比较随意吧。不过命名不是重点，其内在的逻辑才是应该关心的；</li>
-<li>其中的热力学「参量」表示我们给定体系的热力学量。类似于程序设计中「函数」的「输入参数」；</li>
-<li>给定上面的这些热力学「参量」并<span style="color:red"><strong>不代表体系在任意时刻保持这些热力学量恒定</strong></span>。给定它们表示体系在宏观上保持这些热力学量不变，但在微观角度看，这些热力学量是在<strong>时刻不停地涨落</strong>，但是它们整体表现出的<strong>平均值</strong>是恒定不变的，这才是给定热力学参量的真正含义；</li>
-<li>为什么要定义系综？其实刚开始时人们研究宏观态时是只研究其对应的某一个微观态在一段时间内的演化过程，但是研究一个态需要知道这个态的初始参数（所有粒子的初速度、位置信息等），每次研究都要设置这个参数，很麻烦，并且很多时候人们并不知道这些参数；而且在很短时间内这个态经过演化已经经历过了所有可能的等价态，使得结果与初始参数的关系并不大。于是人们将<span style="color:red"><strong>研究一个体系在一段时间的演化</strong></span>转化成<span style="color:red"><strong>研究多个等价体系在同一时间内的统计分布</strong></span>，这样并不需要定义其中某个微观态的初始参数，而是给出这些微观态平均表现出的热力学性质，然后研究这些态的热力学量在统计上的分布就能达到想要的效果，系综的概念应运而生。</li>
-</ol>
-<h1 id="热力学基本关系式"><a href="#热力学基本关系式" class="headerlink" title="热力学基本关系式"></a><a href="https://en.wikipedia.org/wiki/Fundamental_thermodynamic_relation" target="_blank" rel="noopener">热力学基本关系式</a></h1><p>只有一个公式：</p>
+<p>假设给定一个能级 $\epsilon$ ，那么在 $0 \sim \epsilon$ 之间这个粒子存在多少个状态呢？</p>
+<p>显然这个数目应该等于所有所有满足</p>
 <script type="math/tex; mode=display">
-\dif E = T\dif S - p\dif V + \mu\dif N
-\label{eq:thermal_relation}</script><p>式 $\eqref{eq:thermal_relation}​$ 中：</p>
+n_x^2 + n_y^2 + n_z^2 \le \frac{8ma^2\epsilon}{h^2} \label{eq:4}</script><p>的 [$n_x$, $n_y$, $n_z$] 组合的数量。</p>
+<p>如何计算这个数量？当然编程用回溯法不难穷举出所有可能的组合，但是我们不需要知道所有组合具体是什么样，我们只需知道些组合的数量！</p>
+<p>$n_x^2 + n_y^2 + n_z^2$ ，好熟悉的公式，这不就是三维空间中点 $(n_x, n_y, n_z)$ 到原点 $O$ 的距离平方吗？再次审视 $\eqref{eq:4}$ ，它表示的是一个球在第一卦限内的部分</p>
+<p><img src="./image-20190323153538645.png" width="500"></p>
+<p> $\eqref{eq:4}$ 取等号时所表示的面是八分之一个球面，球面半径为</p>
+<script type="math/tex; mode=display">
+R = \sqrt{\frac{8ma^2\epsilon}{h^2}}</script><p>我们的任务是求它们组合的个数，也就是求这八分之一球内部有多少个坐标全为正整数的点；当 $\epsilon$ 取值比较大时，球面部分的 aliasing 可以忽略，我们认为这八分之一球内坐标为整数的点的数量等于这八分之一球的体积。</p>
+<p>于是问题变得简单起来，在 $0 \sim \epsilon$ 之间</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+\varPhi(\epsilon) &={} \frac{1}{8} \cdot \frac{4\pi}{3} R^3 \\
+    &={} \frac{1}{8} \cdot \frac{4\pi}{3} \left( \frac{8ma^2\epsilon}{h^2} \right)^{\frac{3}{2}}
+\end{aligned}</script><p>那么在 $\epsilon \sim \epsilon + \dif \epsilon​$ 之间</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+    \varOmega(\epsilon) &={} \overline{\varOmega}(\epsilon) \dif \epsilon \\
+        &={} \frac{\dif}{\dif \epsilon} \varOmega(\epsilon) \dif \epsilon \\
+        &={} \frac{\dif}{\dif \epsilon} \frac{\pi}{6} \left( \frac{8ma^2\epsilon}{h^2} \right)^{\frac{3}{2}} \dif \epsilon \\
+        &={} \frac{\pi}{6} \left( \frac{8ma^2}{h^2} \right)^{\frac{3}{2}} \cdot \frac{3}{2} \epsilon^{\frac{1}{2}} \dif \epsilon \\
+        &={} \frac{\pi}{4} \left( \frac{8ma^2}{h^2} \right)^{\frac{3}{2}} \cdot \epsilon^{\frac{1}{2}} \dif \epsilon
+\end{aligned}</script><p>当然我们也可以直接用球面面积公式计算 $\varOmega(\epsilon)$ ，得到的结果和上面的一样。</p>
+<h3 id="当体系有-N-个粒子时"><a href="#当体系有-N-个粒子时" class="headerlink" title="当体系有 $N$ 个粒子时"></a>当体系有 $N$ 个粒子时</h3><p>我们认为这 $N$ 个粒子是<a href="https://en.wikipedia.org/wiki/Identical_particles" target="_blank" rel="noopener">全同</a>，即不可分辨的，同时我们要描述这个系统的某个状态需要知道所有粒子的量子数，所以体系的总量子数 ${n}$ 就从 3 个变成了 3 $N$ 个，此时能级的计算公式将变成</p>
+<script type="math/tex; mode=display">
+E(\{n_j\}) = \frac{h^2}{8ma^2} \sum_{j=1}^{3N} n_j^2</script><p>${n_j}$ 所存在的空间不再是三维，而是 $3N$ 维，<a href="https://en.wikipedia.org/wiki/Volume_of_an_n-ball" target="_blank" rel="noopener">谷歌</a>告诉我们 $3N$ 维空间中球的体积公式为</p>
+<script type="math/tex; mode=display">
+V_{3N}(R) = \frac{\pi^{3N/2}}{\Gamma(\frac{3N}{2} + 1)} \cdot R^{3N}</script><p>其中 $\Gamma(\frac{3N}{2} + 1)$ 是一个 <a href="https://en.wikipedia.org/wiki/Gamma_function" target="_blank" rel="noopener">Gamma 函数</a> ， </p>
+<script type="math/tex; mode=display">
+\Gamma(x) = \int_{0}^{+\infty}t^{x-1} e^{-t} \dif t</script><p>它满足</p>
 <ul>
-<li>$E$ ——内能，J；</li>
-<li>$T​$ ——温度，K；</li>
-<li>$S​$ ——熵，J/K；</li>
-<li>$p$ ——压力，Pa；</li>
-<li>$V$ ——体积，m<sup>3</sup>；</li>
-<li>$\mu$ ——化学势，J；</li>
-<li>$N$ ——粒子数目。</li>
+<li>$\Gamma(0) = 0$ ；</li>
+<li>$\Gamma(\frac{1}{2}) = \sqrt{\pi}​$ ；</li>
+<li>$\Gamma(x+1) = x\cdot\Gamma(x)$ 。</li>
 </ul>
-<p>仔细观察这个公式，可以发现公式每一项的量纲都是能量： $E$ ， $TS$ ， $pV$ ， $\mu N$ 单位都是 J 。</p>
-<p>并且，等式右边微分符号左边都是<a href="https://en.wikipedia.org/wiki/Intensive_and_extensive_properties#Intensive_properties" target="_blank" rel="noopener">强度量</a>—— $T$ ， $p$ ， $\mu$ ；被微分的量都是<a href="https://en.wikipedia.org/wiki/Intensive_and_extensive_properties#Extensive_properties" target="_blank" rel="noopener">广延量</a> ——$S$ ， $V$ ， $N$ 。</p>
-<p>强度量不随物质的多少或系统的大小而改变，比如两份温度同样是 300 K 的气体混合在一块，并不意味着它们总体的温度是各自温度的加和，这样的相加是没有意义的，所以温度是强度量；但如果是两份体积为 1 L 的气体混合在一块，它们的总体积就可以是 2 L，那么体积就是广延量；</p>
-<p>再次审视这个公式，我们发现等号右边的每一项的两个量都是一对共轭量，这一点在后面的公式推导中很重要。</p>
-<h2 id="beta-的定义及对热力学基本关系式的变形"><a href="#beta-的定义及对热力学基本关系式的变形" class="headerlink" title="$\beta$ 的定义及对热力学基本关系式的变形"></a>$\beta$ 的定义及对热力学基本关系式的变形</h2><p>为了后面研究的方便，我们定义温度与玻尔兹曼常数乘积的倒数为 $\beta$ ：</p>
+<p>那么在这个球的”第一卦限”内的体积为这个球的 $\frac{1}{2^{3N}}$ ，于是在 $0 \sim E$ 之间</p>
 <script type="math/tex; mode=display">
-\beta = \frac{1}{kT}</script><p>其中 $k$ 是<a href="https://en.wikipedia.org/wiki/Boltzmann_constant" target="_blank" rel="noopener">玻尔兹曼常数</a>， $k = \frac{R}{N_A} = \frac{8.314}{6.02\times 10^{23}} = 1.38064852\times 10^{−23}$ 单位是 J/K。</p>
-<p>接着我们对式 $\eqref{eq:thermal_relation}$ 进行变形：</p>
+\varPhi(E) = \frac{1}{2^{3N} \cdot N!} V_{3N}(R)</script><p>上面式子分母中的 $N!$ 正体现了粒子的不可分辨性。而</p>
 <script type="math/tex; mode=display">
-\begin{align}\notag
-    \dif E &={} T\dif S - p\dif V + \mu\dif N \\ \notag
-    \frac{1}{T} \dif E &={} \dif S - \frac{p}{T} \dif V + \frac{\mu}{T}\dif N \\ \notag
-    \frac{1}{kT} \dif E &={} \frac{1}{k}\dif S - \frac{p}{kT} \dif V + \frac{\mu}{kT}\dif N \\ \notag
-    \beta \dif E &={} \frac{1}{k}\dif S -\beta p\dif V + \beta\mu \dif N\\ \notag
-    \frac{1}{k}\dif S &={} \beta \dif E +\beta p\dif V - \beta\mu \dif N\\
-       \label{eq:thermal_relation_derivative}
-\end{align}</script><p>这时要请出一位热力学历史上的一位重要人物——玻尔兹曼，在他的墓碑上写着一个著名的公式</p>
-<p><img src="boltzmann_tombstone.jpg" alt="玻尔兹曼的墓碑"></p>
+\begin{aligned}
+    R^2 &={} \sum_j n_j^2\\
+    E(\{n_j\}) &={} \frac{h^2}{8ma^2} R^2
+\end{aligned}</script><p>上面式子导出</p>
 <script type="math/tex; mode=display">
-S = k\ln \Omega \label{eq:boltzmann}</script><p>式 $\eqref{eq:boltzmann}$ 中，$k$ 为玻尔兹曼常数， $\Omega$ 是体系的状态数并且无量纲， $S$ 就是体系的熵，将式 $\eqref{eq:boltzmann}$ 代入 $\eqref{eq:thermal_relation_derivative}$ 中</p>
+R = \sqrt{\frac{8ma^2}{h^2}E}</script><p>那么在 $E \sim \dif E$ 之间，体系的状态数为</p>
 <script type="math/tex; mode=display">
-\begin{align} \notag
-\frac{1}{k}\dif k\ln \Omega &={} \beta \dif E + \beta p\dif V - \beta \mu\dif N \\
-\dif \ln \Omega &={} \beta \dif E + \beta p\dif V - \beta \mu\dif N \label{eq:eq5}
-\end{align}</script><p>式  $\eqref{eq:eq5}$ 在后面的推导中会<strong>非常有用</strong>。</p>
-<h1 id="两个假设"><a href="#两个假设" class="headerlink" title="两个假设"></a>两个假设</h1><p>和量子力学存在五个假设类似，统计力学也是在几个假设的前提下延伸的，当然这里的假设数量比量子力学要少很多——只有两个，它们分别是：</p>
-<ol>
-<li><p><a href="https://en.wikipedia.org/wiki/Ergodic_hypothesis" target="_blank" rel="noopener">遍历性假设</a><br>当时间足够长，所有的粒子都能遍历整个体系，体系不存在对于所有状态 $\nu$ ，都使得 $P_{\nu} = 0$ 的区域。 </p>
-<p>$P_{\nu}$ 是体系某区域出现粒子的概率， $\nu$ 表示体系所处的状态。</p>
+\begin{aligned}
+\varOmega(E) &={} \frac{\dif}{\dif E} \varPhi(E) \dif E \\
+    &={}  \frac{1}{2^{3N} \cdot N!} \cdot \frac{\pi^{3N/2}}{\Gamma(\frac{3N}{2} + 1)} \frac{\dif}{\dif E} \left( \frac{8ma^2}{h^2}E \right)^{\frac{3N}{2}} \dif E \\
+    &={} \frac{1}{2^{3N} \cdot N!} \cdot \frac{\pi^{3N/2}}{\Gamma(\frac{3N}{2} + 1)} \left( \frac{8ma^2}{h^2} \right)^{\frac{3N}{2}} \cdot \frac{3N}{2} \cdot E^{\frac{3N}{2}} \frac{\dif E}{E} \\
+    &={} \frac{1}{N!} \cdot \frac{1 }{ \Gamma(\frac{3N}{2})} \cdot \left( \frac{2 \pi ma^2}{h^2} \right)^{\frac{3N}{2}} E^{\frac{3N}{2}} \frac{\dif E}{E} \\
+    &={} \frac{1}{N!} \cdot \frac{a^{3N}}{\Gamma(\frac{3N}{2})} \cdot \left( \frac{2 \pi mE}{h^2} \right)^{\frac{3N}{2}} \frac{\dif E}{E} \\
+    &={} \frac{1}{N!} \cdot \frac{V^{N}}{\Gamma(\frac{3N}{2})} \cdot \left( \frac{2 \pi mE}{h^2} \right)^{\frac{3N}{2}} \frac{\dif E}{E}
+\end{aligned}</script><p>下面来解决 $\Gamma(\frac{3N}{2})​$ 值的问题。</p>
+<p>根据 $\Gamma(x+1) = x\Gamma(x)$ ，可以得到 $\Gamma(\frac{3N}{2}) = (\frac{3N}{2} - 1) \cdot \Gamma(\frac{3N}{2} - 1) =\cdots= (\frac{3N}{2} - 1)!$ </p>
+<p>于是 $\Omega(E)​$ 中 $N! \cdot \Gamma(\frac{3N}{2})​$ 可以使用<a href="https://en.wikipedia.org/wiki/Stirling%27s_approximation" target="_blank" rel="noopener">斯特灵近似</a>来计算</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+    \verb|let|\quad X &={} N!\cdot \left(\frac{3N}{2} - 1\right)! \\
+    \ln X &={}N\ln N - N + \left(\frac{3N}{2}-1\right) \ln \left(\frac{3N}{2}-1\right) - \left(\frac{3N}{2} - 1\right) \\
+    &\sim{} N\ln N + \frac{3N}{2}\ln\frac{3N}{2} \\
+    &\sim{} \frac{5N}{2}\ln N \\
+\end{aligned}</script><p>为了式子的简洁，我们把不需要关心的部分放到 $f(N)​$ 中，表示含 $N​$ 的系数， $\varOmega(E)​$ 可以化简为</p>
+<script type="math/tex; mode=display">
+\ln \varOmega(E) = f(N) + N\ln V + \frac{3N}{2}\ln E + \ln\frac{\dif E}{E}</script><p>此时使用热力学基本公式的变形</p>
+<script type="math/tex; mode=display">
+\dif \ln \varOmega = \beta \dif E + \beta p\dif V - \beta \mu\dif N</script><p>可以得到以下热力学量</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+    \beta &={} \frac{1}{kT} = \left(\frac{\partial \ln\varOmega}{\partial E}\right)_{N, V} = \frac{3N}{2} \cdot \frac{1}{E} \\
+    &\Longrightarrow {} E = \frac{3}{2} NkT ;\\
+    p\beta &={} \frac{p}{kT} = \left(\frac{\partial \ln\varOmega}{\partial V}\right)_{N, E} = \frac{N}{V} \\
+    &\Longrightarrow {} p = \frac{NkT}{V} \\
+    &\Longrightarrow {} pV = NkT = \frac{NRT}{N_A} = nRT . \\
+\end{aligned}</script><ul>
+<li><p>$E = \frac{3}{2} NkT$ 正是理想气体的平动动能表达式（事实上这个体系中的内能只包含粒子的平动动能）；</p>
 </li>
-<li><p><a href="https://en.wikipedia.org/wiki/A_priori_probability" target="_blank" rel="noopener">等几率假设</a></p>
-<p>对于微正则系综（孤立体系，$N$ $V$ $E$ 为给定参数），每个状态出现的概率相等。这里我们使用 $\varOmega(N, V, E)$ 表示体系的总状态数，则每个状态出现的概率</p>
+<li><p>$pV=nRT$ 也恰好是理想气体状态方程。</p>
+</li>
+</ul>
+<p>于是我们从两个假设出发，对三维势箱内的无关联全同粒子系统使用微正则系综进行研究，得到了以前学过的理想气体的状态方程和理想气体的平动动能表达式，很神奇有木有？别急着惊讶，更神奇的东西在后面。</p>
+<h1 id="重新审视-beta"><a href="#重新审视-beta" class="headerlink" title="重新审视 $\beta$"></a>重新审视 $\beta$</h1><p>上一小节我们使用热力学基本关系式的变形得到了 $\beta$ 的表达式</p>
 <script type="math/tex; mode=display">
-P_{\nu} = \frac{1}{\varOmega(N, V, E)}</script></li>
-</ol>
-<h1 id="态密度与简并度"><a href="#态密度与简并度" class="headerlink" title="态密度与简并度"></a>态密度与简并度</h1><ol>
-<li><p>态密度 （Density of States, DOS）</p>
-<p>态密度被定义为体系能量在 $E \sim E + \delta E$ 之间的状态数：</p>
+\beta = \frac{1}{kT} = \left(\frac{\partial \ln\varOmega}{\partial E}\right)_{N, V}</script><p>很明显，如果 $\left(\frac{\partial \ln\varOmega}{\partial E}\right)_{N, V}$ 为正，即体系的 $\varOmega$ 随 $E$ 的增大而增大，那么 $\beta = \frac{1}{kT}$ 为正，换言之，当体系的状态数，或称混乱度随内能增大而增大，体系的温度为正；那么，反过来，如果体系的状态数随内能增大而减小，体系的温度也可以为负吗？</p>
+<h2 id="自旋系统的例外"><a href="#自旋系统的例外" class="headerlink" title="自旋系统的例外"></a>自旋系统的例外</h2><p>假想我们有一个纯自旋系统，系统中存在方向向下的磁场 $\vec{H}$，其中含有 $N$ 个粒子，它们各自拥有的磁矩 $\vec{\mu}$ 都只能与 $\vec{H}$ 共线，且磁矩的模长都是 $\mu$ ，于是对于每个粒子，它们所处的能级有</p>
 <script type="math/tex; mode=display">
-\bar{\varOmega}(N, V, E) := \frac{\Delta \varOmega(N, V, E)}{\delta E}</script></li>
-<li><p>简并度 （Degree of degeneracy）</p>
-<p>当 $\delta E \to 0$ 时，态密度即为简并度：</p>
+\epsilon = %
+\begin{cases}
+    \mu H & \mu \uparrow \\
+    -\mu H & \mu \downarrow
+\end{cases}</script><p>那么对于这哥 $N$ 粒子的系统，当有 $n$ 个粒子磁矩 $\uparrow$ 时，它们的总能量为</p>
 <script type="math/tex; mode=display">
-g := \frac{\dif \varOmega(N, V, E)}{\dif E}</script></li>
-</ol>
-<p><strong>个人认为</strong>：简并度与态密度的区别是简并度是对于一个能级而言，态密度是对一段能级而言。</p>
-<p>​    如果一个体系的能级是连续分布的，那么求其某一个点上的简并度，是不合适的，就像在一个二维图形上取一条线求这条线的面积一样，求出来的值是零；而如果一个体系的能级是量子化的，此时再求简并度就很合理，因为在两个分立能级之间没有态，态全部「确切」地分布在各个能级上，因此数/计算某个能级上有多少个态是可行的。</p>
-<h1 id="参考资料-amp-致谢"><a href="#参考资料-amp-致谢" class="headerlink" title="参考资料 &amp; 致谢"></a>参考资料 &amp; 致谢</h1><p>Wikipedia: 已在超链接中给出；</p>
-<p>Roommate: Li Shihao；</p>
+\begin{aligned}
+    E &={} n\mu H + (N-n)(-\mu H) \\
+        &={} (2n - N)\mu H
+\end{aligned}</script><p>此时体系的状态数 $\varOmega$ 应为</p>
+<script type="math/tex; mode=display">
+\varOmega = C_N^n = \frac{N!}{n! \cdot(N-n)!}</script><p>作出图像可以看出</p>
+<p><img src="./image-20190323145956521.png" width="500"></p>
+<ul>
+<li>随着 $\ln \varOmega$ 的增大， $\frac{\dif \ln\varOmega}{\dif E}$ 在减小，也就是说 $\beta$ 在减小，而 $\beta = \frac{1}{kT}$ ，则温度在升高，但还是正值，到这里还没什么异常；</li>
+<li>当 $n = \frac{N}{2}$ 时， $\ln \varOmega$ 达到极大值，$\frac{\dif \ln\varOmega}{\dif E}$ 为 <span style="color:red"><strong>0</strong></span> ！换言之 $T \to \infty$ ；</li>
+<li>当 $n$ 继续增大， $\frac{\dif \ln\varOmega}{\dif E}$ 变成了<span style="color:red"><strong>负值</strong></span> ， $T &lt; 0$ ！</li>
+</ul>
+<p>我们从唯象地看待一下这个系统：如果这个系统的所有粒子磁矩方向全部相同，那么这个系统的有序度最高，这是毫无疑问的；那什么时候系统的有序度最呢？肯定是一半粒子磁矩朝上，另一半朝下的时候，此时系统的熵最大。所以当 $n$ 从 0 增长到 $\frac{N}{2}$ 的过程中，系统的熵一直在增大，体系的内能也在增大；但是当 $n$ 增长到 $\frac{N}{2}$ 时，体系的熵达到了<span style="color:red"><strong>最大</strong></span>，之后熵就开始<span style="color:red"><strong>变小</strong></span>，但体系的能量却在一直增加，这显然是不合理的。</p>
+<p>哪里出了问题呢？</p>
+<h2 id="负温度的成因"><a href="#负温度的成因" class="headerlink" title="负温度的成因"></a>负温度的成因</h2><p>上面的自旋系统是一个<span style="color:red"><strong>受限</strong></span>系统，所谓受限是指：</p>
+<ul>
+<li>能级数量受限；</li>
+<li>状态数量受限；</li>
+<li>总能量受限；</li>
+<li>熵受限。</li>
+</ul>
+<p><span style="color:red"><strong>但现实不存在这样的系统</strong></span>，就连本文前半部分讲到的理想气体系统，它的能级数量也是无限的，因此在那个系统中得到的热力学量不会出现负温度这种奇怪的结果。</p>
+<p>负温度的结果虽然奇怪，但不妨碍我们再次讨论一下由它衍生出的一些有意思的东西：</p>
+<ul>
+<li>当 $n \to \frac{N^-}{2}$ ， $\beta \to 0^+$ ， $T \to +\infty$ ；</li>
+<li>当 $n \to \frac{N^+}{2}$ ，$\beta \to 0 ^-$  ， $T \to -\infty$ ；</li>
+<li>当 $n = \frac{N}{2}$ ， $\beta = 0$ ， $T \to \infty$ 。</li>
+</ul>
+<p>我们比较关心当 $n$ 跨越 $\frac{N}{2}$ 那一点时， $T$ 为什么可以从正无穷一下子跳到了正无穷。其实我们换一个思路，让 $T$ 处在一个复平面上，而复平面上的无穷全都是<a href="https://en.wikipedia.org/wiki/Complex_plane#Stereographic_projections" target="_blank" rel="noopener">连在一起的</a> ，于是 $T$ 可以很自然地跨过那个奇点，表现出从负无穷到正无穷的跨越。</p>
+<h1 id="参考-amp-致谢"><a href="#参考-amp-致谢" class="headerlink" title="参考 &amp; 致谢"></a>参考 &amp; 致谢</h1><p>Wikipedia 已在超链接中给出；</p>
 <p>《李政道讲义：统计力学》；</p>
+<p>《现代统计力学导论》 David Chandler；</p>
+<p>徐老师、侯老师。</p>
 
       
     </div>
@@ -572,6 +643,8 @@ g := \frac{\dif \varOmega(N, V, E)}{\dif E}</script></li>
           
             <a href="/tags/Physical-Chemistry/" rel="tag"># Physical Chemistry</a>
           
+            <a href="/tags/Negative-Temperature/" rel="tag"># Negative Temperature</a>
+          
         </div>
       
 
@@ -583,8 +656,8 @@ g := \frac{\dif \varOmega(N, V, E)}{\dif E}</script></li>
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/01/25/how-to-solve-matrix-B-in-A-times-B-equals-C/" rel="next" title="如何求解 A * B = C 中的矩阵 B ？">
-                <i class="fa fa-chevron-left"></i> 如何求解 A * B = C 中的矩阵 B ？
+              <a href="/2019/03/22/2019-3-22-Ensembles/" rel="next" title="统计力学笔记——系综的概念">
+                <i class="fa fa-chevron-left"></i> 统计力学笔记——系综的概念
               </a>
             
           </div>
@@ -592,10 +665,6 @@ g := \frac{\dif \varOmega(N, V, E)}{\dif E}</script></li>
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/03/23/2019-3-22-Micro-Canonical-Ensemble-and-Negative-Temperature/" rel="prev" title="微正则系综与负温度的导出">
-                微正则系综与负温度的导出 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -833,7 +902,7 @@ g := \frac{\dif \varOmega(N, V, E)}{\dif E}</script></li>
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#何为「系综」？"><span class="nav-number">1.</span> <span class="nav-text">何为「系综」？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#热力学基本关系式"><span class="nav-number">2.</span> <span class="nav-text">热力学基本关系式</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#beta-的定义及对热力学基本关系式的变形"><span class="nav-number">2.1.</span> <span class="nav-text">$\beta$ 的定义及对热力学基本关系式的变形</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#两个假设"><span class="nav-number">3.</span> <span class="nav-text">两个假设</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#态密度与简并度"><span class="nav-number">4.</span> <span class="nav-text">态密度与简并度</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考资料-amp-致谢"><span class="nav-number">5.</span> <span class="nav-text">参考资料 &amp; 致谢</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#微正则系综"><span class="nav-number">1.</span> <span class="nav-text">微正则系综</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#基本概念"><span class="nav-number">1.1.</span> <span class="nav-text">基本概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三维势箱的例子"><span class="nav-number">1.2.</span> <span class="nav-text">三维势箱的例子</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#当体系只有一个粒子时"><span class="nav-number">1.2.1.</span> <span class="nav-text">当体系只有一个粒子时</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#当体系有-N-个粒子时"><span class="nav-number">1.2.2.</span> <span class="nav-text">当体系有 $N$ 个粒子时</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#重新审视-beta"><span class="nav-number">2.</span> <span class="nav-text">重新审视 $\beta$</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#自旋系统的例外"><span class="nav-number">2.1.</span> <span class="nav-text">自旋系统的例外</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#负温度的成因"><span class="nav-number">2.2.</span> <span class="nav-text">负温度的成因</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考-amp-致谢"><span class="nav-number">3.</span> <span class="nav-text">参考 &amp; 致谢</span></a></li></ol></div>
             
 
           </div>
@@ -992,9 +1061,9 @@ g := \frac{\dif \varOmega(N, V, E)}{\dif E}</script></li>
 
 <script>
   var disqus_config = function() {
-    this.page.url = "https://ionizing.science/2019/03/22/2019-3-22-Ensembles/";
-    this.page.identifier = "2019/03/22/2019-3-22-Ensembles/";
-    this.page.title = '统计力学笔记——系综的概念';
+    this.page.url = "https://ionizing.science/2019/03/23/2019-3-22-Micro-Canonical-Ensemble-and-Negative-Temperature/";
+    this.page.identifier = "2019/03/23/2019-3-22-Micro-Canonical-Ensemble-and-Negative-Temperature/";
+    this.page.title = '微正则系综与负温度的导出';
     };
   function loadComments() {
     var d = document, s = d.createElement('script');
