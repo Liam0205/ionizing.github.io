@@ -1,10 +1,11 @@
 ---
 title: 微正则系综与负温度的导出
-Categories: Physical Chemistry
+categories: Physical Chemistry
 tags:
 	- Statistical Mechanics
 	- Physical Chemistry
 	- Negative Temperature
+date: 2019-3-23 15:46:00
 ---
 
 # 微正则系综
@@ -57,7 +58,7 @@ $$
 
 $n_x^2 + n_y^2 + n_z^2$ ，好熟悉的公式，这不就是三维空间中点 $(n_x, n_y, n_z)$ 到原点 $O$ 的距离平方吗？再次审视 $\eqref{eq:4}$ ，它表示的是一个球在第一卦限内的部分
 
-<img src="2019-3-22-Micro-Canonical-Ensemble-and-Negative-Temperature/image-20190323153538645.png" width="500">
+<img src="./image-20190323153538645.png" width="500">
 
  $\eqref{eq:4}$ 取等号时所表示的面是八分之一个球面，球面半径为
 $$
@@ -203,7 +204,7 @@ $$
 $$
 作出图像可以看出
 
-<img src="2019-3-22-Micro-Canonical-Ensemble-and-Negative-Temperature/image-20190323145956521.png" width="500">
+<img src="./image-20190323145956521.png" width="500">
 
 - 随着 $\ln \varOmega$ 的增大， $\frac{\dif \ln\varOmega}{\dif E}$ 在减小，也就是说 $\beta$ 在减小，而 $\beta = \frac{1}{kT}$ ，则温度在升高，但还是正值，到这里还没什么异常；
 - 当 $n = \frac{N}{2}$ 时， $\ln \varOmega$ 达到极大值，$\frac{\dif \ln\varOmega}{\dif E}$ 为 <span style="color:red">**0**</span> ！换言之 $T \to \infty$ ；
