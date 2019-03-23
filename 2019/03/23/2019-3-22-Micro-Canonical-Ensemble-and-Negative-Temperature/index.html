@@ -108,7 +108,7 @@
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://ionizing.science/2019/03/23/2019-3-22-Micro-Canonical-Ensemble-and-Negative-Temperature/image-20190323153538645.png">
 <meta property="og:image" content="https://ionizing.science/2019/03/23/2019-3-22-Micro-Canonical-Ensemble-and-Negative-Temperature/image-20190323145956521.png">
-<meta property="og:updated_time" content="2019-03-23T07:47:49.294Z">
+<meta property="og:updated_time" content="2019-03-23T08:05:13.998Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="微正则系综与负温度的导出">
 <meta name="twitter:description" content="微正则系综基本概念微正则系综是指参量为 $N​$ $V​$ $E​$ 的体系，对应于宏观的孤立体系，即「在宏观看来」，体系的粒子数、体积、和内能都不改变。$\newcommand{\dif}{\mathop{}\mathrm{d}}​$  上一篇博文中我们已经知道，统计力学中存在两个假设，其中一个假设是：微正则系综中各个状态出现的概率相等，用数学语言表达就是：  P_{\nu} = \frac{1">
@@ -392,7 +392,7 @@
                 
               
 
-              <time title="创建于：2019-03-23 15:46:00 / 更新于：15:47:49" itemprop="dateCreated datePublished" datetime="2019-03-23T15:46:00+08:00">2019-03-23</time>
+              <time title="创建于：2019-03-23 15:46:00 / 更新于：16:05:13" itemprop="dateCreated datePublished" datetime="2019-03-23T15:46:00+08:00">2019-03-23</time>
             
 
             
@@ -487,8 +487,8 @@ S = k\ln \varOmega(N, V, E)</script><h2 id="三维势箱的例子"><a href="#三
 \epsilon_{n_x, n_y, n_z} = \frac{h^2}{8ma^2}(n_x^2 + n_y^2 + n_z^2)</script><p>上面式子中</p>
 <ul>
 <li>$h$ —— 普朗克常量， $6.626\times 10^{-34}$ J*s ；</li>
-<li>$m$ —— 粒子质量，g ；</li>
-<li>$n<em>x$ , $n_y$ , $n_z$ —— $x$ , $y$ , $z​$ 方向上的量子数， $n_x, n_y, n_z \in N</em>+$ ，无量纲。（如果不明白这个公式如何推出来，可以参考<a href="https://en.wikipedia.org/wiki/Particle_in_a_box" target="_blank" rel="noopener">Particle in a box</a> ）</li>
+<li>$m​$ —— 粒子质量，g ；</li>
+<li>n<sub>x</sub>, n<sub>y</sub>, n<sub>z</sub> —— x, y, z 方向上的量子数， n<sub>x</sub>, n<sub>y</sub>, n<sub>z</sub> $\in N_+$ ，无量纲。（如果不明白这个公式如何推出来，可以参考<a href="https://en.wikipedia.org/wiki/Particle_in_a_box" target="_blank" rel="noopener">Particle in a box</a> ）</li>
 </ul>
 <p>假设给定一个能级 $\epsilon$ ，那么在 $0 \sim \epsilon$ 之间这个粒子存在多少个状态呢？</p>
 <p>显然这个数目应该等于所有所有满足</p>
@@ -616,6 +616,7 @@ R = \sqrt{\frac{8ma^2}{h^2}E}</script><p>那么在 $E \sim \dif E$ 之间，体�
 <p>《李政道讲义：统计力学》；</p>
 <p>《现代统计力学导论》 David Chandler；</p>
 <p>徐老师、侯老师。</p>
+<p>顺便强烈吐槽 Hexo 的渲染功能，迭代了这么多版本，还没解决 MathJax 行内公式与下划线强调的冲突问题，强烈差评。 </p>
 
       
     </div>
@@ -1216,6 +1217,28 @@ R = \sqrt{\frac{8ma^2}{h^2}E}</script><p>那么在 $E \sim \dif E$ 之间，体�
   });
 </script>
 <script src="//cdn.jsdelivr.net/npm/mathjax@2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+<script type="text/javascript">
+$(document).ready(function(){
+  $("code").map(function(){
+    match = /^\$(.*)\$$/.exec($(this).html());
+    if (match) {
+      $(this).replaceWith("<span class=hpl_mathjax_inline>" + $(this).html() + "</span>");
+      MathJax.Hub.Queue(["Typeset",MathJax.Hub,$(this).get(0)]);
+    }
+    match = /^\$\$(.*)\$\$$/.exec($(this).html());
+    if (match) {
+      $(this).replaceWith("<span class=hpl_mathjax_inline>" + $(this).html() + "</span>");
+      MathJax.Hub.Queue(["Typeset",MathJax.Hub,$(this).get(0)]);
+    }
+    match = /^\\begin/.exec($(this).html());
+    if (match) {
+      $(this).replaceWith("<span class=hpl_mathjax_inline>" + $(this).html() + "</span>");
+      MathJax.Hub.Queue(["Typeset",MathJax.Hub,$(this).get(0)]);
+    }
+  });
+});
+</script>
 
 <style>
 .MathJax_Display {
