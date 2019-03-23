@@ -390,7 +390,7 @@
                 
               
 
-              <time title="创建于：2019-03-23 15:46:00 / 更新于：15:47:49" itemprop="dateCreated datePublished" datetime="2019-03-23T15:46:00+08:00">2019-03-23</time>
+              <time title="创建于：2019-03-23 15:46:00 / 更新于：16:05:13" itemprop="dateCreated datePublished" datetime="2019-03-23T15:46:00+08:00">2019-03-23</time>
             
 
             
@@ -2843,6 +2843,28 @@ $\mid
   });
 </script>
 <script src="//cdn.jsdelivr.net/npm/mathjax@2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+<script type="text/javascript">
+$(document).ready(function(){
+  $("code").map(function(){
+    match = /^\$(.*)\$$/.exec($(this).html());
+    if (match) {
+      $(this).replaceWith("<span class=hpl_mathjax_inline>" + $(this).html() + "</span>");
+      MathJax.Hub.Queue(["Typeset",MathJax.Hub,$(this).get(0)]);
+    }
+    match = /^\$\$(.*)\$\$$/.exec($(this).html());
+    if (match) {
+      $(this).replaceWith("<span class=hpl_mathjax_inline>" + $(this).html() + "</span>");
+      MathJax.Hub.Queue(["Typeset",MathJax.Hub,$(this).get(0)]);
+    }
+    match = /^\\begin/.exec($(this).html());
+    if (match) {
+      $(this).replaceWith("<span class=hpl_mathjax_inline>" + $(this).html() + "</span>");
+      MathJax.Hub.Queue(["Typeset",MathJax.Hub,$(this).get(0)]);
+    }
+  });
+});
+</script>
 
 <style>
 .MathJax_Display {

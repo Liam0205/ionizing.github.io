@@ -42,8 +42,8 @@ $$
 上面式子中
 
 - $h$ —— 普朗克常量， $6.626\times 10^{-34}$ J*s ；
-- $m$ —— 粒子质量，g ；
-- $n_x$ , $n_y$ , $n_z$ —— $x$ , $y$ , $z​$ 方向上的量子数， $n_x, n_y, n_z \in N_+$ ，无量纲。（如果不明白这个公式如何推出来，可以参考[Particle in a box](https://en.wikipedia.org/wiki/Particle_in_a_box) ）
+- $m​$ —— 粒子质量，g ；
+- n<sub>x</sub>, n<sub>y</sub>, n<sub>z</sub> —— x, y, z 方向上的量子数， n<sub>x</sub>, n<sub>y</sub>, n<sub>z</sub> $\in N_+$ ，无量纲。（如果不明白这个公式如何推出来，可以参考[Particle in a box](https://en.wikipedia.org/wiki/Particle_in_a_box) ）
 
 假设给定一个能级 $\epsilon$ ，那么在 $0 \sim \epsilon$ 之间这个粒子存在多少个状态呢？
 
@@ -242,3 +242,7 @@ Wikipedia 已在超链接中给出；
 《现代统计力学导论》 David Chandler；
 
 徐老师、侯老师。
+
+
+
+顺便强烈吐槽 Hexo 的渲染功能，迭代了这么多版本，还没解决 MathJax 行内公式与下划线强调的冲突问题，强烈差评。 
