@@ -191,7 +191,7 @@ $$
 	-\mu H & \mu \downarrow
 \end{cases}
 $$
-那么对于这哥 $N$ 粒子的系统，当有 $n$ 个粒子磁矩 $\uparrow$ 时，它们的总能量为
+那么对于这个 $N$ 粒子的系统，当有 $n$ 个粒子磁矩 $\uparrow$ 时，它们的总能量为
 $$
 \begin{aligned}
 	E &={} n\mu H + (N-n)(-\mu H) \\
